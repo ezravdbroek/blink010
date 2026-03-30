@@ -102,7 +102,7 @@ import foto1 from '../assets/foto1.jpeg';
   }
 
   /* ============================================================
-     BACKGROUND VIDEO (desktop only — JS handles visibility)
+     BACKGROUND VIDEO (desktop only — CSS handles visibility)
      ============================================================ */
   .hero-video {
     position: absolute;
@@ -112,8 +112,7 @@ import foto1 from '../assets/foto1.jpeg';
     object-fit: cover;
     object-position: center;
     z-index: 0;
-    /* Hidden on mobile via JS — default visible for no-JS */
-    display: block;
+    display: block; /* visible on desktop */
   }
 
   /* ============================================================
@@ -126,7 +125,7 @@ import foto1 from '../assets/foto1.jpeg';
     height: 100%;
     z-index: 0;
     overflow: hidden;
-    display: none; /* shown on mobile via JS */
+    display: none; /* hidden on desktop */
   }
 
   .hero-mobile-photo {
@@ -474,6 +473,14 @@ import foto1 from '../assets/foto1.jpeg';
      MOBILE LAYOUT (max-width: 768px)
      ============================================================ */
   @media (max-width: 768px) {
+    .hero-video {
+      display: none !important;
+    }
+
+    .hero-mobile-img {
+      display: block !important;
+    }
+
     .hero-content {
       left: 0;
       max-width: 100%;
@@ -590,39 +597,6 @@ import foto1 from '../assets/foto1.jpeg';
 </style>
 
 <script>
-  // Hide video on mobile, show image instead.
-  // On iOS, even muted+playsinline videos can cause issues — pause and remove
-  // the src on mobile so the browser does not buffer or attempt autoplay.
-  const mq = window.matchMedia('(max-width: 768px)');
-  const video = document.querySelector('.hero-video') as HTMLVideoElement;
-  const mobileImg = document.querySelector('.hero-mobile-img') as HTMLElement;
-
-  function handleMedia(e: MediaQueryListEvent | MediaQueryList) {
-    const isMobile = e.matches;
-
-    if (video) {
-      if (isMobile) {
-        // Hide and fully stop the video so iOS doesn't attempt playback
-        video.style.display = 'none';
-        video.pause();
-        video.removeAttribute('src');
-        video.load();
-      } else {
-        // Restore src and let autoplay resume on desktop
-        if (!video.getAttribute('src')) {
-          video.setAttribute('src', '/hero-video.mp4');
-          video.load();
-          video.play().catch(() => {/* autoplay blocked — poster shows */});
-        }
-        video.style.display = 'block';
-      }
-    }
-
-    if (mobileImg) {
-      mobileImg.style.display = isMobile ? 'block' : 'none';
-    }
-  }
-
-  handleMedia(mq);
-  mq.addEventListener('change', handleMedia);
+  // Video/image toggle is handled entirely by CSS media queries.
+  // No JS needed — this avoids unreliable mobile autoplay behavior.
 </script>

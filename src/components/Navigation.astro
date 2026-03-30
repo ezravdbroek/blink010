@@ -945,6 +945,34 @@
       display: none !important;
     }
   }
+
+  @media (max-width: 768px) {
+    .nav {
+      height: 64px;
+      padding: 0;
+    }
+
+    .nav-inner {
+      padding: 0 16px;
+    }
+
+    /* Solid white background with no transparency on mobile scrolled state */
+    .nav.scrolled {
+      background: #ffffff;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    /* Ensure hamburger doesn't overflow */
+    .hamburger {
+      flex-shrink: 0;
+    }
+  }
 </style>
 
 <script>
