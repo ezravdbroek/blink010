@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { Image } from 'astro:assets';
+
+import foto4 from '../assets/foto4.png';
+import foto7 from '../assets/foto7.png';
+---
+
+<BaseLayout
+  title="Over Ons"
+  description="Leer meer over Blink Schoonmaak 010, een jong familiebedrijf met passie voor schoonmaken in Rotterdam en omgeving."
+>
+  <main>
+    <HeroBanner
+      title="Over Ons"
+      image={foto4}
+      breadcrumbs={[{ label: 'Home', href: '/' }]}
+    />
+
+    <section class="section over-ons-section">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-heading">Over Blink Schoonmaak 010</h2>
+        </div>
+        <div class="over-ons-grid reveal">
+          <div class="over-ons-text">
+            <p>
+              Blink Schoonmaak 010 is een jong familiebedrijf met een passie voor schoonmaken.
+              Met korte lijnen en persoonlijk contact staan wij garant voor betrouwbare en
+              kwalitatieve schoonmaakdiensten in Rotterdam en omgeving.
+            </p>
+            <p>
+              Ons diverse team &mdash; van jong en energiek tot ervaren vakmensen &mdash; staat
+              klaar om uw ruimte te laten blinken. Wij werken met duurzame middelen en passen
+              ons flexibel aan uw wensen aan.
+            </p>
+          </div>
+          <div class="over-ons-image reveal-right">
+            <Image
+              src={foto7}
+              alt="Receptie van Blink Schoonmaak 010"
+              width={700}
+              height={500}
+              format="webp"
+              quality={80}
+              class="receptie-foto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABlock
+      heading="Samenwerken?"
+      subtext="Neem contact op voor een vrijblijvend kennismakingsgesprek"
+    />
+  </main>
+</BaseLayout>
+
+<style>
+  .over-ons-section {
+    background: #fff;
+  }
+
+  .over-ons-grid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .over-ons-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .over-ons-text p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-gray-800);
+  }
+
+  /* Custom slide-in from right animation for the photo */
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .receptie-foto {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .over-ons-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .over-ons-image {
+      order: -1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-right {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll('.reveal-right').forEach((el) => observer.observe(el));
+</script>
