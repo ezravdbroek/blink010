@@ -365,11 +365,16 @@
       transform var(--transition-fast);
   }
 
-  /* Visible state */
+  /* Visible state — hover on desktop */
+  .nav-item-dropdown:hover .dropdown-menu,
   .nav-item-dropdown.open .dropdown-menu {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-item-dropdown:hover .dropdown-chevron {
+    transform: rotate(180deg);
   }
 
   .dropdown-link {
@@ -696,21 +701,20 @@
   }
 
   if (dienstenBtn && dienstenItem) {
-    // Toggle on click
+    // Desktop: hover is handled by CSS. Click-toggle is disabled for desktop.
+    // We still support keyboard activation (Enter/Space opens, Escape closes).
+    const isMobile = () => window.innerWidth <= 1024;
+
     dienstenBtn.addEventListener('click', (e) => {
+      // Only use click-toggle when in mobile viewport (desktop nav is hidden at <=1024px,
+      // but guard here in case breakpoints shift)
+      if (!isMobile()) return;
       e.stopPropagation();
       const isOpen = dienstenItem.classList.contains('open');
       isOpen ? closeDropdown() : openDropdown();
     });
 
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dienstenItem.contains(e.target as Node)) {
-        closeDropdown();
-      }
-    });
-
-    // Keyboard: Escape closes
+    // Keyboard: Escape closes (desktop keyboard nav support)
     dienstenItem.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeDropdown();
@@ -718,14 +722,20 @@
       }
     });
 
-    // Focus trap within dropdown: Tab through items naturally, close on final Tab out
-    const dropdownLinks = dienstenMenu?.querySelectorAll<HTMLAnchorElement>('.dropdown-link') ?? [];
-
     dienstenMenu?.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeDropdown();
         dienstenBtn.focus();
       }
+    });
+
+    // Close the open class when mouse leaves (keeps aria-expanded accurate)
+    dienstenItem.addEventListener('mouseleave', () => {
+      closeDropdown();
+    });
+
+    dienstenItem.addEventListener('mouseenter', () => {
+      if (!isMobile()) openDropdown();
     });
   }
 
