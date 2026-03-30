@@ -1,0 +1,749 @@
+---
+// Navigation.astro — Sticky transparent navbar with scroll transition
+---
+
+<nav class="nav" id="main-nav" aria-label="Hoofdnavigatie">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="/" class="nav-logo" aria-label="Blink Schoonmaak 010 — terug naar home">
+      <img src="/logo.png" alt="Blink Schoonmaak 010" width="140" height="40" />
+    </a>
+
+    <!-- Desktop menu -->
+    <ul class="nav-links" role="list">
+      <li>
+        <a href="/" class="nav-link">Home</a>
+      </li>
+
+      <!-- Diensten dropdown -->
+      <li class="nav-item-dropdown">
+        <button
+          class="nav-link nav-link-dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          id="diensten-btn"
+        >
+          Diensten
+          <svg class="dropdown-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <ul class="dropdown-menu" role="list" id="diensten-menu" aria-labelledby="diensten-btn">
+          <li>
+            <a href="/kantoren-schoonmaak" class="dropdown-link">
+              <span class="dropdown-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </span>
+              Kantoren Schoonmaak
+            </a>
+          </li>
+          <li>
+            <a href="/particuliere-schoonmaak" class="dropdown-link">
+              <span class="dropdown-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </span>
+              Particuliere Schoonmaak
+            </a>
+          </li>
+          <li>
+            <a href="/restaurant-schoonmaak" class="dropdown-link">
+              <span class="dropdown-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              </span>
+              Restaurant Schoonmaak
+            </a>
+          </li>
+          <li>
+            <a href="/schoonmaak-recreatiewoning" class="dropdown-link">
+              <span class="dropdown-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/><path d="M15 5l2-2"/></svg>
+              </span>
+              Recreatiewoning Schoonmaak
+            </a>
+          </li>
+          <li>
+            <a href="/opleveringsschoonmaak" class="dropdown-link">
+              <span class="dropdown-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+              </span>
+              Opleveringsschoonmaak
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="/over-ons" class="nav-link">Over Ons</a>
+      </li>
+      <li>
+        <a href="/offerte-aanvragen" class="nav-link nav-link-cta">Offerte Aanvragen</a>
+      </li>
+      <li>
+        <a href="/contact" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Hamburger button (mobile) -->
+    <button
+      class="hamburger"
+      id="hamburger-btn"
+      aria-label="Menu openen"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile slide-in panel -->
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<div
+  class="mobile-menu"
+  id="mobile-menu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobiel menu"
+  aria-hidden="true"
+>
+  <div class="mobile-menu-header">
+    <a href="/" class="mobile-logo" aria-label="Blink Schoonmaak 010 — home">
+      <img src="/logo.png" alt="Blink Schoonmaak 010" width="120" height="34" />
+    </a>
+    <button
+      class="mobile-close"
+      id="mobile-close-btn"
+      aria-label="Menu sluiten"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav aria-label="Mobiele navigatie">
+    <ul class="mobile-nav-list" role="list">
+      <li>
+        <a href="/" class="mobile-nav-link">Home</a>
+      </li>
+
+      <!-- Diensten accordion -->
+      <li class="mobile-item-accordion">
+        <button
+          class="mobile-nav-link mobile-accordion-btn"
+          aria-expanded="false"
+          id="mobile-diensten-btn"
+          aria-controls="mobile-diensten-list"
+        >
+          Diensten
+          <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <ul class="mobile-submenu" id="mobile-diensten-list" aria-labelledby="mobile-diensten-btn" hidden>
+          <li><a href="/kantoren-schoonmaak" class="mobile-sub-link">Kantoren Schoonmaak</a></li>
+          <li><a href="/particuliere-schoonmaak" class="mobile-sub-link">Particuliere Schoonmaak</a></li>
+          <li><a href="/restaurant-schoonmaak" class="mobile-sub-link">Restaurant Schoonmaak</a></li>
+          <li><a href="/schoonmaak-recreatiewoning" class="mobile-sub-link">Recreatiewoning Schoonmaak</a></li>
+          <li><a href="/opleveringsschoonmaak" class="mobile-sub-link">Opleveringsschoonmaak</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="/over-ons" class="mobile-nav-link">Over Ons</a>
+      </li>
+      <li>
+        <a href="/offerte-aanvragen" class="mobile-nav-link mobile-nav-cta">Offerte Aanvragen</a>
+      </li>
+      <li>
+        <a href="/contact" class="mobile-nav-link">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<style>
+  /* ============================================================
+     NAV BASE
+     ============================================================ */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    background: transparent;
+    transition:
+      background var(--transition-medium),
+      box-shadow var(--transition-medium);
+  }
+
+  .nav.scrolled {
+    background: var(--color-white);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============================================================
+     LOGO
+     ============================================================ */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+  .nav-logo img {
+    height: 40px;
+    width: auto;
+    transition: filter var(--transition-medium);
+  }
+
+  /* White logo invisible on white bg — make it black */
+  .nav.scrolled .nav-logo img {
+    filter: brightness(0);
+  }
+
+  /* ============================================================
+     DESKTOP NAV LINKS
+     ============================================================ */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color var(--transition-medium);
+    white-space: nowrap;
+  }
+
+  /* Underline grows from center */
+  .nav-link:not(.nav-link-cta)::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: calc(100% - 28px);
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform var(--transition-fast);
+  }
+
+  .nav-link:not(.nav-link-cta):hover::after,
+  .nav-link:not(.nav-link-cta):focus-visible::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  /* Color flip on scrolled state */
+  .nav.scrolled .nav-link:not(.nav-link-cta) {
+    color: var(--color-black);
+  }
+
+  /* ============================================================
+     CTA BUTTON
+     ============================================================ */
+  .nav-link-cta {
+    background: var(--color-primary);
+    color: var(--color-white) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 133, 154, 0.35);
+    transition:
+      background var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .nav-link-cta:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 0 6px 20px rgba(0, 133, 154, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .nav-link-cta:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  /* ============================================================
+     DROPDOWN
+     ============================================================ */
+  .nav-item-dropdown {
+    position: relative;
+    list-style: none;
+  }
+
+  .dropdown-chevron {
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+  }
+
+  .nav-item-dropdown.open .dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    min-width: 240px;
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.14);
+    padding: 8px;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  /* Visible state */
+  .nav-item-dropdown.open .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-black);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .dropdown-link:hover,
+  .dropdown-link:focus-visible {
+    background: var(--color-gray-50);
+    color: var(--color-primary);
+  }
+
+  .dropdown-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: rgba(0, 133, 154, 0.08);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  /* ============================================================
+     HAMBURGER (hidden on desktop)
+     ============================================================ */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border-radius: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+
+  .hamburger:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .nav.scrolled .hamburger:hover {
+    background: var(--color-gray-50);
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-white);
+    transition:
+      transform var(--transition-fast),
+      opacity var(--transition-fast),
+      background var(--transition-medium);
+  }
+
+  .nav.scrolled .hamburger-line {
+    background: var(--color-black);
+  }
+
+  /* Animate to X when open */
+  .hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ============================================================
+     MOBILE OVERLAY
+     ============================================================ */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-medium);
+  }
+
+  .mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ============================================================
+     MOBILE SLIDE-IN PANEL
+     ============================================================ */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1002;
+    width: min(320px, 88vw);
+    background: var(--color-white);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform var(--transition-medium);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--color-gray-100);
+    flex-shrink: 0;
+  }
+
+  .mobile-logo img {
+    height: 34px;
+    width: auto;
+    filter: brightness(0);
+  }
+
+  .mobile-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: var(--color-black);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+
+  .mobile-close:hover {
+    background: var(--color-gray-50);
+  }
+
+  /* ============================================================
+     MOBILE NAV LIST
+     ============================================================ */
+  .mobile-nav-list {
+    list-style: none;
+    padding: 12px 12px 24px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-black);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus-visible {
+    background: var(--color-gray-50);
+    color: var(--color-primary);
+  }
+
+  .mobile-nav-cta {
+    margin-top: 8px;
+    background: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    border-radius: 8px;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 133, 154, 0.3);
+  }
+
+  .mobile-nav-cta:hover {
+    background: var(--color-primary-dark) !important;
+    color: var(--color-white) !important;
+  }
+
+  /* Mobile accordion submenu */
+  .mobile-item-accordion {
+    list-style: none;
+  }
+
+  .accordion-chevron {
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+  }
+
+  .mobile-accordion-btn[aria-expanded="true"] .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  .mobile-submenu {
+    list-style: none;
+    padding: 4px 0 4px 16px;
+    margin: 0;
+  }
+
+  .mobile-sub-link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-gray-400);
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .mobile-sub-link:hover,
+  .mobile-sub-link:focus-visible {
+    background: var(--color-gray-50);
+    color: var(--color-primary);
+  }
+
+  /* Left accent border for submenu */
+  .mobile-submenu {
+    border-left: 2px solid var(--color-gray-100);
+    margin-left: 14px;
+  }
+
+  /* ============================================================
+     RESPONSIVE — show hamburger, hide desktop links
+     ============================================================ */
+  @media (max-width: 1024px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  // ============================================================
+  // SCROLL BEHAVIOR
+  // ============================================================
+  const nav = document.getElementById('main-nav') as HTMLElement;
+
+  function updateNavScroll() {
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+
+  // Initial check (in case page loads already scrolled)
+  updateNavScroll();
+  window.addEventListener('scroll', updateNavScroll, { passive: true });
+
+  // ============================================================
+  // DESKTOP DROPDOWN
+  // ============================================================
+  const dienstenBtn = document.getElementById('diensten-btn') as HTMLButtonElement;
+  const dienstenMenu = document.getElementById('diensten-menu') as HTMLElement;
+  const dienstenItem = dienstenBtn?.closest('.nav-item-dropdown') as HTMLElement;
+
+  function openDropdown() {
+    dienstenItem.classList.add('open');
+    dienstenBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDropdown() {
+    dienstenItem.classList.remove('open');
+    dienstenBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  if (dienstenBtn && dienstenItem) {
+    // Toggle on click
+    dienstenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dienstenItem.classList.contains('open');
+      isOpen ? closeDropdown() : openDropdown();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dienstenItem.contains(e.target as Node)) {
+        closeDropdown();
+      }
+    });
+
+    // Keyboard: Escape closes
+    dienstenItem.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDropdown();
+        dienstenBtn.focus();
+      }
+    });
+
+    // Focus trap within dropdown: Tab through items naturally, close on final Tab out
+    const dropdownLinks = dienstenMenu?.querySelectorAll<HTMLAnchorElement>('.dropdown-link') ?? [];
+
+    dienstenMenu?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDropdown();
+        dienstenBtn.focus();
+      }
+    });
+  }
+
+  // ============================================================
+  // MOBILE MENU
+  // ============================================================
+  const hamburger = document.getElementById('hamburger-btn') as HTMLButtonElement;
+  const mobileMenu = document.getElementById('mobile-menu') as HTMLElement;
+  const mobileOverlay = document.getElementById('mobile-overlay') as HTMLElement;
+  const mobileCloseBtn = document.getElementById('mobile-close-btn') as HTMLButtonElement;
+
+  function openMobileMenu() {
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    mobileOverlay.classList.add('active');
+    mobileOverlay.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.setAttribute('aria-label', 'Menu sluiten');
+    document.body.style.overflow = 'hidden';
+    // Move focus into the panel
+    mobileCloseBtn.focus();
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    mobileOverlay.classList.remove('active');
+    mobileOverlay.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Menu openen');
+    document.body.style.overflow = '';
+    hamburger.focus();
+  }
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('open');
+    isOpen ? closeMobileMenu() : openMobileMenu();
+  });
+
+  mobileCloseBtn?.addEventListener('click', closeMobileMenu);
+  mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+  // Escape key closes mobile menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
+  // Close mobile menu when any link inside is clicked (SPA navigation)
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // ============================================================
+  // MOBILE DIENSTEN ACCORDION
+  // ============================================================
+  const mobileDienstenBtn = document.getElementById('mobile-diensten-btn') as HTMLButtonElement;
+  const mobileDienstenList = document.getElementById('mobile-diensten-list') as HTMLElement;
+
+  mobileDienstenBtn?.addEventListener('click', () => {
+    const isExpanded = mobileDienstenBtn.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+      mobileDienstenBtn.setAttribute('aria-expanded', 'false');
+      mobileDienstenList.hidden = true;
+    } else {
+      mobileDienstenBtn.setAttribute('aria-expanded', 'true');
+      mobileDienstenList.hidden = false;
+    }
+  });
+</script>
