@@ -702,14 +702,40 @@
   /* ── Services Grid ─────────────────────────────────────────────────────── */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 14px;
     margin-bottom: 32px;
+  }
+
+  /* Top 3 cards: each span 2 of 6 columns */
+  .services-grid .service-card {
+    grid-column: span 2;
+  }
+
+  /* Bottom 2 cards: each span 3 columns to fill full width evenly */
+  .services-grid .service-card:nth-child(4) {
+    grid-column: 1 / span 3;
+  }
+
+  .services-grid .service-card:nth-child(5) {
+    grid-column: 4 / span 3;
   }
 
   @media (max-width: 520px) {
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid .service-card {
+      grid-column: span 1;
+    }
+
+    .services-grid .service-card:nth-child(4) {
+      grid-column: span 1;
+    }
+
+    .services-grid .service-card:nth-child(5) {
+      grid-column: 1 / -1;
     }
   }
 
@@ -719,8 +745,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 20px 12px;
+    gap: 12px;
+    padding: 28px 16px;
+    min-height: 130px;
     border: 2px solid #e0e0e0;
     border-radius: 12px;
     background: var(--color-white);
@@ -784,10 +811,17 @@
     align-items: center;
     justify-content: center;
     transition: color var(--transition-fast);
+    width: 40px;
+    height: 40px;
+  }
+
+  .card-icon svg {
+    width: 40px;
+    height: 40px;
   }
 
   .card-name {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     font-weight: var(--font-weight-semibold);
     text-align: center;
     line-height: 1.2;
