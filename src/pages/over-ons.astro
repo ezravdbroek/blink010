@@ -7,6 +7,11 @@ import { Image } from 'astro:assets';
 import foto4 from '../assets/foto4.png';
 import foto5 from '../assets/foto5.png';
 import foto7 from '../assets/foto7.png';
+import foto16 from '../assets/foto16.jpeg';
+import foto17 from '../assets/foto17.jpeg';
+import foto18 from '../assets/foto18.jpeg';
+import foto21 from '../assets/foto21.jpeg';
+import foto22 from '../assets/foto22.webp';
 ---
 
 <BaseLayout
@@ -39,8 +44,8 @@ import foto7 from '../assets/foto7.png';
           </div>
           <div class="intro-image reveal-right">
             <Image
-              src={foto7}
-              alt="Blink Schoonmaak 010 in actie"
+              src={foto22}
+              alt="Eigenaar van Blink Schoonmaak 010 in Blink hoodie"
               width={700}
               height={500}
               format="webp"
@@ -109,7 +114,66 @@ import foto7 from '../assets/foto7.png';
       </div>
     </section>
 
-    <!-- 4. Team Section -->
+    <!-- 4. Team Gallery Section -->
+    <section class="section gallery-section">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-heading">Ons Team in Actie</h2>
+        </div>
+        <div class="team-gallery reveal">
+          <div class="gallery-item reveal-item">
+            <Image
+              src={foto16}
+              alt="Twee teamleden van Blink Schoonmaak klaar voor een klus"
+              width={600}
+              height={450}
+              loading="lazy"
+              format="webp"
+              quality={80}
+              class="gallery-foto"
+            />
+          </div>
+          <div class="gallery-item reveal-item">
+            <Image
+              src={foto17}
+              alt="Teamlid van Blink Schoonmaak bezig met ramen lappen"
+              width={600}
+              height={450}
+              loading="lazy"
+              format="webp"
+              quality={80}
+              class="gallery-foto"
+            />
+          </div>
+          <div class="gallery-item reveal-item">
+            <Image
+              src={foto18}
+              alt="Blink Schoonmaak teamlid bezig met keukenreiniging"
+              width={600}
+              height={450}
+              loading="lazy"
+              format="webp"
+              quality={80}
+              class="gallery-foto"
+            />
+          </div>
+          <div class="gallery-item reveal-item">
+            <Image
+              src={foto21}
+              alt="Bestelbus van Blink Schoonmaak 010 met schoonmaakmateriaal"
+              width={600}
+              height={450}
+              loading="lazy"
+              format="webp"
+              quality={80}
+              class="gallery-foto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Team Section -->
     <section class="section team-section">
       <div class="container">
         <div class="team-grid">
@@ -153,10 +217,11 @@ import foto7 from '../assets/foto7.png';
           </div>
           <div class="team-image-col reveal-right">
             <Image
-              src={foto5}
-              alt="Ons schoonmaakteam aan het werk"
+              src={foto21}
+              alt="De bedrijfsbus van Blink Schoonmaak 010 met uitrusting"
               width={600}
               height={480}
+              loading="lazy"
               format="webp"
               quality={80}
               class="content-foto"
@@ -415,6 +480,48 @@ import foto7 from '../assets/foto7.png';
   .stad-item:hover {
     border-color: var(--color-primary-light);
     box-shadow: 0 4px 16px rgba(0, 133, 154, 0.1);
+  }
+
+  /* ── 4. Team Gallery ───────────────────────────────────────── */
+  .gallery-section {
+    background: var(--color-white);
+  }
+
+  .team-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(0, 133, 154, 0.14);
+  }
+
+  .gallery-foto {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .team-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-foto {
+      height: 240px;
+    }
   }
 
   /* ── Shared: slide-in from right ────────────────────────────── */
