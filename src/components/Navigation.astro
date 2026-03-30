@@ -362,9 +362,9 @@
     }
   }
 
-  /* White logo invisible on white bg — make it black */
+  /* White logo invisible on white bg — make it dark */
   .nav.scrolled .nav-logo img {
-    filter: brightness(0);
+    filter: brightness(0) saturate(100%);
   }
 
   /* ============================================================
@@ -957,13 +957,15 @@
     .nav.scrolled {
       background: #ffffff !important;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
     }
 
     .nav.scrolled .nav-logo img {
-      filter: brightness(0) !important;
+      filter: brightness(0) saturate(100%) !important;
     }
 
-    .nav.scrolled .hamburger span {
+    .nav.scrolled .hamburger-line {
       background: var(--color-black) !important;
     }
 
