@@ -136,18 +136,16 @@ const steps = [
     transform: scaleX(1);
   }
 
-  .steps-wrapper.circles-done .circle {
+  .step.step-done .circle {
     background: var(--color-primary);
     border-color: var(--color-primary);
   }
 
-  .steps-wrapper.circles-done .circle-number {
+  .step.step-done .circle-number {
     color: var(--color-white);
   }
 
-  .steps-wrapper .step[data-index="0"].text-done .step-text,
-  .steps-wrapper .step[data-index="1"].text-done .step-text,
-  .steps-wrapper .step[data-index="2"].text-done .step-text {
+  .step.step-done .step-text {
     opacity: 1;
     transform: translateY(0);
   }
@@ -204,7 +202,7 @@ const steps = [
       transition: none !important;
     }
 
-    .steps-wrapper .step-text {
+    .step .step-text {
       opacity: 1 !important;
       transform: none !important;
     }
@@ -213,11 +211,11 @@ const steps = [
       transform: scaleX(1) !important;
     }
 
-    .steps-wrapper .circle {
+    .step .circle {
       background: var(--color-primary) !important;
     }
 
-    .steps-wrapper .circle-number {
+    .step .circle-number {
       color: var(--color-white) !important;
     }
   }
@@ -233,20 +231,16 @@ const steps = [
     function runAnimation() {
       const steps = wrapper!.querySelectorAll<HTMLElement>('.step');
 
-      // Phase 1: draw the line (0s)
+      // Phase 1: draw the line (0–800ms)
       wrapper!.classList.add('line-done');
 
-      // Phase 2: fill circles (0.8s after line starts)
-      setTimeout(() => {
-        wrapper!.classList.add('circles-done');
-      }, 800);
-
-      // Phase 3: fade in text with per-step stagger
-      const textDelays = [1100, 1600, 2100]; // 0s, 0.5s, 1s after circles start
+      // Phase 2: each step's circle and text appear together
+      // Step 1 at 800ms, step 2 at 1300ms, step 3 at 1800ms
+      const stepDelays = [800, 1300, 1800];
       steps.forEach((step, i) => {
         setTimeout(() => {
-          step.classList.add('text-done');
-        }, textDelays[i]);
+          step.classList.add('step-done');
+        }, stepDelays[i]);
       });
     }
 
@@ -254,8 +248,8 @@ const steps = [
 
     if (prefersReduced) {
       // Apply final state immediately
-      wrapper.classList.add('line-done', 'circles-done');
-      wrapper.querySelectorAll<HTMLElement>('.step').forEach((s) => s.classList.add('text-done'));
+      wrapper.classList.add('line-done');
+      wrapper.querySelectorAll<HTMLElement>('.step').forEach((s) => s.classList.add('step-done'));
       return;
     }
 
