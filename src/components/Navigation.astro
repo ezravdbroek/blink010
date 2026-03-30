@@ -948,27 +948,28 @@
 
   @media (max-width: 768px) {
     .nav {
-      height: 64px;
-      padding: 0;
+      height: var(--nav-height);
+      padding: 0 20px;
     }
 
-    .nav-inner {
-      padding: 0 16px;
-    }
-
-    /* Solid white background with no transparency on mobile scrolled state */
     .nav.scrolled {
-      background: #ffffff;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+      background: #ffffff !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .nav.scrolled .nav-logo img {
+      filter: brightness(0) !important;
+    }
+
+    .nav.scrolled .hamburger span {
+      background: var(--color-black) !important;
     }
 
     .nav-logo img {
-      height: 36px;
+      height: 44px;
       width: auto;
     }
 
-    /* Ensure hamburger doesn't overflow */
     .hamburger {
       flex-shrink: 0;
     }
