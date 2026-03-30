@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import CTABlock from '../components/CTABlock.astro';
+import heroImg from '../assets/foto8.png';
+---
+
+<BaseLayout
+  title="Recreatiewoning Schoonmaak"
+  description="Professionele schoonmaak van vakantiewoningen en recreatieparken."
+>
+  <HeroBanner
+    title="Recreatiewoning Schoonmaak"
+    image={heroImg}
+    breadcrumbs={[{ label: 'Home', href: '/' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <div class="service-content">
+          <p class="service-intro">
+            Zorg dat uw vakantiewoning altijd gastklaar is. Wij verzorgen de schoonmaak tussen
+            gasten door, snel en grondig.
+          </p>
+          <h2>Wat wij bieden</h2>
+          <ul class="service-features">
+            <li class="reveal-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Wisselschoonmaak tussen gasten</span>
+            </li>
+            <li class="reveal-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Beddengoed en handdoeken verschonen</span>
+            </li>
+            <li class="reveal-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Keuken en sanitair</span>
+            </li>
+            <li class="reveal-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Buitenruimte onderhoud</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    heading="Interesse in recreatiewoning schoonmaak? Vraag een offerte aan."
+    subtext="Neem vandaag nog contact op"
+  />
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 80px 24px;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .service-content {
+    text-align: center;
+  }
+
+  .service-intro {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 36px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-heading);
+    margin-bottom: 24px;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .service-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--color-text);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .service-features li.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-features svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 60px 24px;
+    }
+  }
+</style>

@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/foto7.png';
+import contentImg1 from '../assets/foto6.png';
+import contentImg2 from '../assets/foto7.png';
+---
+
+<BaseLayout
+  title="Opleveringsschoonmaak"
+  description="Grondige opleveringsschoonmaak in Rotterdam voor woningen en kantoren."
+>
+  <HeroBanner
+    title="Opleveringsschoonmaak"
+    image={heroImg}
+    breadcrumbs={[{ label: 'Home', href: '/' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <div class="service-content">
+          <div class="service-text">
+            <p class="service-intro">
+              Bij oplevering van een woning of kantoor moet alles brandschoon zijn. Wij zorgen voor
+              een grondige schoonmaak zodat het pand er perfect uitziet.
+            </p>
+            <h2>Wat wij bieden</h2>
+            <ul class="service-features">
+              <li class="reveal-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Dieptereiniging van alle ruimtes</span>
+              </li>
+              <li class="reveal-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Ramen, kozijnen en deuren</span>
+              </li>
+              <li class="reveal-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Keuken en sanitair intensief</span>
+              </li>
+              <li class="reveal-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Vloeren en plinten</span>
+              </li>
+            </ul>
+          </div>
+          <div class="service-images">
+            <Image src={contentImg1} alt="Tandarts ruimte opleveringsschoonmaak" class="service-img" />
+            <Image src={contentImg2} alt="Receptie opleveringsschoonmaak" class="service-img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    heading="Interesse in opleveringsschoonmaak? Vraag een offerte aan."
+    subtext="Neem vandaag nog contact op"
+  />
+</BaseLayout>
+
+<style>
+  .section {
+    padding: 80px 24px;
+    background: #fff;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .service-intro {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 36px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-heading);
+    margin-bottom: 24px;
+  }
+
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .service-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: var(--color-text);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .service-features li.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-features svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--color-primary);
+  }
+
+  .service-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 900px) {
+    .service-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 60px 24px;
+    }
+  }
+</style>
