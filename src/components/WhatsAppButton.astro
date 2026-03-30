@@ -50,10 +50,11 @@ import ikPhoto from '../assets/ik.png';
     z-index: 1;
   }
 
-  .whatsapp-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .whatsapp-photo :global(img) {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    max-width: none !important;
   }
 
   .whatsapp-btn {
