@@ -1,0 +1,49 @@
+---
+interface Props {
+  heading: string;
+  subtext: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+const { heading, subtext, buttonText = 'Offerte aanvragen →', buttonLink = '/offerte-aanvragen' } = Astro.props;
+---
+
+<section class="cta-block reveal">
+  <div class="cta-inner">
+    <h2>{heading}</h2>
+    <p>{subtext}</p>
+    <a href={buttonLink} class="btn btn-white">{buttonText}</a>
+  </div>
+</section>
+
+<style>
+  .cta-block {
+    background: var(--color-primary);
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--color-white);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 768px) {
+    .cta-block {
+      padding: 60px 24px;
+    }
+  }
+</style>
