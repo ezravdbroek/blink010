@@ -1,0 +1,1072 @@
+---
+---
+
+<div class="quote-form-wrapper" id="quote-form-wrapper">
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progress-bar" aria-label="Formulier stappen">
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="steps-row">
+      <div class="step-dot active" id="dot-1" aria-current="step">
+        <span class="dot-inner"><span class="dot-num">1</span><span class="dot-check" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10"><polyline points="1.5,5 4.5,8 10.5,2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        <span class="step-label">Dienst kiezen</span>
+      </div>
+      <div class="step-dot" id="dot-2">
+        <span class="dot-inner"><span class="dot-num">2</span><span class="dot-check" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10"><polyline points="1.5,5 4.5,8 10.5,2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        <span class="step-label">Uw gegevens</span>
+      </div>
+      <div class="step-dot" id="dot-3">
+        <span class="dot-inner"><span class="dot-num">3</span><span class="dot-check" aria-hidden="true"><svg width="12" height="10" viewBox="0 0 12 10"><polyline points="1.5,5 4.5,8 10.5,2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        <span class="step-label">Verzenden</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Steps Container -->
+  <div class="steps-container" id="steps-container">
+
+    <!-- Step 1: Dienst kiezen -->
+    <div class="step-panel active" id="step-1" role="group" aria-labelledby="step1-title">
+      <h3 class="step-title" id="step1-title">Welke dienst?</h3>
+      <p class="step-subtitle">Selecteer een of meerdere diensten waarvoor u een offerte wenst.</p>
+
+      <div class="services-grid">
+
+        <button type="button" class="service-card" data-service="Kantoren" aria-pressed="false">
+          <span class="card-check" aria-hidden="true">
+            <svg width="14" height="12" viewBox="0 0 14 12"><polyline points="1.5,6 5,9.5 12.5,2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="card-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="8" width="30" height="26" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <rect x="10" y="14" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="22" y="14" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="10" y="24" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="22" y="24" width="6" height="5" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="5" y1="12" x2="35" y2="12" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <span class="card-name">Kantoren</span>
+        </button>
+
+        <button type="button" class="service-card" data-service="Particulier" aria-pressed="false">
+          <span class="card-check" aria-hidden="true">
+            <svg width="14" height="12" viewBox="0 0 14 12"><polyline points="1.5,6 5,9.5 12.5,2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="card-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 34 L6 18 L20 6 L34 18 L34 34 Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <rect x="15" y="24" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="11" y="16" width="7" height="6" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <rect x="22" y="16" width="7" height="6" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </span>
+          <span class="card-name">Particulier</span>
+        </button>
+
+        <button type="button" class="service-card" data-service="Restaurant" aria-pressed="false">
+          <span class="card-check" aria-hidden="true">
+            <svg width="14" height="12" viewBox="0 0 14 12"><polyline points="1.5,6 5,9.5 12.5,2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="card-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 8 C10 8 10 20 16 20 L16 34" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M13 8 L13 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="27" cy="16" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+              <line x1="27" y1="24" x2="27" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="card-name">Restaurant</span>
+        </button>
+
+        <button type="button" class="service-card" data-service="Recreatiewoning" aria-pressed="false">
+          <span class="card-check" aria-hidden="true">
+            <svg width="14" height="12" viewBox="0 0 14 12"><polyline points="1.5,6 5,9.5 12.5,2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="card-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 28 Q10 14 20 14 Q30 14 36 28 Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <rect x="10" y="28" width="20" height="8" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <circle cx="20" cy="20" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <line x1="20" y1="8" x2="20" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="card-name">Recreatiewoning</span>
+        </button>
+
+        <button type="button" class="service-card" data-service="Oplevering" aria-pressed="false">
+          <span class="card-check" aria-hidden="true">
+            <svg width="14" height="12" viewBox="0 0 14 12"><polyline points="1.5,6 5,9.5 12.5,2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="card-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="6" width="18" height="28" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M26 14 L34 10 L34 38 L26 34 Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+              <line x1="12" y1="13" x2="22" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="18" x2="22" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="12" y1="23" x2="18" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="card-name">Oplevering</span>
+        </button>
+
+      </div>
+
+      <div class="step-actions">
+        <button type="button" class="btn btn-primary next-btn" id="step1-next" disabled aria-disabled="true">
+          Volgende <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2: Uw gegevens -->
+    <div class="step-panel" id="step-2" role="group" aria-labelledby="step2-title">
+      <h3 class="step-title" id="step2-title">Uw gegevens</h3>
+      <p class="step-subtitle">Vul uw contactgegevens in zodat wij u kunnen bereiken.</p>
+
+      <div class="form-fields">
+        <div class="form-group">
+          <label for="qf-naam">Naam <span class="required" aria-hidden="true">*</span><span class="sr-only">verplicht</span></label>
+          <input type="text" id="qf-naam" name="naam" autocomplete="name" placeholder="Uw volledige naam" />
+          <span class="field-error" id="err-naam" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="qf-telefoon">Telefoon <span class="required" aria-hidden="true">*</span><span class="sr-only">verplicht</span></label>
+          <input type="tel" id="qf-telefoon" name="telefoon" autocomplete="tel" placeholder="Uw telefoonnummer" />
+          <span class="field-error" id="err-telefoon" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="qf-email">Email <span class="required" aria-hidden="true">*</span><span class="sr-only">verplicht</span></label>
+          <input type="email" id="qf-email" name="email" autocomplete="email" placeholder="uw@email.nl" />
+          <span class="field-error" id="err-email" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="qf-adres">Adres <span class="required" aria-hidden="true">*</span><span class="sr-only">verplicht</span></label>
+          <input type="text" id="qf-adres" name="adres" autocomplete="street-address" placeholder="Straat en huisnummer" />
+          <span class="field-error" id="err-adres" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="qf-postcode">Postcode <span class="required" aria-hidden="true">*</span><span class="sr-only">verplicht</span></label>
+            <input type="text" id="qf-postcode" name="postcode" autocomplete="postal-code" placeholder="1234 AB" />
+            <span class="field-error" id="err-postcode" role="alert" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="qf-woonplaats">Woonplaats <span class="required" aria-hidden="true">*</span><span class="sr-only">verplicht</span></label>
+            <input type="text" id="qf-woonplaats" name="woonplaats" autocomplete="address-level2" placeholder="Uw stad" />
+            <span class="field-error" id="err-woonplaats" role="alert" aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-actions step-actions--split">
+        <button type="button" class="btn btn-outline prev-btn" id="step2-prev">
+          <span aria-hidden="true">←</span> Vorige
+        </button>
+        <button type="button" class="btn btn-primary next-btn" id="step2-next">
+          Volgende <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Extra informatie & Verzenden -->
+    <div class="step-panel" id="step-3" role="group" aria-labelledby="step3-title">
+      <h3 class="step-title" id="step3-title">Extra informatie</h3>
+      <p class="step-subtitle">Controleer uw gegevens en voeg eventueel extra informatie toe.</p>
+
+      <div class="form-group">
+        <label for="qf-bericht">Waarmee kunnen wij u van dienst zijn? <span class="optional">(optioneel)</span></label>
+        <textarea id="qf-bericht" name="bericht" rows="4" placeholder="Vertel ons meer over uw wensen..."></textarea>
+      </div>
+
+      <div class="summary-box" id="summary-box" aria-label="Samenvatting van uw gegevens">
+        <h4 class="summary-title">Uw aanvraag</h4>
+        <div class="summary-section">
+          <span class="summary-label">Diensten:</span>
+          <ul class="summary-services" id="summary-services"></ul>
+        </div>
+        <div class="summary-section">
+          <span class="summary-label">Naam:</span>
+          <span class="summary-value" id="summary-naam"></span>
+        </div>
+        <div class="summary-section">
+          <span class="summary-label">Email:</span>
+          <span class="summary-value" id="summary-email"></span>
+        </div>
+        <div class="summary-section">
+          <span class="summary-label">Telefoon:</span>
+          <span class="summary-value" id="summary-telefoon"></span>
+        </div>
+        <div class="summary-section">
+          <span class="summary-label">Adres:</span>
+          <span class="summary-value" id="summary-adres"></span>
+        </div>
+      </div>
+
+      <!-- Hidden Web3Forms inputs -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+      <input type="hidden" name="from_name" value="Blink Schoonmaak 010 - Offerte" />
+      <input type="hidden" id="hidden-services" name="diensten" value="" />
+      <input type="hidden" id="hidden-naam" name="naam_hidden" value="" />
+      <input type="hidden" id="hidden-telefoon" name="telefoon_hidden" value="" />
+      <input type="hidden" id="hidden-email" name="email_hidden" value="" />
+      <input type="hidden" id="hidden-adres-full" name="adres_full" value="" />
+
+      <div class="form-error" id="submit-error" role="alert" aria-live="assertive" hidden>
+        Er is iets misgegaan. Probeer het opnieuw.
+      </div>
+
+      <div class="step-actions step-actions--split">
+        <button type="button" class="btn btn-outline prev-btn" id="step3-prev">
+          <span aria-hidden="true">←</span> Vorige
+        </button>
+        <button type="button" class="btn btn-primary submit-btn" id="submit-btn">
+          Versturen
+        </button>
+      </div>
+    </div>
+
+  </div><!-- end steps-container -->
+
+  <!-- Success State -->
+  <div class="quote-success" id="quote-success" hidden aria-live="polite">
+    <svg class="success-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle class="success-circle" cx="40" cy="40" r="36" stroke="#00859a" stroke-width="4" fill="none"/>
+      <path class="success-check" d="M22 40 L34 52 L58 28" stroke="#00859a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h3>Bedankt!</h3>
+    <p>We nemen zo snel mogelijk contact met u op.</p>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    // ── State ────────────────────────────────────────────────────────────────
+    let currentStep: number = 1;
+    const selectedServices = new Set<string>();
+    const formData: Record<string, string> = {};
+
+    // ── Elements ─────────────────────────────────────────────────────────────
+    const wrapper = document.getElementById('quote-form-wrapper') as HTMLElement;
+    const progressFill = document.getElementById('progress-fill') as HTMLElement;
+    const successEl = document.getElementById('quote-success') as HTMLElement;
+    const submitErrorEl = document.getElementById('submit-error') as HTMLElement;
+
+    const stepPanels = [
+      document.getElementById('step-1') as HTMLElement,
+      document.getElementById('step-2') as HTMLElement,
+      document.getElementById('step-3') as HTMLElement,
+    ];
+
+    const dots = [
+      document.getElementById('dot-1') as HTMLElement,
+      document.getElementById('dot-2') as HTMLElement,
+      document.getElementById('dot-3') as HTMLElement,
+    ];
+
+    const step1NextBtn = document.getElementById('step1-next') as HTMLButtonElement;
+    const step2PrevBtn = document.getElementById('step2-prev') as HTMLButtonElement;
+    const step2NextBtn = document.getElementById('step2-next') as HTMLButtonElement;
+    const step3PrevBtn = document.getElementById('step3-prev') as HTMLButtonElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+    const serviceCards = document.querySelectorAll<HTMLButtonElement>('.service-card');
+
+    // ── Progress Bar ─────────────────────────────────────────────────────────
+    const FILL_WIDTHS: Record<number, string> = { 1: '16.5%', 2: '50%', 3: '83.5%' };
+
+    function updateProgress(step: number): void {
+      progressFill.style.width = FILL_WIDTHS[step] ?? '16.5%';
+
+      dots.forEach((dot, i) => {
+        const stepNum = i + 1;
+        dot.classList.remove('active', 'completed');
+        dot.removeAttribute('aria-current');
+
+        if (stepNum < step) {
+          dot.classList.add('completed');
+        } else if (stepNum === step) {
+          dot.classList.add('active');
+          dot.setAttribute('aria-current', 'step');
+        }
+      });
+    }
+
+    // ── Step Transitions ─────────────────────────────────────────────────────
+    function goToStep(next: number): void {
+      const direction = next > currentStep ? 1 : -1;
+      const prevStep = currentStep;
+
+      // Slide out current
+      const leaving = stepPanels[prevStep - 1];
+      leaving.classList.remove('active');
+      leaving.classList.add(direction > 0 ? 'exit-left' : 'exit-right');
+
+      // Prepare incoming from the right/left
+      const entering = stepPanels[next - 1];
+      entering.classList.remove('exit-left', 'exit-right');
+      entering.classList.add(direction > 0 ? 'enter-right' : 'enter-left');
+
+      // Force reflow so the entering start position is painted before the transition
+      entering.getBoundingClientRect();
+
+      requestAnimationFrame(() => {
+        entering.classList.remove('enter-right', 'enter-left');
+        entering.classList.add('active');
+      });
+
+      // Clean exit class after transition ends
+      const onEnd = () => {
+        leaving.classList.remove('exit-left', 'exit-right');
+        leaving.removeEventListener('transitionend', onEnd);
+      };
+      leaving.addEventListener('transitionend', onEnd);
+
+      currentStep = next;
+      updateProgress(currentStep);
+
+      if (currentStep === 3) {
+        populateSummary();
+      }
+    }
+
+    // ── Service Cards ─────────────────────────────────────────────────────────
+    serviceCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const service = card.dataset.service ?? '';
+        if (!service) return;
+
+        if (selectedServices.has(service)) {
+          selectedServices.delete(service);
+          card.classList.remove('selected');
+          card.setAttribute('aria-pressed', 'false');
+        } else {
+          selectedServices.add(service);
+          card.classList.add('selected');
+          card.setAttribute('aria-pressed', 'true');
+        }
+
+        step1NextBtn.disabled = selectedServices.size === 0;
+        step1NextBtn.setAttribute('aria-disabled', String(selectedServices.size === 0));
+      });
+    });
+
+    step1NextBtn.addEventListener('click', () => {
+      if (selectedServices.size > 0) goToStep(2);
+    });
+
+    // ── Step 2 Validation ─────────────────────────────────────────────────────
+    function getVal(id: string): string {
+      return (document.getElementById(id) as HTMLInputElement)?.value.trim() ?? '';
+    }
+
+    function setError(id: string, msg: string): void {
+      const el = document.getElementById(id) as HTMLElement;
+      if (el) {
+        el.textContent = msg;
+        el.classList.toggle('visible', msg.length > 0);
+      }
+      const input = document.getElementById(id.replace('err-', 'qf-')) as HTMLElement;
+      if (input) input.classList.toggle('invalid', msg.length > 0);
+    }
+
+    function clearErrors(): void {
+      ['naam', 'telefoon', 'email', 'adres', 'postcode', 'woonplaats'].forEach((f) => {
+        setError(`err-${f}`, '');
+      });
+    }
+
+    function validateStep2(): boolean {
+      clearErrors();
+      let valid = true;
+
+      const naam = getVal('qf-naam');
+      const telefoon = getVal('qf-telefoon');
+      const email = getVal('qf-email');
+      const adres = getVal('qf-adres');
+      const postcode = getVal('qf-postcode');
+      const woonplaats = getVal('qf-woonplaats');
+
+      if (!naam) { setError('err-naam', 'Naam is verplicht.'); valid = false; }
+      if (!telefoon) { setError('err-telefoon', 'Telefoonnummer is verplicht.'); valid = false; }
+      if (!email) {
+        setError('err-email', 'E-mailadres is verplicht.'); valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError('err-email', 'Voer een geldig e-mailadres in.'); valid = false;
+      }
+      if (!adres) { setError('err-adres', 'Adres is verplicht.'); valid = false; }
+      if (!postcode) { setError('err-postcode', 'Postcode is verplicht.'); valid = false; }
+      if (!woonplaats) { setError('err-woonplaats', 'Woonplaats is verplicht.'); valid = false; }
+
+      if (valid) {
+        formData.naam = naam;
+        formData.telefoon = telefoon;
+        formData.email = email;
+        formData.adres = adres;
+        formData.postcode = postcode;
+        formData.woonplaats = woonplaats;
+      }
+
+      return valid;
+    }
+
+    step2PrevBtn.addEventListener('click', () => goToStep(1));
+    step2NextBtn.addEventListener('click', () => {
+      if (validateStep2()) goToStep(3);
+    });
+
+    step3PrevBtn.addEventListener('click', () => goToStep(2));
+
+    // ── Summary ───────────────────────────────────────────────────────────────
+    function populateSummary(): void {
+      const servicesList = document.getElementById('summary-services') as HTMLElement;
+      if (servicesList) {
+        servicesList.innerHTML = '';
+        selectedServices.forEach((s) => {
+          const li = document.createElement('li');
+          li.textContent = s;
+          servicesList.appendChild(li);
+        });
+      }
+
+      const set = (id: string, val: string) => {
+        const el = document.getElementById(id) as HTMLElement;
+        if (el) el.textContent = val;
+      };
+
+      set('summary-naam', formData.naam ?? '');
+      set('summary-email', formData.email ?? '');
+      set('summary-telefoon', formData.telefoon ?? '');
+      set('summary-adres', `${formData.adres ?? ''}, ${formData.postcode ?? ''} ${formData.woonplaats ?? ''}`);
+
+      // Populate hidden inputs
+      const setHidden = (id: string, val: string) => {
+        const el = document.getElementById(id) as HTMLInputElement;
+        if (el) el.value = val;
+      };
+      setHidden('hidden-services', Array.from(selectedServices).join(', '));
+      setHidden('hidden-naam', formData.naam ?? '');
+      setHidden('hidden-telefoon', formData.telefoon ?? '');
+      setHidden('hidden-email', formData.email ?? '');
+      setHidden('hidden-adres-full', `${formData.adres ?? ''}, ${formData.postcode ?? ''} ${formData.woonplaats ?? ''}`);
+    }
+
+    // ── Submit ─────────────────────────────────────────────────────────────────
+    submitBtn.addEventListener('click', async () => {
+      submitErrorEl.hidden = true;
+      submitBtn.textContent = 'Verzenden...';
+      submitBtn.disabled = true;
+
+      const data = new FormData();
+      data.append('access_key', 'YOUR_WEB3FORMS_KEY');
+      data.append('from_name', 'Blink Schoonmaak 010 - Offerte');
+      data.append('diensten', Array.from(selectedServices).join(', '));
+      data.append('naam', formData.naam ?? '');
+      data.append('telefoon', formData.telefoon ?? '');
+      data.append('email', formData.email ?? '');
+      data.append('adres', `${formData.adres ?? ''}, ${formData.postcode ?? ''} ${formData.woonplaats ?? ''}`);
+
+      const berichtEl = document.getElementById('qf-bericht') as HTMLTextAreaElement;
+      if (berichtEl && berichtEl.value.trim()) {
+        data.append('bericht', berichtEl.value.trim());
+      }
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+        });
+
+        if (response.ok) {
+          // Hide form, show success
+          const stepsContainer = document.getElementById('steps-container') as HTMLElement;
+          const progressBar = document.getElementById('progress-bar') as HTMLElement;
+          if (stepsContainer) stepsContainer.hidden = true;
+          if (progressBar) progressBar.hidden = true;
+          successEl.hidden = false;
+
+          // Trigger SVG animation
+          const circle = successEl.querySelector('.success-circle') as SVGCircleElement;
+          const check = successEl.querySelector('.success-check') as SVGPathElement;
+          if (circle) circle.classList.add('animate');
+          if (check) {
+            setTimeout(() => check.classList.add('animate'), 350);
+          }
+        } else {
+          throw new Error('Server error');
+        }
+      } catch {
+        submitErrorEl.hidden = false;
+        submitBtn.textContent = 'Versturen';
+        submitBtn.disabled = false;
+      }
+    });
+
+    // ── Init ──────────────────────────────────────────────────────────────────
+    updateProgress(1);
+
+  })();
+</script>
+
+<style>
+  /* ── Wrapper ───────────────────────────────────────────────────────────── */
+  .quote-form-wrapper {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ── Progress Bar ──────────────────────────────────────────────────────── */
+  .progress-bar {
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .progress-track {
+    position: absolute;
+    top: 18px;
+    left: calc(16.5%);
+    right: calc(16.5%);
+    height: 3px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 2px;
+    width: 16.5%;
+    transition: width var(--transition-medium);
+  }
+
+  .steps-row {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .dot-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #888;
+    font-weight: var(--font-weight-bold);
+    font-size: 0.85rem;
+    transition: background var(--transition-medium), color var(--transition-medium), transform var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dot-check {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .dot-num {
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .step-dot.active .dot-inner {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(0, 133, 154, 0.18);
+  }
+
+  .step-dot.completed .dot-inner {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .step-dot.completed .dot-num {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  .step-dot.completed .dot-check {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .step-label {
+    font-size: 0.78rem;
+    font-weight: var(--font-weight-semibold);
+    color: #888;
+    text-align: center;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+  }
+
+  .step-dot.active .step-label,
+  .step-dot.completed .step-label {
+    color: var(--color-primary);
+  }
+
+  /* ── Steps Container ───────────────────────────────────────────────────── */
+  .steps-container {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+  }
+
+  .step-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    /* static height so wrapper doesn't collapse */
+    height: auto;
+  }
+
+  .step-panel.active {
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .step-panel.exit-left {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  .step-panel.exit-right {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  .step-panel.enter-right {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  .step-panel.enter-left {
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  /* ── Step Typography ───────────────────────────────────────────────────── */
+  .step-title {
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-800);
+    margin-bottom: 6px;
+  }
+
+  .step-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-gray-400);
+    margin-bottom: 28px;
+  }
+
+  /* ── Services Grid ─────────────────────────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 520px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: var(--color-white);
+    cursor: pointer;
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+    color: var(--color-gray-800);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .service-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 12px rgba(0, 133, 154, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .service-card:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .service-card.selected {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 16px rgba(0, 133, 154, 0.2);
+    animation: pulse-select 0.3s ease;
+  }
+
+  @keyframes pulse-select {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+  }
+
+  .card-check {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .service-card.selected .card-check {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .card-icon {
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+  }
+
+  .card-name {
+    font-size: 0.88rem;
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  /* ── Form Fields (Step 2) ──────────────────────────────────────────────── */
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 480px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 0;
+  }
+
+  .form-group label {
+    font-weight: var(--font-weight-semibold);
+    font-size: 0.92rem;
+    color: var(--color-gray-800);
+  }
+
+  .required {
+    color: #c0392b;
+    margin-left: 2px;
+  }
+
+  .optional {
+    color: var(--color-gray-400);
+    font-weight: var(--font-weight-regular);
+    font-size: 0.85em;
+    margin-left: 4px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    color: var(--color-black);
+    background: var(--color-white);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 133, 154, 0.15);
+  }
+
+  .form-group input.invalid {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+  }
+
+  .form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .field-error {
+    font-size: 0.82rem;
+    color: #c0392b;
+    min-height: 1em;
+    display: none;
+  }
+
+  .field-error.visible {
+    display: block;
+  }
+
+  /* ── Summary Box ───────────────────────────────────────────────────────── */
+  .summary-box {
+    background: var(--color-gray-50, #f8f9fa);
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 20px 0 28px;
+  }
+
+  .summary-title {
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-800);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.78rem;
+    color: var(--color-primary);
+  }
+
+  .summary-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    align-items: flex-start;
+  }
+
+  .summary-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .summary-label {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-800);
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .summary-value {
+    color: var(--color-gray-400);
+  }
+
+  .summary-services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .summary-services li {
+    background: rgba(0, 133, 154, 0.1);
+    color: var(--color-primary);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* ── Action Buttons ────────────────────────────────────────────────────── */
+  .step-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+  }
+
+  .step-actions--split {
+    justify-content: space-between;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    box-shadow: none;
+  }
+
+  .btn-outline:hover {
+    background: rgba(0, 133, 154, 0.06);
+    box-shadow: none;
+  }
+
+  .next-btn:disabled,
+  .next-btn[aria-disabled="true"] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* ── Form Error ────────────────────────────────────────────────────────── */
+  .form-error {
+    background: #fff3f3;
+    border: 1px solid #f5c6c6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #c0392b;
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+  }
+
+  /* ── Success State ─────────────────────────────────────────────────────── */
+  .quote-success {
+    text-align: center;
+    padding: 56px 24px 48px;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-svg {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    display: block;
+  }
+
+  /* SVG draw animation */
+  .success-circle {
+    stroke-dasharray: 226.2;
+    stroke-dashoffset: 226.2;
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .success-circle.animate {
+    stroke-dashoffset: 0;
+  }
+
+  .success-check {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    transition: stroke-dashoffset 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+  }
+
+  .success-check.animate {
+    stroke-dashoffset: 0;
+  }
+
+  .quote-success h3 {
+    font-size: 1.6rem;
+    color: var(--color-gray-800);
+    margin-bottom: 10px;
+  }
+
+  .quote-success p {
+    color: var(--color-gray-400);
+    font-size: 1rem;
+  }
+
+  /* ── Screen reader only ────────────────────────────────────────────────── */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ── Responsive tweaks ─────────────────────────────────────────────────── */
+  @media (max-width: 400px) {
+    .step-label {
+      font-size: 0.68rem;
+    }
+    .progress-track {
+      left: 14%;
+      right: 14%;
+    }
+    .dot-inner {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>
