@@ -100,7 +100,14 @@ const { title, description, image, href } = Astro.props;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 24px;
+    padding: 20px 24px;
+    /* Shift the whole block upward when description expands */
+    transform: translateY(0);
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .service-card-content {
+    transform: translateY(-8px);
   }
 
   h3 {
@@ -109,11 +116,6 @@ const { title, description, image, href } = Astro.props;
     color: var(--color-white);
     margin: 0;
     line-height: 1.2;
-    transition: transform 0.4s ease;
-  }
-
-  .service-card:hover h3 {
-    transform: translateY(-4px);
   }
 
   .service-card-desc {
@@ -121,14 +123,16 @@ const { title, description, image, href } = Astro.props;
     color: rgba(255, 255, 255, 0.88);
     margin-top: 8px;
     line-height: 1.5;
+    /* Collapsed by default — takes up no space */
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease 0.05s, max-height 0.4s ease 0.05s;
   }
 
   .service-card:hover .service-card-desc {
     opacity: 1;
-    transform: translateY(0);
+    max-height: 100px;
   }
 
   .service-card-link {
@@ -137,30 +141,36 @@ const { title, description, image, href } = Astro.props;
     font-size: 0.875rem;
     font-weight: var(--font-weight-semibold);
     color: var(--color-primary-light);
+    /* Collapsed by default — takes up no space */
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease 0.1s, max-height 0.4s ease 0.1s;
   }
 
   .service-card:hover .service-card-link {
     opacity: 1;
-    transform: translateY(0);
+    max-height: 100px;
   }
 
   @media (prefers-reduced-motion: reduce) {
     .service-card,
     .service-card-img,
     .service-card-overlay,
-    h3,
+    .service-card-content,
     .service-card-desc,
     .service-card-link {
       transition: none;
     }
 
+    .service-card-content {
+      transform: none;
+    }
+
     .service-card-desc,
     .service-card-link {
       opacity: 1;
-      transform: none;
+      max-height: 100px;
     }
   }
 </style>
