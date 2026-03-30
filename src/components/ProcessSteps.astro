@@ -231,16 +231,24 @@ const steps = [
     function runAnimation() {
       const steps = wrapper!.querySelectorAll<HTMLElement>('.step');
 
-      // Phase 1: draw the line (0–800ms)
-      wrapper!.classList.add('line-done');
+      // Phase 1: draw the line (0–800ms).
+      // Use double-rAF to guarantee the browser has painted the initial
+      // scaleX(0) state before we add the class that triggers the transition.
+      // Without this the transition is skipped because the start and end
+      // states are set in the same frame.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          wrapper!.classList.add('line-done');
 
-      // Phase 2: each step's circle and text appear together
-      // Step 1 at 800ms, step 2 at 1300ms, step 3 at 1800ms
-      const stepDelays = [800, 1300, 1800];
-      steps.forEach((step, i) => {
-        setTimeout(() => {
-          step.classList.add('step-done');
-        }, stepDelays[i]);
+          // Phase 2: each step's circle and text appear together.
+          // Step 1 at 800ms, step 2 at 1300ms, step 3 at 1800ms.
+          const stepDelays = [800, 1300, 1800];
+          steps.forEach((step, i) => {
+            setTimeout(() => {
+              step.classList.add('step-done');
+            }, stepDelays[i]);
+          });
+        });
       });
     }
 
