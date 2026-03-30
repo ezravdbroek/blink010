@@ -241,6 +241,12 @@
     transition: filter var(--transition-medium);
   }
 
+  @media (max-width: 480px) {
+    .nav-logo img {
+      height: 40px;
+    }
+  }
+
   /* White logo invisible on white bg — make it black */
   .nav.scrolled .nav-logo img {
     filter: brightness(0);

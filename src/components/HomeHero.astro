@@ -477,7 +477,70 @@ import foto1 from '../assets/foto1.jpeg';
     .hero-content {
       left: 0;
       max-width: 100%;
-      padding: 0 24px;
+      padding: 0 20px;
+      padding-top: var(--nav-height);
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .hero-tagline {
+      margin-bottom: 8px;
+    }
+
+    .hero-tagline span {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .tagline-line {
+      width: 28px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+      font-size: 0.9375rem;
+      max-width: 100%;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .hero-cta,
+    .btn-ghost {
+      width: 100%;
+      justify-content: center;
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    .hero-trust {
+      gap: 12px;
+    }
+
+    .hero-trust span {
+      font-size: 0.7rem;
+    }
+
+    .hero-scroll-indicator {
+      display: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero-title {
+      font-size: clamp(1.6rem, 7.5vw, 2rem);
+    }
+
+    .hero-trust {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
     }
   }
 

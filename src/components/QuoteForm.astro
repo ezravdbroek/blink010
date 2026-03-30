@@ -1090,6 +1090,53 @@
   }
 
   /* ── Responsive tweaks ─────────────────────────────────────────────────── */
+  @media (max-width: 520px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 12px;
+    }
+
+    .services-grid .service-card {
+      grid-column: span 1 !important;
+    }
+
+    .services-grid .service-card:nth-child(4) {
+      grid-column: span 1 !important;
+    }
+
+    .services-grid .service-card:nth-child(5) {
+      grid-column: 1 / -1 !important;
+    }
+
+    .service-card {
+      padding: 20px 12px;
+      min-height: 110px;
+      gap: 8px;
+    }
+
+    .card-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .card-name {
+      font-size: 0.82rem;
+    }
+
+    .step-actions,
+    .step-actions--split {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .step-actions .btn,
+    .step-actions--split .btn {
+      flex: 1;
+      justify-content: center;
+      min-width: 0;
+    }
+  }
+
   @media (max-width: 400px) {
     .step-label {
       font-size: 0.68rem;
@@ -1101,6 +1148,10 @@
     .dot-inner {
       width: 30px;
       height: 30px;
+    }
+
+    .step-title {
+      font-size: 1.2rem;
     }
   }
 </style>

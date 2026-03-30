@@ -159,13 +159,13 @@ const steps = [
     }
 
     .line-track {
-      top: calc(16.666% + 30px);
-      bottom: calc(16.666% + 30px);
-      left: 50%;
+      top: 30px;
+      bottom: 30px;
+      left: calc(50% - 1px);
       right: auto;
       width: 2px;
       height: auto;
-      transform: translateX(-50%);
+      transform: none;
     }
 
     .line-fill {
@@ -185,12 +185,27 @@ const steps = [
       text-align: left;
       gap: 20px;
       width: 100%;
-      max-width: 320px;
+      max-width: 340px;
       padding: 16px 0;
+      align-items: center;
+    }
+
+    .circle {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
     }
 
     .step-text {
       margin-top: 0;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+    }
+
+    .step-desc {
+      font-size: 0.825rem;
     }
   }
 

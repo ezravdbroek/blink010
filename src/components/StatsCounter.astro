@@ -114,12 +114,26 @@ const stats: StatItem[] = [
   /* ── Mobile: 2x2 grid ── */
   @media (max-width: 640px) {
     .stats-counter {
-      padding: 60px 24px;
+      padding: 60px 20px;
     }
 
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 40px 24px;
+      gap: 32px 16px;
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 9vw, 2.5rem);
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .stat-number {
+      font-size: clamp(1.75rem, 8vw, 2rem);
     }
   }
 

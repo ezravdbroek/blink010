@@ -70,8 +70,12 @@ const reviews = [
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      gap: 16px;
-      padding-bottom: 8px;
+      gap: 14px;
+      padding-bottom: 12px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
       /* Hide scrollbar */
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
@@ -83,8 +87,8 @@ const reviews = [
 
     /* Target each ReviewCard article directly */
     .reviews-grid > :global(article) {
-      scroll-snap-align: center;
-      min-width: 85vw;
+      scroll-snap-align: start;
+      min-width: min(85vw, 320px);
       flex-shrink: 0;
     }
 

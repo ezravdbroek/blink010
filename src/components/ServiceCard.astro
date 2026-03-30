@@ -153,6 +153,23 @@ const { title, description, image, href } = Astro.props;
     max-height: 100px;
   }
 
+  /* Mobile: show description and link always (no hover state on touch) */
+  @media (max-width: 768px) {
+    .service-card-desc,
+    .service-card-link {
+      opacity: 1;
+      max-height: 100px;
+    }
+
+    .service-card-content {
+      padding: 16px 18px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .service-card,
     .service-card-img,

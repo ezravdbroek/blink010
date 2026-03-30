@@ -105,12 +105,32 @@
   @media (max-width: 900px) {
     .footer-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
   }
 
   @media (max-width: 540px) {
     .footer-grid {
       grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .footer {
+      padding-top: 2.5rem;
+    }
+
+    .footer-inner {
+      padding: 0 1.25rem;
+    }
+
+    .footer-contact-list li {
+      font-size: 0.875rem;
+      word-break: break-word;
+    }
+
+    .footer-contact-list a {
+      word-break: break-all;
     }
   }
 

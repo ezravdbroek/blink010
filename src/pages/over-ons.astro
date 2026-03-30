@@ -453,6 +453,7 @@ import foto7 from '../assets/foto7.png';
   @media (max-width: 768px) {
     .waarden-grid {
       grid-template-columns: 1fr;
+      gap: 20px;
     }
 
     .steden-grid {
@@ -462,15 +463,41 @@ import foto7 from '../assets/foto7.png';
     .team-grid {
       gap: 32px;
     }
+
+    .intro-grid {
+      gap: 28px;
+    }
+
+    .intro-text p {
+      font-size: 1rem;
+    }
+
+    .team-intro {
+      font-size: 1rem;
+    }
+
+    .team-stats {
+      padding: 20px;
+    }
   }
 
   @media (max-width: 480px) {
     .steden-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .waarde-card {
-      padding: 24px;
+      padding: 22px;
+    }
+
+    .werkgebied-intro {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .steden-grid {
+      grid-template-columns: 1fr;
     }
   }
 
