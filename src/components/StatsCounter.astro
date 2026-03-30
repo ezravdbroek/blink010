@@ -1,0 +1,204 @@
+---
+interface StatItem {
+  number?: number;
+  suffix?: string;
+  value?: string;
+  label: string;
+}
+
+const stats: StatItem[] = [
+  { number: 10,  suffix: "+", label: "Jaar ervaring" },
+  { number: 100, suffix: "%", label: "Garantie op werk" },
+  { value: "24/7",            label: "Bereikbaar" },
+  { number: 500, suffix: "+", label: "Tevreden klanten" },
+];
+---
+
+<section class="stats-counter" aria-label="Statistieken">
+  <div class="stats-grid">
+    {stats.map((stat, i) => (
+      <div class="stat-item" data-index={i} style={`--stagger: ${i * 0.15}s`}>
+        {stat.value != null ? (
+          <span class="stat-number static-value">{stat.value}</span>
+        ) : (
+          <span
+            class="stat-number counter"
+            data-target={stat.number}
+            data-suffix={stat.suffix ?? ""}
+          >0</span>
+        )}
+        <span class="stat-label">{stat.label}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .stats-counter {
+    background: #111;
+    background-image: radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 133, 154, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(0, 133, 154, 0.05) 0%,
+      transparent 60%
+    );
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle branded pattern overlay */
+  .stats-counter::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(0, 133, 154, 0.03) 40px,
+      rgba(0, 133, 154, 0.03) 41px
+    );
+    pointer-events: none;
+  }
+
+  .stats-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* ── Stat item ── */
+  .stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.5s ease-out var(--stagger),
+      transform 0.5s ease-out var(--stagger);
+  }
+
+  .stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Number ── */
+  .stat-number {
+    display: block;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    line-height: 1;
+    margin-bottom: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Label ── */
+  .stat-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+  }
+
+  /* ── Mobile: 2x2 grid ── */
+  @media (max-width: 640px) {
+    .stats-counter {
+      padding: 60px 24px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stat-item {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    function animateCounter(
+      el: HTMLElement,
+      target: number,
+      suffix: string,
+      duration: number = 2000
+    ) {
+      const start = performance.now();
+      function update(now: number) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // easeOut: 1 - (1 - progress)^3
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = String(current);
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target + suffix;
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    const section = document.querySelector<HTMLElement>('.stats-counter');
+    if (!section) return;
+
+    const items = section.querySelectorAll<HTMLElement>('.stat-item');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      items.forEach((item) => {
+        item.classList.add('visible');
+        const counter = item.querySelector<HTMLElement>('.counter');
+        if (counter) {
+          const target = Number(counter.dataset.target ?? 0);
+          const suffix = counter.dataset.suffix ?? '';
+          counter.textContent = target + suffix;
+        }
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            items.forEach((item, i) => {
+              const delay = i * 150; // ms, mirrors CSS --stagger
+              setTimeout(() => {
+                item.classList.add('visible');
+                const counter = item.querySelector<HTMLElement>('.counter');
+                if (counter) {
+                  const target = Number(counter.dataset.target ?? 0);
+                  const suffix = counter.dataset.suffix ?? '';
+                  animateCounter(counter, target, suffix);
+                }
+              }, delay);
+            });
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(section);
+  })();
+</script>

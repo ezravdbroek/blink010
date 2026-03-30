@@ -1,0 +1,276 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Offerte aanvragen",
+    description: "Vul het formulier in",
+  },
+  {
+    number: "2",
+    title: "Kennismaking",
+    description: "We bespreken uw wensen",
+  },
+  {
+    number: "3",
+    title: "Schoonmaak",
+    description: "Wij gaan aan de slag",
+  },
+];
+---
+
+<section class="process-steps section">
+  <div class="container">
+    <h2 class="section-heading">Hoe het werkt</h2>
+
+    <div class="steps-wrapper" aria-label="Processtappen">
+      <div class="line-track" aria-hidden="true">
+        <div class="line-fill"></div>
+      </div>
+
+      {steps.map((step, i) => (
+        <div class="step" data-index={i} aria-label={`Stap ${step.number}: ${step.title}`}>
+          <div class="circle" aria-hidden="true">
+            <span class="circle-number">{step.number}</span>
+          </div>
+          <div class="step-text">
+            <strong class="step-title">{step.title}</strong>
+            <p class="step-desc">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-steps {
+    background: var(--color-gray-50);
+  }
+
+  /* ── Layout ── */
+  .steps-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  /* ── Connecting line ── */
+  .line-track {
+    position: absolute;
+    top: 30px; /* vertically centred on the 60px circles */
+    left: calc(16.666% + 30px); /* starts at centre of first circle */
+    right: calc(16.666% + 30px); /* ends at centre of last circle */
+    height: 2px;
+    background: var(--color-gray-100);
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .line-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.8s ease-in-out;
+  }
+
+  /* ── Individual step ── */
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Circle ── */
+  .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background: var(--color-gray-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .circle-number {
+    font-weight: var(--font-weight-bold);
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+  }
+
+  /* ── Step text ── */
+  .step-text {
+    margin-top: 16px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .step-title {
+    display: block;
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+    color: var(--color-black);
+    margin-bottom: 4px;
+  }
+
+  .step-desc {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+  }
+
+  /* ── Animated states ── */
+  .steps-wrapper.line-done .line-fill {
+    transform: scaleX(1);
+  }
+
+  .steps-wrapper.circles-done .circle {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .steps-wrapper.circles-done .circle-number {
+    color: var(--color-white);
+  }
+
+  .steps-wrapper .step[data-index="0"].text-done .step-text,
+  .steps-wrapper .step[data-index="1"].text-done .step-text,
+  .steps-wrapper .step[data-index="2"].text-done .step-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Mobile: vertical layout ── */
+  @media (max-width: 640px) {
+    .steps-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .line-track {
+      top: calc(16.666% + 30px);
+      bottom: calc(16.666% + 30px);
+      left: 50%;
+      right: auto;
+      width: 2px;
+      height: auto;
+      transform: translateX(-50%);
+    }
+
+    .line-fill {
+      width: 100%;
+      height: 100%;
+      transform: scaleY(0);
+      transform-origin: top center;
+      transition: transform 0.8s ease-in-out;
+    }
+
+    .steps-wrapper.line-done .line-fill {
+      transform: scaleY(1);
+    }
+
+    .step {
+      flex-direction: row;
+      text-align: left;
+      gap: 20px;
+      width: 100%;
+      max-width: 320px;
+      padding: 16px 0;
+    }
+
+    .step-text {
+      margin-top: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .line-fill,
+    .circle,
+    .circle-number,
+    .step-text {
+      transition: none !important;
+    }
+
+    .steps-wrapper .step-text {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .steps-wrapper .line-fill {
+      transform: scaleX(1) !important;
+    }
+
+    .steps-wrapper .circle {
+      background: var(--color-primary) !important;
+    }
+
+    .steps-wrapper .circle-number {
+      color: var(--color-white) !important;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const wrapper = document.querySelector<HTMLElement>('.steps-wrapper');
+    if (!wrapper) return;
+
+    const isVertical = () => window.innerWidth <= 640;
+
+    function runAnimation() {
+      const steps = wrapper!.querySelectorAll<HTMLElement>('.step');
+
+      // Phase 1: draw the line (0s)
+      wrapper!.classList.add('line-done');
+
+      // Phase 2: fill circles (0.8s after line starts)
+      setTimeout(() => {
+        wrapper!.classList.add('circles-done');
+      }, 800);
+
+      // Phase 3: fade in text with per-step stagger
+      const textDelays = [1100, 1600, 2100]; // 0s, 0.5s, 1s after circles start
+      steps.forEach((step, i) => {
+        setTimeout(() => {
+          step.classList.add('text-done');
+        }, textDelays[i]);
+      });
+    }
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      // Apply final state immediately
+      wrapper.classList.add('line-done', 'circles-done');
+      wrapper.querySelectorAll<HTMLElement>('.step').forEach((s) => s.classList.add('text-done'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            runAnimation();
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(wrapper);
+  })();
+</script>
