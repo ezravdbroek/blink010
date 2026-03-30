@@ -11,7 +11,9 @@
       "Bash(npx astro:*)",
       "Bash(rm /c/Users/Shabad/Desktop/projecten/blink010/.git/index.lock)",
       "Bash(git -C /c/Users/Shabad/Desktop/projecten/blink010 add src/components/HomeHero.astro src/pages/index.astro)",
-      "Bash(git -C:*)"
+      "Bash(git -C:*)",
+      "WebFetch(domain:trustoo.nl)",
+      "WebFetch(domain:www.google.com)"
     ]
   }
 }
