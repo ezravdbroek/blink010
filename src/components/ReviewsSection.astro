@@ -88,8 +88,16 @@ const reviews = [
     /* Target each ReviewCard article directly */
     .reviews-grid > :global(article) {
       scroll-snap-align: start;
-      min-width: min(85vw, 320px);
+      /* Use calc so the card is always viewport-relative and includes
+         the container padding offset — prevents cards overflowing the
+         viewport or being clipped on narrow screens. */
+      min-width: calc(100vw - 80px);
+      max-width: calc(100vw - 80px);
       flex-shrink: 0;
+      box-sizing: border-box;
+      /* Ensure long words / URLs wrap rather than busting the card */
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .carousel-dots {

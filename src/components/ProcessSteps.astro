@@ -152,16 +152,25 @@ const steps = [
 
   /* ── Mobile: vertical layout ── */
   @media (max-width: 640px) {
+    /* Align everything to the left; left-padding creates room for the
+       line (2px) + circle (52px) — line sits at 30px from left edge,
+       which is the horizontal centre of a 52px circle starting at ~4px. */
     .steps-wrapper {
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 0;
+      padding-left: 30px; /* space so circles don't clip the left edge */
     }
 
+    /* Vertical line: positioned at the horizontal centre of the circles.
+       Circle left edge = 0 (inside the padded wrapper), circle width = 52px,
+       so centre = 26px from the wrapper's content edge = 30 + 26 = 56px
+       from the section left edge.  We set left relative to .steps-wrapper
+       which already has padding-left: 30px, so left: 26px (= 52px / 2 - 1px). */
     .line-track {
-      top: 30px;
-      bottom: 30px;
-      left: calc(50% - 1px);
+      top: 26px;   /* half of 52px circle — aligns with first circle centre */
+      bottom: 26px;
+      left: 26px;  /* centre of 52px circle within the padded wrapper */
       right: auto;
       width: 2px;
       height: auto;
@@ -185,9 +194,9 @@ const steps = [
       text-align: left;
       gap: 20px;
       width: 100%;
-      max-width: 340px;
       padding: 16px 0;
       align-items: center;
+      /* Remove max-width cap so text isn't squeezed on wider phones */
     }
 
     .circle {
