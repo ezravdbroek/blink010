@@ -50,7 +50,10 @@ import foto1 from '../assets/foto1.jpeg';
 
   <!-- Content -->
   <div class="hero-content">
-    <div class="hero-badge">Schoonmaakbedrijf Rotterdam</div>
+    <div class="hero-tagline">
+      <div class="tagline-line"></div>
+      <span>Schoonmaakbedrijf Rotterdam</span>
+    </div>
 
     <h1 class="hero-title">
       Blink Schoonmaak <span>010</span>
@@ -268,17 +271,17 @@ import foto1 from '../assets/foto1.jpeg';
      CONTENT
      ============================================================ */
   .hero-content {
-    position: relative;
-    z-index: 3;
-    bottom: 60px;
+    position: absolute;
+    top: 0;
     left: 48px;
+    bottom: 0;
+    z-index: 3;
     max-width: 550px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     gap: 20px;
-    /* Position from bottom-left */
-    margin-bottom: 0;
   }
 
   /* Stagger animation */
@@ -293,7 +296,7 @@ import foto1 from '../assets/foto1.jpeg';
     }
   }
 
-  .hero-badge,
+  .hero-tagline,
   .hero-title,
   .hero-subtitle,
   .hero-cta {
@@ -301,23 +304,33 @@ import foto1 from '../assets/foto1.jpeg';
     animation: staggerIn 0.8s ease-out forwards;
   }
 
-  .hero-badge    { animation-delay: 0.3s; }
+  .hero-tagline  { animation-delay: 0.3s; }
   .hero-title    { animation-delay: 0.6s; }
   .hero-subtitle { animation-delay: 0.9s; }
   .hero-cta      { animation-delay: 1.2s; }
 
-  /* Badge */
-  .hero-badge {
-    display: inline-block;
-    padding: 6px 14px;
-    border-radius: 100px;
-    background: rgba(0, 133, 154, 0.25);
-    border: 1px solid rgba(0, 133, 154, 0.4);
-    color: #5ec4d4;
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0.08em;
+  /* Tagline */
+  .hero-tagline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .tagline-line {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #00859a, transparent);
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
+
+  .hero-tagline span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
+    color: #5ec4d4;
   }
 
   /* Title */
@@ -408,7 +421,6 @@ import foto1 from '../assets/foto1.jpeg';
   @media (max-width: 768px) {
     .hero-content {
       left: 0;
-      bottom: 40px;
       max-width: 100%;
       padding: 0 24px;
     }
@@ -436,7 +448,7 @@ import foto1 from '../assets/foto1.jpeg';
     }
 
     /* Keep simple fade-ins by overriding with faster, no-movement version */
-    .hero-badge,
+    .hero-tagline,
     .hero-title,
     .hero-subtitle,
     .hero-cta,
@@ -444,7 +456,7 @@ import foto1 from '../assets/foto1.jpeg';
       animation: reducedFadeIn 0.3s ease-out forwards;
     }
 
-    .hero-badge            { animation-delay: 0.1s; }
+    .hero-tagline          { animation-delay: 0.1s; }
     .hero-title            { animation-delay: 0.15s; }
     .hero-subtitle         { animation-delay: 0.2s; }
     .hero-cta              { animation-delay: 0.25s; }
