@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.blinkschoonmaak.nl)",
+      "WebFetch(domain:www.topp.nl)",
+      "Bash(bash \"C:\\\\Users\\\\Shabad\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.5\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"C:\\\\Users\\\\Shabad\\\\Desktop\\\\projecten\\\\blink010\")",
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(git commit:*)",
+      "Bash(npx astro:*)",
+      "Bash(rm /c/Users/Shabad/Desktop/projecten/blink010/.git/index.lock)",
+      "Bash(git -C /c/Users/Shabad/Desktop/projecten/blink010 add src/components/HomeHero.astro src/pages/index.astro)",
+      "Bash(git -C:*)"
+    ]
+  }
+}
