@@ -5,6 +5,9 @@ import CTABlock from '../components/CTABlock.astro';
 import { Image } from 'astro:assets';
 import heroImg from '../assets/foto3.jpeg';
 import galleryImg1 from '../assets/foto8.png';
+import teamPhoto16 from '../assets/foto16.jpeg';
+import teamPhoto17 from '../assets/foto17.jpeg';
+import teamPhoto18 from '../assets/foto18.jpeg';
 ---
 
 <BaseLayout
@@ -103,6 +106,17 @@ import galleryImg1 from '../assets/foto8.png';
             <span class="stat-number">5&#9733;</span>
             <span class="stat-label">Gemiddelde beoordeling</span>
           </div>
+        </div>
+      </div>
+      <div class="team-photos reveal">
+        <div class="team-photo-wrap">
+          <Image src={teamPhoto16} alt="Teamleden aan het werk in een woning" class="team-photo-img" />
+        </div>
+        <div class="team-photo-wrap">
+          <Image src={teamPhoto17} alt="Ramen zemen in een kamer" class="team-photo-img" />
+        </div>
+        <div class="team-photo-wrap">
+          <Image src={teamPhoto18} alt="Keuken dweilen en schoonmaken" class="team-photo-img" />
         </div>
       </div>
     </div>
@@ -347,6 +361,42 @@ import galleryImg1 from '../assets/foto8.png';
     color: var(--color-gray-400);
     margin-top: 6px;
     font-weight: var(--font-weight-semibold);
+  }
+
+  /* ── Team Photos Row ── */
+  .team-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .team-photo-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+  }
+
+  .team-photo-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .team-photo-wrap:hover .team-photo-img {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 700px) {
+    .team-photos {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .team-photo-wrap:last-child {
+      grid-column: span 2;
+    }
   }
 
   /* ── Timeline ── */

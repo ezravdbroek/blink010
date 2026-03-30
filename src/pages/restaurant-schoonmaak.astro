@@ -5,6 +5,7 @@ import CTABlock from '../components/CTABlock.astro';
 import { Image } from 'astro:assets';
 import heroImg from '../assets/foto1.jpeg';
 import galleryImg1 from '../assets/foto1.jpeg';
+import teamPhoto18 from '../assets/foto18.jpeg';
 ---
 
 <BaseLayout
@@ -86,6 +87,7 @@ import galleryImg1 from '../assets/foto1.jpeg';
       <div class="highlight-grid reveal">
         <div class="highlight-image-wrap">
           <Image src={galleryImg1} alt="Schone horecakeuken" class="highlight-img" />
+          <Image src={teamPhoto18} alt="Medewerker dweilt de keuken" class="highlight-img highlight-img-team" />
         </div>
         <div class="highlight-text">
           <p class="intro-label">Onze aanpak</p>
@@ -290,16 +292,22 @@ import galleryImg1 from '../assets/foto1.jpeg';
   }
 
   .highlight-image-wrap {
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .highlight-img {
     width: 100%;
-    height: 420px;
+    height: 300px;
     object-fit: cover;
     display: block;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .highlight-img-team {
+    height: 220px;
   }
 
   .highlight-text h2 {
@@ -429,9 +437,16 @@ import galleryImg1 from '../assets/foto1.jpeg';
       gap: 40px;
     }
 
-    .intro-image,
-    .highlight-img {
+    .intro-image {
       height: 300px;
+    }
+
+    .highlight-img {
+      height: 220px;
+    }
+
+    .highlight-img-team {
+      height: 180px;
     }
 
     .usp-grid {
