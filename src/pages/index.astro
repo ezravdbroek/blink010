@@ -1,10 +1,95 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeHero from '../components/HomeHero.astro';
+import USPStrip from '../components/USPStrip.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import StatsCounter from '../components/StatsCounter.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+import foto1 from '../assets/foto1.jpeg';
+import foto2 from '../assets/foto2.jpeg';
+import foto3 from '../assets/foto3.jpeg';
+import foto7 from '../assets/foto7.png';
+import foto8 from '../assets/foto8.png';
 ---
 
 <BaseLayout title="Home">
   <main>
     <HomeHero />
+
+    <USPStrip />
+
+    <section class="section" style="background: #fff;">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-heading">Onze Diensten</h2>
+          <div class="diensten-grid">
+            <ServiceCard
+              title="Kantoren Schoonmaak"
+              description="Professionele kantoorschoonmaak voor een productieve werkomgeving."
+              image={foto2}
+              href="/kantoren-schoonmaak"
+            />
+            <ServiceCard
+              title="Particuliere Schoonmaak"
+              description="Huishoudelijke schoonmaak op maat voor uw woning."
+              image={foto3}
+              href="/particuliere-schoonmaak"
+            />
+            <ServiceCard
+              title="Restaurant Schoonmaak"
+              description="Hygiënische schoonmaak voor horeca en restaurants."
+              image={foto1}
+              href="/restaurant-schoonmaak"
+            />
+            <ServiceCard
+              title="Recreatiewoning Schoonmaak"
+              description="Uw vakantiewoning altijd gastklaar."
+              image={foto8}
+              href="/schoonmaak-recreatiewoning"
+            />
+            <ServiceCard
+              title="Opleveringsschoonmaak"
+              description="Grondige schoonmaak bij oplevering van panden."
+              image={foto7}
+              href="/opleveringsschoonmaak"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <ProcessSteps />
+
+    <StatsCounter />
+
+    <ReviewsSection />
+
+    <CTABlock
+      heading="Klaar voor een schone start?"
+      subtext="Vraag vrijblijvend een offerte aan"
+    />
   </main>
 </BaseLayout>
+
+<style>
+  .diensten-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .diensten-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .diensten-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
