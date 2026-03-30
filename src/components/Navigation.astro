@@ -16,7 +16,7 @@
         <a href="/" class="nav-link">Home</a>
       </li>
 
-      <!-- Diensten dropdown -->
+      <!-- Diensten mega menu trigger -->
       <li class="nav-item-dropdown">
         <button
           class="nav-link nav-link-dropdown"
@@ -29,78 +29,6 @@
             <path d="M2 5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        <ul class="dropdown-menu" role="list" id="diensten-menu" aria-labelledby="diensten-btn">
-          <li>
-            <a href="/kantoren-schoonmaak" class="dropdown-link">
-              <span class="dropdown-icon" aria-hidden="true">
-                <!-- Building / office icon -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M7 6h.01"/><path d="M12 6h.01"/><path d="M17 6h.01"/>
-                </svg>
-              </span>
-              <span class="dropdown-text">
-                <span class="dropdown-title">Kantoren Schoonmaak</span>
-                <span class="dropdown-desc">Professionele kantoorschoonmaak</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/particuliere-schoonmaak" class="dropdown-link">
-              <span class="dropdown-icon" aria-hidden="true">
-                <!-- House icon -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
-              </span>
-              <span class="dropdown-text">
-                <span class="dropdown-title">Particuliere Schoonmaak</span>
-                <span class="dropdown-desc">Huishoudelijke schoonmaak op maat</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/restaurant-schoonmaak" class="dropdown-link">
-              <span class="dropdown-icon" aria-hidden="true">
-                <!-- Utensils / restaurant icon -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
-                </svg>
-              </span>
-              <span class="dropdown-text">
-                <span class="dropdown-title">Restaurant Schoonmaak</span>
-                <span class="dropdown-desc">Hygiënische horeca reiniging</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/schoonmaak-recreatiewoning" class="dropdown-link">
-              <span class="dropdown-icon" aria-hidden="true">
-                <!-- Key + house icon for vacation home -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="2"/><path d="M12 15v4"/>
-                </svg>
-              </span>
-              <span class="dropdown-text">
-                <span class="dropdown-title">Recreatiewoning Schoonmaak</span>
-                <span class="dropdown-desc">Vakantiewoning altijd gastklaar</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/opleveringsschoonmaak" class="dropdown-link">
-              <span class="dropdown-icon" aria-hidden="true">
-                <!-- Sparkle / checklist icon for oplevering -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><path d="M5 16l1 3 3-1"/><path d="M19 16l-1 3-3-1"/>
-                </svg>
-              </span>
-              <span class="dropdown-text">
-                <span class="dropdown-title">Opleveringsschoonmaak</span>
-                <span class="dropdown-desc">Grondige opleverings&shy;reiniging</span>
-              </span>
-            </a>
-          </li>
-        </ul>
       </li>
 
       <li>
@@ -128,6 +56,75 @@
     </button>
   </div>
 </nav>
+
+<!-- Mega menu — full-width, positioned below the nav bar -->
+<div class="mega-menu" id="diensten-menu" role="region" aria-labelledby="diensten-btn" aria-hidden="true">
+  <div class="mega-menu-inner">
+    <ul class="mega-grid" role="list">
+
+      <li class="mega-item" style="--i:0">
+        <a href="/kantoren-schoonmaak" class="mega-card">
+          <span class="mega-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/><path d="M7 6h.01"/><path d="M12 6h.01"/><path d="M17 6h.01"/>
+            </svg>
+          </span>
+          <span class="mega-title">Kantoren Schoonmaak</span>
+          <span class="mega-desc">Professionele kantoorschoonmaak</span>
+        </a>
+      </li>
+
+      <li class="mega-item" style="--i:1">
+        <a href="/particuliere-schoonmaak" class="mega-card">
+          <span class="mega-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </span>
+          <span class="mega-title">Particuliere Schoonmaak</span>
+          <span class="mega-desc">Huishoudelijke schoonmaak op maat</span>
+        </a>
+      </li>
+
+      <li class="mega-item" style="--i:2">
+        <a href="/restaurant-schoonmaak" class="mega-card">
+          <span class="mega-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+            </svg>
+          </span>
+          <span class="mega-title">Restaurant Schoonmaak</span>
+          <span class="mega-desc">Hygiënische horeca reiniging</span>
+        </a>
+      </li>
+
+      <li class="mega-item" style="--i:3">
+        <a href="/schoonmaak-recreatiewoning" class="mega-card">
+          <span class="mega-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="2"/><path d="M12 15v4"/>
+            </svg>
+          </span>
+          <span class="mega-title">Recreatiewoning Schoonmaak</span>
+          <span class="mega-desc">Vakantiewoning altijd gastklaar</span>
+        </a>
+      </li>
+
+      <li class="mega-item" style="--i:4">
+        <a href="/opleveringsschoonmaak" class="mega-card">
+          <span class="mega-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00859a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/><path d="M5 16l1 3 3-1"/><path d="M19 16l-1 3-3-1"/>
+            </svg>
+          </span>
+          <span class="mega-title">Opleveringsschoonmaak</span>
+          <span class="mega-desc">Grondige opleveringsreiniging</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
 
 <!-- Mobile slide-in panel -->
 <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
@@ -330,10 +327,9 @@
   }
 
   /* ============================================================
-     DROPDOWN
+     DROPDOWN TRIGGER (chevron)
      ============================================================ */
   .nav-item-dropdown {
-    position: relative;
     list-style: none;
   }
 
@@ -346,88 +342,138 @@
     transform: rotate(180deg);
   }
 
-  .dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%) translateY(-6px);
-    min-width: 350px;
+  /* ============================================================
+     MEGA MENU — full-width overlay panel
+     ============================================================ */
+  .mega-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    z-index: 999;
     background: var(--color-white);
-    border-radius: 14px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.16);
-    padding: 10px;
-    list-style: none;
-    margin: 0;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+    /* Hidden by default */
     opacity: 0;
     pointer-events: none;
+    transform: translateY(-10px);
     transition:
-      opacity var(--transition-fast),
-      transform var(--transition-fast);
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
-  /* Visible state — hover on desktop */
-  .nav-item-dropdown:hover .dropdown-menu,
-  .nav-item-dropdown.open .dropdown-menu {
+  /* Visible state toggled via JS (.open class on nav-item-dropdown AND mega-menu) */
+  .mega-menu.open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 
-  .nav-item-dropdown:hover .dropdown-chevron {
-    transform: rotate(180deg);
+  .mega-menu-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px 36px;
   }
 
-  .dropdown-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    border-radius: 10px;
-    color: var(--color-black);
-    text-decoration: none;
+  /* 5-column grid */
+  .mega-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Stagger animation for each item */
+  .mega-item {
+    opacity: 0;
+    transform: translateY(6px);
     transition:
-      background var(--transition-fast);
+      opacity 0.22s ease calc(var(--i) * 0.03s),
+      transform 0.22s ease calc(var(--i) * 0.03s);
   }
 
-  .dropdown-link:hover,
-  .dropdown-link:focus-visible {
-    background: #f8f9fa;
+  .mega-menu.open .mega-item {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .dropdown-icon {
+  /* Card */
+  .mega-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 22px 16px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition:
+      border-color 0.18s ease,
+      transform 0.18s ease,
+      background 0.18s ease;
+  }
+
+  .mega-card:hover,
+  .mega-card:focus-visible {
+    border-color: #00859a;
+    transform: translateY(-2px);
+    background: rgba(0, 133, 154, 0.02);
+  }
+
+  .mega-card:focus-visible {
+    outline: 2px solid #00859a;
+    outline-offset: 2px;
+  }
+
+  /* Icon circle */
+  .mega-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
     background: rgba(0, 133, 154, 0.08);
+    margin-bottom: 14px;
     flex-shrink: 0;
+    transition: background 0.18s ease;
   }
 
-  .dropdown-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  .mega-card:hover .mega-icon,
+  .mega-card:focus-visible .mega-icon {
+    background: rgba(0, 133, 154, 0.16);
   }
 
-  .dropdown-title {
-    font-size: 0.9375rem;
+  /* Title */
+  .mega-title {
+    display: block;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-black);
-    line-height: 1.2;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    transition: color 0.18s ease;
   }
 
-  .dropdown-link:hover .dropdown-title,
-  .dropdown-link:focus-visible .dropdown-title {
-    color: var(--color-primary);
+  .mega-card:hover .mega-title,
+  .mega-card:focus-visible .mega-title {
+    color: #00859a;
   }
 
-  .dropdown-desc {
-    font-size: 0.8125rem;
+  /* Description */
+  .mega-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.82rem;
     font-weight: 400;
     color: #888;
-    line-height: 1.3;
+    line-height: 1.45;
   }
 
   /* ============================================================
@@ -652,7 +698,7 @@
   }
 
   /* ============================================================
-     RESPONSIVE — show hamburger, hide desktop links
+     RESPONSIVE — show hamburger, hide desktop links + mega menu
      ============================================================ */
   @media (max-width: 1024px) {
     .nav-links {
@@ -661,6 +707,11 @@
 
     .hamburger {
       display: flex;
+    }
+
+    /* Mega menu never shows on mobile — mobile accordion handles it */
+    .mega-menu {
+      display: none !important;
     }
   }
 </style>
@@ -684,67 +735,76 @@
   window.addEventListener('scroll', updateNavScroll, { passive: true });
 
   // ============================================================
-  // DESKTOP DROPDOWN
+  // DESKTOP MEGA MENU
   // ============================================================
-  const dienstenBtn = document.getElementById('diensten-btn') as HTMLButtonElement;
+  const dienstenBtn  = document.getElementById('diensten-btn')  as HTMLButtonElement;
   const dienstenMenu = document.getElementById('diensten-menu') as HTMLElement;
   const dienstenItem = dienstenBtn?.closest('.nav-item-dropdown') as HTMLElement;
 
-  function openDropdown() {
+  const isMobile = () => window.innerWidth <= 1024;
+
+  function openMega() {
+    if (isMobile()) return;
     dienstenItem.classList.add('open');
+    dienstenMenu.classList.add('open');
+    dienstenMenu.setAttribute('aria-hidden', 'false');
     dienstenBtn.setAttribute('aria-expanded', 'true');
   }
 
-  function closeDropdown() {
+  function closeMega() {
     dienstenItem.classList.remove('open');
+    dienstenMenu.classList.remove('open');
+    dienstenMenu.setAttribute('aria-hidden', 'true');
     dienstenBtn.setAttribute('aria-expanded', 'false');
   }
 
-  if (dienstenBtn && dienstenItem) {
-    // Desktop: hover is handled by CSS. Click-toggle is disabled for desktop.
-    // We still support keyboard activation (Enter/Space opens, Escape closes).
-    const isMobile = () => window.innerWidth <= 1024;
-
-    dienstenBtn.addEventListener('click', (e) => {
-      // Only use click-toggle when in mobile viewport (desktop nav is hidden at <=1024px,
-      // but guard here in case breakpoints shift)
-      if (!isMobile()) return;
-      e.stopPropagation();
-      const isOpen = dienstenItem.classList.contains('open');
-      isOpen ? closeDropdown() : openDropdown();
-    });
-
-    // Keyboard: Escape closes (desktop keyboard nav support)
-    dienstenItem.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeDropdown();
-        dienstenBtn.focus();
-      }
-    });
-
-    dienstenMenu?.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeDropdown();
-        dienstenBtn.focus();
-      }
-    });
-
-    // Close the open class when mouse leaves (keeps aria-expanded accurate)
+  if (dienstenBtn && dienstenItem && dienstenMenu) {
+    // Open on hover over the trigger item
+    dienstenItem.addEventListener('mouseenter', openMega);
     dienstenItem.addEventListener('mouseleave', () => {
-      closeDropdown();
+      // Give a brief moment so cursor can travel into the mega menu
+      setTimeout(() => {
+        if (!dienstenMenu.matches(':hover')) closeMega();
+      }, 80);
     });
 
-    dienstenItem.addEventListener('mouseenter', () => {
-      if (!isMobile()) openDropdown();
+    // Keep open while hovering the mega menu itself
+    dienstenMenu.addEventListener('mouseenter', openMega);
+    dienstenMenu.addEventListener('mouseleave', closeMega);
+
+    // Keyboard: Enter/Space toggles
+    dienstenBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        dienstenItem.classList.contains('open') ? closeMega() : openMega();
+      }
+    });
+
+    // Keyboard: Escape closes
+    dienstenItem.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeMega(); dienstenBtn.focus(); }
+    });
+    dienstenMenu.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeMega(); dienstenBtn.focus(); }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (
+        !dienstenItem.contains(e.target as Node) &&
+        !dienstenMenu.contains(e.target as Node)
+      ) {
+        closeMega();
+      }
     });
   }
 
   // ============================================================
   // MOBILE MENU
   // ============================================================
-  const hamburger = document.getElementById('hamburger-btn') as HTMLButtonElement;
-  const mobileMenu = document.getElementById('mobile-menu') as HTMLElement;
-  const mobileOverlay = document.getElementById('mobile-overlay') as HTMLElement;
+  const hamburger      = document.getElementById('hamburger-btn')   as HTMLButtonElement;
+  const mobileMenu     = document.getElementById('mobile-menu')     as HTMLElement;
+  const mobileOverlay  = document.getElementById('mobile-overlay')  as HTMLElement;
   const mobileCloseBtn = document.getElementById('mobile-close-btn') as HTMLButtonElement;
 
   function openMobileMenu() {
@@ -755,7 +815,6 @@
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Menu sluiten');
     document.body.style.overflow = 'hidden';
-    // Move focus into the panel
     mobileCloseBtn.focus();
   }
 
@@ -778,14 +837,12 @@
   mobileCloseBtn?.addEventListener('click', closeMobileMenu);
   mobileOverlay?.addEventListener('click', closeMobileMenu);
 
-  // Escape key closes mobile menu
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
       closeMobileMenu();
     }
   });
 
-  // Close mobile menu when any link inside is clicked (SPA navigation)
   mobileMenu?.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMobileMenu);
   });
@@ -793,7 +850,7 @@
   // ============================================================
   // MOBILE DIENSTEN ACCORDION
   // ============================================================
-  const mobileDienstenBtn = document.getElementById('mobile-diensten-btn') as HTMLButtonElement;
+  const mobileDienstenBtn  = document.getElementById('mobile-diensten-btn')  as HTMLButtonElement;
   const mobileDienstenList = document.getElementById('mobile-diensten-list') as HTMLElement;
 
   mobileDienstenBtn?.addEventListener('click', () => {
