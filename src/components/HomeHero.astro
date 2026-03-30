@@ -473,12 +473,13 @@ import foto1 from '../assets/foto1.jpeg';
      MOBILE LAYOUT (max-width: 768px)
      ============================================================ */
   @media (max-width: 768px) {
+    /* Video stays visible on mobile — autoplay works with muted+playsinline */
     .hero-video {
-      display: none !important;
+      display: block !important;
     }
 
     .hero-mobile-img {
-      display: block !important;
+      display: none !important;
     }
 
     .hero-content {
