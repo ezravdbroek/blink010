@@ -5,9 +5,8 @@ import CTABlock from '../components/CTABlock.astro';
 import { Image } from 'astro:assets';
 import heroImg from '../assets/particulieren_schoonmaak.jpeg';
 import galleryImg1 from '../assets/foto8.png';
-import teamPhoto16 from '../assets/foto16.jpeg';
-import teamPhoto17 from '../assets/foto17.jpeg';
 import teamPhoto18 from '../assets/foto18.jpeg';
+import teamPhoto20 from '../assets/foto20.jpeg';
 ---
 
 <BaseLayout
@@ -110,13 +109,10 @@ import teamPhoto18 from '../assets/foto18.jpeg';
       </div>
       <div class="team-photos reveal">
         <div class="team-photo-wrap">
-          <Image src={teamPhoto16} alt="Teamleden aan het werk in een woning" class="team-photo-img" />
+          <Image src={teamPhoto18} alt="Medewerker dweilt de keuken" class="team-photo-img" />
         </div>
         <div class="team-photo-wrap">
-          <Image src={teamPhoto17} alt="Ramen zemen in een kamer" class="team-photo-img" />
-        </div>
-        <div class="team-photo-wrap">
-          <Image src={teamPhoto18} alt="Keuken dweilen en schoonmaken" class="team-photo-img" />
+          <Image src={teamPhoto20} alt="Medewerker maakt ramen schoon in blokhut" class="team-photo-img" />
         </div>
       </div>
     </div>
@@ -366,7 +362,7 @@ import teamPhoto18 from '../assets/foto18.jpeg';
   /* ── Team Photos Row ── */
   .team-photos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-top: 20px;
   }
@@ -392,10 +388,6 @@ import teamPhoto18 from '../assets/foto18.jpeg';
   @media (max-width: 700px) {
     .team-photos {
       grid-template-columns: 1fr 1fr;
-    }
-
-    .team-photo-wrap:last-child {
-      grid-column: span 2;
     }
   }
 
