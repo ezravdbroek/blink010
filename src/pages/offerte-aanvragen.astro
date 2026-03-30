@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+---
+
+<BaseLayout
+  title="Offerte Aanvragen"
+  description="Vraag vrijblijvend een offerte aan bij Blink Schoonmaak 010 in Rotterdam."
+>
+  <main>
+    <HeroBanner
+      title="Offerte Aanvragen"
+      breadcrumbs={[{ label: 'Home', href: '/' }]}
+    />
+
+    <section class="section quote-section">
+      <div class="container">
+        <div class="form-wrapper reveal">
+          <QuoteForm />
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <span class="trust-item">10+ jaar ervaring</span>
+      <span class="trust-sep" aria-hidden="true">·</span>
+      <span class="trust-item">100% garantie</span>
+      <span class="trust-sep" aria-hidden="true">·</span>
+      <span class="trust-item">24/7 bereikbaar</span>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .quote-section {
+    background: var(--color-gray-50);
+  }
+
+  .form-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .trust-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 20px 24px 28px;
+    background: var(--color-gray-50);
+  }
+
+  .trust-item {
+    font-size: 0.82rem;
+    color: #888;
+    letter-spacing: 0.02em;
+  }
+
+  .trust-sep {
+    font-size: 0.82rem;
+    color: #ccc;
+    line-height: 1;
+  }
+
+  @media (max-width: 480px) {
+    .trust-sep {
+      display: none;
+    }
+
+    .trust-strip {
+      gap: 6px 12px;
+    }
+  }
+</style>
