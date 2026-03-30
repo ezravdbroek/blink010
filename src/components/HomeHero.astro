@@ -1,0 +1,473 @@
+---
+import { Image } from 'astro:assets';
+import foto1 from '../assets/foto1.jpeg';
+---
+
+<section class="hero" aria-label="Homepage hero">
+
+  <!-- Background: desktop video -->
+  <video
+    class="hero-video"
+    src="/hero-video.mp4"
+    poster={foto1.src}
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+  ></video>
+
+  <!-- Background: mobile image with Ken Burns -->
+  <div class="hero-mobile-img" aria-hidden="true">
+    <Image
+      src={foto1}
+      alt=""
+      class="hero-mobile-photo"
+      widths={[480, 768]}
+      sizes="100vw"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Overlays -->
+  <div class="hero-overlay-brand" aria-hidden="true"></div>
+  <div class="hero-overlay-bottom" aria-hidden="true"></div>
+
+  <!-- Light sweep effect -->
+  <div class="hero-light-sweep" aria-hidden="true"></div>
+
+  <!-- Corner glow -->
+  <div class="hero-corner-glow" aria-hidden="true"></div>
+
+  <!-- Particles (5 floating circles on the right) -->
+  <div class="hero-particles" aria-hidden="true">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+    <div class="particle particle-5"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-badge">Schoonmaakbedrijf Rotterdam</div>
+
+    <h1 class="hero-title">
+      Blink Schoonmaak <span>010</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Professionele schoonmaak op maat &mdash; geen zorgen, wij regelen het.
+    </p>
+
+    <a href="/offerte-aanvragen" class="btn btn-primary hero-cta">
+      Offerte aanvragen <span class="arrow">&#8594;</span>
+    </a>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll-indicator" aria-hidden="true">
+    <div class="scroll-mouse">
+      <div class="scroll-dot"></div>
+    </div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+
+</section>
+
+<style>
+  /* ============================================================
+     HERO BASE
+     ============================================================ */
+  .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  /* ============================================================
+     BACKGROUND VIDEO (desktop only — JS handles visibility)
+     ============================================================ */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    /* Hidden on mobile via JS — default visible for no-JS */
+    display: block;
+  }
+
+  /* ============================================================
+     MOBILE IMAGE + KEN BURNS
+     ============================================================ */
+  .hero-mobile-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    display: none; /* shown on mobile via JS */
+  }
+
+  .hero-mobile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: kenBurns 18s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
+
+  @keyframes kenBurns {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+  }
+
+  /* ============================================================
+     OVERLAYS
+     ============================================================ */
+  .hero-overlay-brand,
+  .hero-overlay-bottom {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-overlay-brand {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 133, 154, 0.55) 0%,
+      rgba(0, 133, 154, 0.2) 35%,
+      transparent 65%
+    );
+  }
+
+  .hero-overlay-bottom {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      transparent 70%
+    );
+  }
+
+  /* ============================================================
+     LIGHT SWEEP
+     ============================================================ */
+  .hero-light-sweep {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.04) 45%,
+      transparent 50%
+    );
+    animation: lightSweep 6s ease-in-out infinite;
+  }
+
+  @keyframes lightSweep {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(250%); }
+  }
+
+  /* ============================================================
+     CORNER GLOW (bottom-left)
+     ============================================================ */
+  .hero-corner-glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    z-index: 2;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0, 133, 154, 0.2) 0%, transparent 70%);
+    animation: cornerPulse 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes cornerPulse {
+    from { opacity: 0.5; }
+    to   { opacity: 1; }
+  }
+
+  /* ============================================================
+     PARTICLES
+     ============================================================ */
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 133, 154, 0.35);
+    animation: float 8s ease-in-out infinite alternate;
+  }
+
+  /* Individual particle sizes and positions (right side) */
+  .particle-1 {
+    width: 5px;
+    height: 5px;
+    right: 18%;
+    top: 25%;
+    animation-delay: 0s;
+  }
+
+  .particle-2 {
+    width: 3px;
+    height: 3px;
+    right: 12%;
+    top: 40%;
+    animation-delay: 1.5s;
+  }
+
+  .particle-3 {
+    width: 6px;
+    height: 6px;
+    right: 25%;
+    top: 55%;
+    animation-delay: 3s;
+  }
+
+  .particle-4 {
+    width: 4px;
+    height: 4px;
+    right: 8%;
+    top: 30%;
+    animation-delay: 4.5s;
+  }
+
+  .particle-5 {
+    width: 5px;
+    height: 5px;
+    right: 20%;
+    top: 70%;
+    animation-delay: 2s;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0);    opacity: 0.35; }
+    50%  { transform: translateY(-18px); opacity: 0.7; }
+    100% { transform: translateY(-32px); opacity: 0.2; }
+  }
+
+  /* ============================================================
+     CONTENT
+     ============================================================ */
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    bottom: 60px;
+    left: 48px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    /* Position from bottom-left */
+    margin-bottom: 0;
+  }
+
+  /* Stagger animation */
+  @keyframes staggerIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-badge,
+  .hero-title,
+  .hero-subtitle,
+  .hero-cta {
+    opacity: 0;
+    animation: staggerIn 0.8s ease-out forwards;
+  }
+
+  .hero-badge    { animation-delay: 0.3s; }
+  .hero-title    { animation-delay: 0.6s; }
+  .hero-subtitle { animation-delay: 0.9s; }
+  .hero-cta      { animation-delay: 1.2s; }
+
+  /* Badge */
+  .hero-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(0, 133, 154, 0.25);
+    border: 1px solid rgba(0, 133, 154, 0.4);
+    color: #5ec4d4;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Title */
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw, 2.75rem);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .hero-title span {
+    color: #5ec4d4;
+  }
+
+  /* Subtitle */
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.0625rem; /* ~17px */
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* CTA button — inherits .btn .btn-primary from global CSS */
+  .hero-cta {
+    font-size: 1rem;
+  }
+
+  .hero-cta .arrow {
+    display: inline-block;
+    transition: transform var(--transition-fast);
+  }
+
+  .hero-cta:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* ============================================================
+     SCROLL INDICATOR
+     ============================================================ */
+  .hero-scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: staggerIn 0.8s ease-out 1.6s forwards;
+  }
+
+  .scroll-mouse {
+    width: 22px;
+    height: 34px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .scroll-dot {
+    width: 3px;
+    height: 8px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.6);
+    animation: scrollDot 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollDot {
+    0%   { transform: translateY(0);    opacity: 1; }
+    100% { transform: translateY(12px); opacity: 0; }
+  }
+
+  .scroll-label {
+    font-size: 0.6875rem; /* ~11px */
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* ============================================================
+     MOBILE LAYOUT (max-width: 768px)
+     ============================================================ */
+  @media (max-width: 768px) {
+    .hero-content {
+      left: 0;
+      bottom: 40px;
+      max-width: 100%;
+      padding: 0 24px;
+    }
+  }
+
+  /* ============================================================
+     PREFERS-REDUCED-MOTION
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mobile-photo {
+      animation: none;
+    }
+
+    .hero-light-sweep {
+      animation: none;
+    }
+
+    .particle {
+      animation: none;
+    }
+
+    .hero-corner-glow {
+      animation: none;
+      opacity: 0.75;
+    }
+
+    /* Keep simple fade-ins by overriding with faster, no-movement version */
+    .hero-badge,
+    .hero-title,
+    .hero-subtitle,
+    .hero-cta,
+    .hero-scroll-indicator {
+      animation: reducedFadeIn 0.3s ease-out forwards;
+    }
+
+    .hero-badge            { animation-delay: 0.1s; }
+    .hero-title            { animation-delay: 0.15s; }
+    .hero-subtitle         { animation-delay: 0.2s; }
+    .hero-cta              { animation-delay: 0.25s; }
+    .hero-scroll-indicator { animation-delay: 0.3s; }
+  }
+
+  @keyframes reducedFadeIn {
+    from { opacity: 0; transform: none; }
+    to   { opacity: 1; transform: none; }
+  }
+</style>
+
+<script>
+  // Hide video on mobile, show image instead
+  const mq = window.matchMedia('(max-width: 768px)');
+  const video = document.querySelector('.hero-video') as HTMLVideoElement;
+  const mobileImg = document.querySelector('.hero-mobile-img') as HTMLElement;
+
+  function handleMedia(e: MediaQueryListEvent | MediaQueryList) {
+    if (video) video.style.display = e.matches ? 'none' : 'block';
+    if (mobileImg) mobileImg.style.display = e.matches ? 'block' : 'none';
+  }
+
+  handleMedia(mq);
+  mq.addEventListener('change', handleMedia);
+</script>
