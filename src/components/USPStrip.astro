@@ -1,0 +1,116 @@
+---
+const usps = [
+  {
+    label: 'Flexibele planning',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <rect x="4" y="6" width="24" height="22" rx="3" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <line x1="4" y1="12" x2="28" y2="12" stroke="currentColor" stroke-width="1.75"/>
+      <line x1="10" y1="3" x2="10" y2="9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="22" y1="3" x2="22" y2="9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <circle cx="22" cy="22" r="5" stroke="currentColor" stroke-width="1.75"/>
+      <polyline points="22,19.5 22,22 24,23.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    label: 'Betrouwbaar & stipt',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path d="M16 3L5 7.5V16c0 6.075 4.477 11.74 11 13 6.523-1.26 11-6.925 11-13V7.5L16 3Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <polyline points="10,16.5 13.5,20 22,12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    label: 'Duurzame werkwijze',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path d="M6 26c2-8 8-12 14-10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <path d="M20 16c4-6 8-5 8-5s-1 8-8 10c-4 1-8-1-8-1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 20c-2-6 2-14 2-14s6 2 8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="16" y1="26" x2="16" y2="29" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    label: '100% Nederlandstalig',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path d="M4 8h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4V8Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+      <polyline points="20,14 26,10 26,22 20,18" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="8" y1="20" x2="8" y2="25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="14" y1="20" x2="14" y2="25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+      <line x1="6" y1="25" x2="16" y2="25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+    </svg>`,
+  },
+];
+---
+
+<section class="usp-strip reveal">
+  <div class="container">
+    <ul class="usp-list">
+      {usps.map((usp) => (
+        <li class="usp-item reveal-item">
+          <span class="usp-icon" set:html={usp.icon} />
+          <span class="usp-label">{usp.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .usp-strip {
+    background: var(--color-gray-50);
+    padding: 60px 0;
+    border-top: 1px solid var(--color-gray-100);
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .usp-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .usp-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .usp-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(0, 133, 154, 0.08);
+    color: var(--color-primary);
+    flex-shrink: 0;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .usp-item:hover .usp-icon {
+    background: rgba(0, 133, 154, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .usp-label {
+    font-weight: var(--font-weight-semibold);
+    font-size: 0.95rem;
+    color: var(--color-gray-800);
+    line-height: 1.3;
+  }
+
+  @media (max-width: 768px) {
+    .usp-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .usp-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
