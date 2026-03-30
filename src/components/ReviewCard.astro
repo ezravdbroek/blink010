@@ -1,0 +1,106 @@
+---
+interface Props {
+  stars?: number;
+  quote: string;
+  name: string;
+  type: string;
+}
+
+const { stars = 5, quote, name, type } = Astro.props;
+
+// Extract initials: first letter of each word, max 2 chars
+const initials = name
+  .split(' ')
+  .map((word) => word.charAt(0).toUpperCase())
+  .filter((char) => char.match(/[A-Za-z]/))
+  .slice(0, 2)
+  .join('');
+---
+
+<article class="review-card reveal-item">
+  <div class="stars" aria-label={`${stars} sterren`}>
+    {Array.from({ length: stars }).map(() => <span class="star" aria-hidden="true">★</span>)}
+  </div>
+
+  <blockquote class="quote">
+    <p>"{quote}"</p>
+  </blockquote>
+
+  <div class="author">
+    <div class="avatar" aria-hidden="true">{initials}</div>
+    <div class="author-info">
+      <span class="author-name">{name}</span>
+      <span class="author-type">{type}</span>
+    </div>
+  </div>
+</article>
+
+<style>
+  .review-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .star {
+    color: #eab308;
+    font-size: 1.1rem;
+  }
+
+  .quote {
+    flex: 1;
+  }
+
+  .quote p {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 133, 154, 0.15);
+    color: #00859a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .author-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-black, #111111);
+  }
+
+  .author-type {
+    font-size: 0.85rem;
+    color: #888;
+  }
+</style>

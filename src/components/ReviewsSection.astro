@@ -1,0 +1,184 @@
+---
+import ReviewCard from './ReviewCard.astro';
+
+const reviews = [
+  {
+    quote: 'Erg tevreden over de schoonmaak van ons kantoor. Flexibel en betrouwbaar team.',
+    name: 'Jan V.',
+    type: 'Kantoor Rotterdam',
+  },
+  {
+    quote: 'Onze vakantiewoning is altijd perfect schoon als gasten aankomen. Top service!',
+    name: 'Maria K.',
+    type: 'Recreatiewoning',
+  },
+  {
+    quote: 'Fijne samenwerking, ze denken echt met je mee. Aanrader!',
+    name: 'Peter B.',
+    type: 'Particulier',
+  },
+];
+---
+
+<section class="reviews-section section">
+  <div class="container">
+    <h2 class="section-heading reveal">Wat onze klanten zeggen</h2>
+
+    <div class="reveal">
+      <div class="reviews-grid" id="reviews-carousel">
+        {reviews.map((review, index) => (
+          <ReviewCard
+            quote={review.quote}
+            name={review.name}
+            type={review.type}
+            data-index={index}
+          />
+        ))}
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots" aria-hidden="true">
+        {reviews.map((_, index) => (
+          <button
+            class:list={['dot', { active: index === 0 }]}
+            data-index={index}
+            aria-label={`Ga naar review ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    background: #ffffff;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* Hide dots on desktop */
+  .carousel-dots {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding-bottom: 8px;
+      /* Hide scrollbar */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .reviews-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Target each ReviewCard article directly */
+    .reviews-grid > :global(article) {
+      scroll-snap-align: center;
+      min-width: 85vw;
+      flex-shrink: 0;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ddd;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .dot.active {
+      background: #00859a;
+    }
+  }
+</style>
+
+<script>
+  function initCarousel() {
+    const carousel = document.getElementById('reviews-carousel');
+    const dotsContainer = document.getElementById('carousel-dots');
+
+    if (!carousel || !dotsContainer) return;
+
+    const cards = Array.from(carousel.querySelectorAll('article'));
+    const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+
+    if (cards.length === 0 || dots.length === 0) return;
+
+    // Only run IntersectionObserver logic on mobile
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    let observer: IntersectionObserver | null = null;
+
+    function setupObserver() {
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
+
+      if (!mediaQuery.matches) return;
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const card = entry.target as HTMLElement;
+              const index = cards.indexOf(card as HTMLElement);
+              if (index === -1) return;
+
+              dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+              });
+            }
+          });
+        },
+        {
+          root: carousel,
+          threshold: 0.6,
+        }
+      );
+
+      cards.forEach((card) => observer!.observe(card));
+    }
+
+    // Dot click: scroll corresponding card into view
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        const card = cards[index];
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+    });
+
+    setupObserver();
+
+    mediaQuery.addEventListener('change', setupObserver);
+  }
+
+  // Run after DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+</script>
