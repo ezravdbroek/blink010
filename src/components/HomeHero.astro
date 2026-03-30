@@ -273,10 +273,14 @@ import foto1 from '../assets/foto1.jpeg';
   .hero-content {
     position: absolute;
     top: 0;
-    left: 48px;
+    left: 0;
+    right: 0;
     bottom: 0;
     z-index: 3;
-    max-width: 550px;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -353,6 +357,7 @@ import foto1 from '../assets/foto1.jpeg';
     font-size: 1.0625rem; /* ~17px */
     line-height: 1.6;
     margin: 0;
+    max-width: 500px;
   }
 
   /* CTA button — inherits .btn .btn-primary from global CSS */
