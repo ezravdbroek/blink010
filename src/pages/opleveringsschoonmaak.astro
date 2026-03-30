@@ -4,13 +4,13 @@ import HeroBanner from '../components/HeroBanner.astro';
 import CTABlock from '../components/CTABlock.astro';
 import { Image } from 'astro:assets';
 import heroImg from '../assets/foto7.png';
-import contentImg1 from '../assets/foto6.png';
-import contentImg2 from '../assets/foto7.png';
+import galleryImg1 from '../assets/foto7.png';
+import galleryImg2 from '../assets/foto6.png';
 ---
 
 <BaseLayout
   title="Opleveringsschoonmaak"
-  description="Grondige opleveringsschoonmaak in Rotterdam voor woningen en kantoren."
+  description="Grondige opleveringsschoonmaak in Rotterdam voor woningen en kantoren. Onberispelijk resultaat gegarandeerd."
 >
   <HeroBanner
     title="Opleveringsschoonmaak"
@@ -18,38 +18,125 @@ import contentImg2 from '../assets/foto7.png';
     breadcrumbs={[{ label: 'Home', href: '/' }]}
   />
 
-  <section class="section">
+  <!-- Intro Section -->
+  <section class="section intro-section">
     <div class="container">
-      <div class="reveal">
-        <div class="service-content">
-          <div class="service-text">
-            <p class="service-intro">
-              Bij oplevering van een woning of kantoor moet alles brandschoon zijn. Wij zorgen voor
-              een grondige schoonmaak zodat het pand er perfect uitziet.
-            </p>
-            <h2>Wat wij bieden</h2>
-            <ul class="service-features">
-              <li class="reveal-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Dieptereiniging van alle ruimtes</span>
-              </li>
-              <li class="reveal-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Ramen, kozijnen en deuren</span>
-              </li>
-              <li class="reveal-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Keuken en sanitair intensief</span>
-              </li>
-              <li class="reveal-item">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Vloeren en plinten</span>
-              </li>
-            </ul>
+      <div class="intro-grid reveal">
+        <div class="intro-text">
+          <p class="intro-label">Oplevering &amp; bouwschoonmaak</p>
+          <h2>Elk detail onberispelijk verzorgd</h2>
+          <p class="intro-paragraph">
+            Bij oplevering van een woning of bedrijfspand moet alles perfect zijn. Onze
+            gespecialiseerde opleveringsschoonmaak zorgt ervoor dat elke ruimte er onberispelijk uitziet.
+          </p>
+          <a href="/offerte-aanvragen" class="btn btn-primary">
+            Meer weten? Neem contact op
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="intro-image-wrap">
+          <Image src={galleryImg2} alt="Opgeleverd pand na grondige schoonmaak" class="intro-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP Section -->
+  <section class="section usp-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Waarom kiezen voor onze opleveringsschoonmaak?</h2>
+        <p class="section-sub">Wij leveren geen standaard schoonmaak — wij leveren een perfect resultaat, tot in de kleinste hoek.</p>
+      </div>
+      <div class="usp-grid">
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
-          <div class="service-images">
-            <Image src={contentImg1} alt="Tandarts ruimte opleveringsschoonmaak" class="service-img" />
-            <Image src={contentImg2} alt="Receptie opleveringsschoonmaak" class="service-img" />
+          <h3>Dieptereiniging</h3>
+          <p>Wij reinigen overal waar anderen niet komen: achter radiatoren, onder plinten, in ventilatieopeningen en tussen tegels.</p>
+        </div>
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Detailgericht</h3>
+          <p>Van deurstoppen en stopcontacten tot glaswerk en kozijnen — elk detail wordt met zorg behandeld voor een perfect eindresultaat.</p>
+        </div>
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Oplevering-klaar</h3>
+          <p>Na onze schoonmaak is het pand direct klaar voor oplevering, inspectie of verhuur. Geen extra ronde nodig.</p>
+        </div>
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Tevredenheidsgarantie</h3>
+          <p>Niet tevreden met het resultaat? Wij komen terug en lossen het op — zonder extra kosten, dat is onze belofte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="gallery-grid reveal">
+        <div class="gallery-main">
+          <Image src={galleryImg1} alt="Professionele opleveringsschoonmaak" class="gallery-img gallery-img-main" />
+        </div>
+        <div class="gallery-secondary">
+          <Image src={galleryImg2} alt="Schone opgeleverde ruimte" class="gallery-img gallery-img-secondary" />
+          <div class="gallery-quote">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p>Elk pand dat wij opleveren ziet er beter uit dan nieuw.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="section timeline-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Hoe werkt het?</h2>
+        <p class="section-sub">Van aanvraag tot onberispelijk opgeleverd pand — professioneel en zonder zorgen.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>Offerte aanvragen</h3>
+            <p>Vul het formulier in of neem contact op. Wij reageren binnen één werkdag.</p>
+          </div>
+          <div class="timeline-circle">1</div>
+          <div class="timeline-spacer"></div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-circle">2</div>
+          <div class="timeline-content">
+            <h3>Vrijblijvend gesprek</h3>
+            <p>We bespreken uw wensen en situatie. Geen verplichtingen, wel concrete oplossingen.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>Planning</h3>
+            <p>We stellen een passend schoonmaakplan op dat aansluit bij uw oplevertermijn en eisen.</p>
+          </div>
+          <div class="timeline-circle">3</div>
+          <div class="timeline-spacer"></div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-circle">4</div>
+          <div class="timeline-content">
+            <h3>Schoonmaak</h3>
+            <p>Onze vakmensen gaan aan de slag! U hoeft er niets voor te doen — wij regelen alles.</p>
           </div>
         </div>
       </div>
@@ -58,97 +145,362 @@ import contentImg2 from '../assets/foto7.png';
 
   <CTABlock
     heading="Interesse in opleveringsschoonmaak? Vraag een offerte aan."
-    subtext="Neem vandaag nog contact op"
+    subtext="Neem vandaag nog contact op — wij reageren binnen één werkdag."
   />
 </BaseLayout>
 
 <style>
-  .section {
-    padding: 80px 24px;
-    background: #fff;
+  /* ── Intro ── */
+  .intro-section {
+    background: var(--color-white);
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .service-content {
+  .intro-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+    gap: 64px;
+    align-items: center;
   }
 
-  .service-intro {
-    font-size: 1.15rem;
-    line-height: 1.75;
-    color: var(--color-text);
-    margin-bottom: 36px;
+  .intro-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 12px;
   }
 
-  h2 {
-    font-size: 1.6rem;
-    font-weight: var(--font-weight-extrabold);
-    color: var(--color-heading);
-    margin-bottom: 24px;
+  .intro-text h2 {
+    margin-bottom: 20px;
+    color: var(--color-gray-900);
   }
 
-  .service-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  .intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-gray-800);
+    margin-bottom: 32px;
   }
 
-  .service-features li {
+  .intro-image-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  .intro-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── USPs ── */
+  .usp-section {
+    background: var(--color-gray-50);
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--color-gray-400);
+    margin-top: 12px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .usp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .usp-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 32px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .usp-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 133, 154, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .usp-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 133, 154, 0.08);
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    color: var(--color-text);
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
   }
 
-  .service-features li.visible {
+  .usp-card h3 {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .usp-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-gray-800);
+  }
+
+  /* ── Gallery ── */
+  .gallery-section {
+    background: var(--color-white);
+    padding-top: 0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .gallery-main,
+  .gallery-secondary {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .gallery-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: visible;
+  }
+
+  .gallery-img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+  }
+
+  .gallery-img-main {
+    height: 100%;
+    min-height: 340px;
+  }
+
+  .gallery-img-secondary {
+    height: 240px;
+    flex-shrink: 0;
+  }
+
+  .gallery-quote {
+    background: var(--color-primary);
+    border-radius: 16px;
+    padding: 28px 24px;
+    color: var(--color-white);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .gallery-quote svg {
+    opacity: 0.6;
+  }
+
+  .gallery-quote p {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.5;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* ── Timeline ── */
+  .timeline-section {
+    background: var(--color-gray-50);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: var(--color-gray-100);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    align-items: center;
+    padding: 20px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .timeline-item.visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .service-features svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    color: var(--color-primary);
-  }
-
-  .service-images {
+  .timeline-circle {
+    width: 56px;
+    height: 56px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-extrabold);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(0, 133, 154, 0.35);
   }
 
-  .service-img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 12px;
+  .timeline-content {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
+  .timeline-content h3 {
+    font-size: 1.05rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    margin: 0;
+  }
+
+  .timeline-left .timeline-content {
+    text-align: right;
+  }
+
+  .timeline-right .timeline-content {
+    text-align: left;
+  }
+
+  .timeline-spacer {
+    /* fills the empty opposite column */
+  }
+
+  /* ── Responsive ── */
   @media (max-width: 900px) {
-    .service-content {
+    .intro-grid {
       grid-template-columns: 1fr;
       gap: 40px;
     }
+
+    .intro-image {
+      height: 300px;
+    }
+
+    .usp-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-img-main {
+      min-height: 260px;
+    }
+
+    .gallery-img-secondary {
+      height: 220px;
+    }
+
+    .gallery-quote {
+      min-height: 100px;
+    }
+
+    .timeline::before {
+      left: 28px;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .timeline-spacer {
+      display: none;
+    }
+
+    .timeline-left .timeline-content,
+    .timeline-right .timeline-content {
+      text-align: left;
+    }
+
+    .timeline-left .timeline-circle {
+      order: -1;
+    }
   }
 
-  @media (max-width: 768px) {
-    .section {
-      padding: 60px 24px;
+  @media (max-width: 600px) {
+    .usp-card {
+      padding: 24px;
+    }
+
+    .timeline-content {
+      padding: 18px 20px;
     }
   }
 </style>
+
+<script>
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  if (timelineItems.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(timelineItems).indexOf(entry.target as HTMLElement);
+            setTimeout(() => {
+              (entry.target as HTMLElement).classList.add('visible');
+            }, index * 150);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    timelineItems.forEach((item) => observer.observe(item));
+  }
+</script>
