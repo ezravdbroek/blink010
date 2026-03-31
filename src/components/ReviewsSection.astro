@@ -3,48 +3,191 @@ import ReviewCard from './ReviewCard.astro';
 
 const reviews = [
   {
-    quote: 'Dylan is een geweldige schoonmaker! Hij is super georganiseerd en heel duidelijk over zijn prijzen. Na elke schoonmaakbeurt laat hij het huis brandschoon achter. Ik zou hem voor 100% aan iedereen aanraden!',
-    name: 'Cameron W.',
+    quote: 'Dylan is een geweldige schoonmaker! Hij is super georganiseerd en heel duidelijk over zijn prijzen en wanneer hij langskomt. Na elke schoonmaakbeurt laat hij het huis brandschoon achter. Echt een harde werker die zijn werk met veel zorg doet. Ik zou hem voor 100% aan iedereen aanraden!',
+    name: 'Cameron Wright',
     type: 'Google Review',
   },
   {
-    quote: 'Zeer tevreden over dit schoonmaakbedrijf! Ze doen hun werk perfect — altijd grondig, professioneel en betrouwbaar. Alles wordt netjes achtergelaten en ze werken met oog voor detail.',
-    name: 'Alejandro E.',
+    quote: 'Zeer tevreden over dit schoonmaakbedrijf! Ze doen hun werk perfect — altijd grondig, professioneel en betrouwbaar. Alles wordt netjes achtergelaten en ze werken met oog voor detail. Ook de communicatie verloopt vlot en vriendelijk. Een echte aanrader!',
+    name: 'Alejandro El Arabe',
     type: 'Google Review',
   },
   {
     quote: 'Levert netjes de werkzaamheden uit! Beleefd personeel en komen altijd netjes hun afspraken na. Al met al een welverdiende 5 sterren!',
-    name: 'Fabian M.',
+    name: 'Fabian Mariano',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Heeft professioneel werk geleverd. Was een vriendelijke jongen, stipt op tijd en liet alles netjes achter. Zeker een aanrader voor wie een betrouwbare schoonmaakdienst zoekt!',
+    name: 'Lucas Rotteveel',
+    type: 'Trustoo',
+  },
+  {
+    quote: 'In een woord een top bedrijf! Heeft goede afspraken, je zit nergens aan vast. Komt altijd netjes hun afspraken na. En leveren fantastisch eindresultaat!',
+    name: 'Kelly Wuister',
+    type: 'Trustoo',
+  },
+  {
+    quote: 'Heel blij met de schoonmaak van mijn huis! Dylan heeft echt super werk geleverd, alles ziet er weer fris en netjes uit. Van de keuken tot de badkamer, zelfs de lastigste hoekjes zijn meegenomen. Hij was vriendelijk, snel en werkte heel secuur. Echt topservice, zeker een aanrader!',
+    name: 'Chimène Noest',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Heel vriendelijk en echt uitstekend schoonmaakwerk op ons kantoor!',
+    name: 'Dylano',
+    type: 'Trustoo',
+  },
+  {
+    quote: 'Uitstekende service, snelle reactie en zeer uitstekende netheid.',
+    name: 'Hasan Barri',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Wij zijn dagelijks zeer tevreden met het schoonmaakwerk van Blinkschoonmaak010.',
+    name: 'Mohanad Wello',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Het is een nette jongeheer. Hij is zoals hij zelf heeft beschreven jong maar heeft genoeg ervaring. Wij zijn blij met het werk wat is geleverd en we gaan vaker gebruik maken van zijn diensten. Mooi om te zien dat jongeren het goed doen.',
+    name: 'Ruenna',
+    type: 'Werkspot',
+  },
+  {
+    quote: 'Blink Schoonmaak 010 is bij ons komen schoonmaken. Wij hebben werkruimte aan huis, een veranda, een tuinhuis; veel vierkante meters om bij te houden. Vorige week kwam Blink Schoonmaak 010 met 3 personen werken.',
+    name: 'Elzelien van Zwienen',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Door werk, studie en een groot gezin, blijft er nog maar heel weinig tijd over voor een grondige schoonmaak. Op Instagram zag ik Blinkschoonmaak010 voorbij komen en meteen een afspraak ingepland voor een grondige schoonmaak van ons huis.',
+    name: 'Natalie Lagerweij',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Very nice service, everything was done perfectly with short time. Dylan did a great job with his friendly team and I would be happy if we worked again together in the future.',
+    name: 'Mark FN',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Very happy with the service. Dylan did a great job cleaning my house. He also has a nice personality!',
+    name: 'Amy Samad',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Bedankt voor je snelle en topservice. Het huis is weer spik en span! Ik raad iedereen Dylan aan.',
+    name: 'Damian Mac Intosch',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Top bedrijf met toppersoneel! Een echte aanrader, precies de mensen die je nodig hebt. Ze luisteren naar je wensen en zorgen ervoor dat alles wordt geregeld!',
+    name: 'Khalil Aissati',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Blinkschoonmaak010 wat een topservice. Netjes op tijd, alles super schoon en hele aardige mensen. 5 sterren dus!',
+    name: 'Roan Hess',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Dit bedrijf doet bij ons thuis een wekelijkse schoonmaak, zeer tevreden over de schoonmaak en communicatie. Je zit niet vast aan gekke contracten. Ik zou het iedereen aanraden!',
+    name: 'Jill Wuister',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Afspraken waren duidelijk, zijn dan ook grondig te werk gegaan. Zeker aan te raden!',
+    name: 'Mees',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Erg goed te werk gegaan! Overal goed schoongemaakt. Het hele proces van afspraak maken tot het einde verliep erg soepel!',
+    name: 'Yusuf Aliskan',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Afspraken waren duidelijk. Werkt goed door en levert goed werk voor een leuke prijs.',
+    name: 'Timmo',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Goed verzorgd werk. Maken 2x per week mijn kantoor schoon.',
+    name: 'Che Vano',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Top zaak, alles goed schoongemaakt! Ik zal het ten zeerste aanbevelen.',
+    name: 'J V',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Heel netjes! Hard werken. Super blij met eindresultaat!',
+    name: 'Lars Klerk',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Fantastisch werk en zeer netjes in de omgang! Een echte aanrader.',
+    name: 'Jesse Van Oosten',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Super tevreden over de wekelijkse schoonmaak van ons kantoor!',
+    name: 'Sonya Ben Ahmed',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Perfect! Heel netjes gedaan. Aanraden!',
+    name: 'Projectbouw010',
+    type: 'Google Review',
+  },
+  {
+    quote: 'Prettige samenwerking!',
+    name: 'Jordi van Sluis',
     type: 'Google Review',
   },
 ];
+
+const totalReviews = reviews.length;
+const avgRating = '4.9';
 ---
 
 <section class="reviews-section section">
   <div class="container">
-    <h2 class="section-heading reveal">Wat onze klanten zeggen</h2>
+    <h2 class="section-heading reveal" style="margin-bottom: 12px;">Wat onze klanten zeggen</h2>
 
-    <div class="reveal">
-      <div class="reviews-grid" id="reviews-carousel">
-        {reviews.map((review, index) => (
-          <ReviewCard
-            quote={review.quote}
-            name={review.name}
-            type={review.type}
-            data-index={index}
-          />
-        ))}
+    <div class="reviews-summary reveal">
+      <div class="summary-stars" aria-label={`${avgRating} van 5 sterren`}>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>
+      <p class="summary-text">
+        <strong>{avgRating}/5</strong> op basis van <strong>{totalReviews} reviews</strong>
+      </p>
+    </div>
+
+    <div class="slider-wrapper reveal">
+      <div class="slider-overflow">
+        <div class="slider-track" id="reviews-slider">
+          {reviews.map((review) => (
+            <div class="slider-card">
+              <ReviewCard
+                quote={review.quote}
+                name={review.name}
+                type={review.type}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div class="carousel-dots" id="carousel-dots" aria-hidden="true">
-        {reviews.map((_, index) => (
-          <button
-            class:list={['dot', { active: index === 0 }]}
-            data-index={index}
-            aria-label={`Ga naar review ${index + 1}`}
-          />
-        ))}
-      </div>
+      <button class="slider-btn slider-btn-prev" id="slider-prev" aria-label="Vorige reviews">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-btn slider-btn-next" id="slider-next" aria-label="Volgende reviews">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <div class="slider-dots" id="slider-dots" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -54,143 +197,294 @@ const reviews = [
     background: #ffffff;
   }
 
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* Summary */
+  .reviews-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .summary-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .summary-stars .star {
+    color: #eab308;
+    font-size: 1.4rem;
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    color: var(--color-gray-800, #333);
+    margin: 0;
+  }
+
+  .summary-text strong {
+    color: var(--color-gray-900, #111);
+  }
+
+  /* Slider */
+  .slider-wrapper {
+    position: relative;
+  }
+
+  .slider-overflow {
+    overflow: hidden;
+    padding: 12px 0;
+    margin: -12px 0;
+  }
+
+  .slider-track {
+    display: flex;
     gap: 24px;
+    align-items: stretch;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Hide dots on desktop */
-  .carousel-dots {
-    display: none;
+  .slider-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    display: flex;
   }
 
-  @media (max-width: 768px) {
-    .reviews-grid {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 14px;
-      padding-bottom: 12px;
-      padding-left: 20px;
-      padding-right: 20px;
-      margin-left: -20px;
-      margin-right: -20px;
-      /* Hide scrollbar */
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+  .slider-card > :global(article) {
+    flex: 1;
+  }
+
+  /* Buttons */
+  .slider-btn {
+    position: absolute;
+    top: calc(50% - 20px);
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid var(--color-gray-100, #e5e7eb);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-gray-900, #111);
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    z-index: 2;
+  }
+
+  .slider-btn:hover {
+    background: var(--color-primary, #00859a);
+    color: #fff;
+    border-color: var(--color-primary, #00859a);
+  }
+
+  .slider-btn-prev {
+    left: -56px;
+  }
+
+  .slider-btn-next {
+    right: -56px;
+  }
+
+  /* Dots */
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+  }
+
+  .slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .slider-dots .dot.active {
+    background: var(--color-primary, #00859a);
+    transform: scale(1.2);
+  }
+
+  /* Tablet: 2 cards */
+  @media (max-width: 1024px) {
+    .slider-card {
+      flex: 0 0 calc((100% - 24px) / 2);
     }
 
-    .reviews-grid::-webkit-scrollbar {
-      display: none;
-    }
+    .slider-btn-prev { left: -8px; }
+    .slider-btn-next { right: -8px; }
+  }
 
-    /* Target each ReviewCard article directly */
-    .reviews-grid > :global(article) {
-      scroll-snap-align: start;
-      /* Use calc so the card is always viewport-relative and includes
-         the container padding offset — prevents cards overflowing the
-         viewport or being clipped on narrow screens. */
-      min-width: calc(100vw - 80px);
-      max-width: calc(100vw - 80px);
-      flex-shrink: 0;
-      box-sizing: border-box;
-      /* Ensure long words / URLs wrap rather than busting the card */
-      overflow-wrap: break-word;
-      word-break: break-word;
-    }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
+  /* Mobile: 1 card */
+  @media (max-width: 640px) {
+    .reviews-summary {
+      flex-direction: column;
       gap: 8px;
-      margin-top: 20px;
     }
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ddd;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      transition: background 0.2s ease;
+    .slider-track {
+      gap: 14px;
     }
 
-    .dot.active {
-      background: #00859a;
+    .slider-card {
+      flex: 0 0 100%;
+    }
+
+    .slider-btn {
+      display: none;
     }
   }
 </style>
 
 <script>
-  function initCarousel() {
-    const carousel = document.getElementById('reviews-carousel');
-    const dotsContainer = document.getElementById('carousel-dots');
+  function initSlider() {
+    const track = document.getElementById('reviews-slider') as HTMLElement;
+    const dotsContainer = document.getElementById('slider-dots') as HTMLElement;
+    const prevBtn = document.getElementById('slider-prev') as HTMLButtonElement;
+    const nextBtn = document.getElementById('slider-next') as HTMLButtonElement;
 
-    if (!carousel || !dotsContainer) return;
+    if (!track || !dotsContainer || !prevBtn || !nextBtn) return;
 
-    const cards = Array.from(carousel.querySelectorAll('article'));
-    const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+    const cards = Array.from(track.children) as HTMLElement[];
+    const totalCards = cards.length;
+    let currentPage = 0;
+    let autoplayTimer: ReturnType<typeof setInterval> | null = null;
+    let pauseTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    if (cards.length === 0 || dots.length === 0) return;
-
-    // Only run IntersectionObserver logic on mobile
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-    let observer: IntersectionObserver | null = null;
-
-    function setupObserver() {
-      if (observer) {
-        observer.disconnect();
-        observer = null;
-      }
-
-      if (!mediaQuery.matches) return;
-
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const card = entry.target as HTMLElement;
-              const index = cards.indexOf(card as HTMLElement);
-              if (index === -1) return;
-
-              dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-              });
-            }
-          });
-        },
-        {
-          root: carousel,
-          threshold: 0.6,
-        }
-      );
-
-      cards.forEach((card) => observer!.observe(card));
+    function getCardsPerPage(): number {
+      const w = window.innerWidth;
+      if (w <= 640) return 1;
+      if (w <= 1024) return 2;
+      return 3;
     }
 
-    // Dot click: scroll corresponding card into view
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        const card = cards[index];
-        if (card) {
-          card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
+    function getGap(): number {
+      return window.innerWidth <= 640 ? 14 : 24;
+    }
+
+    function getMaxSlide(): number {
+      const perPage = getCardsPerPage();
+      return Math.max(0, totalCards - perPage);
+    }
+
+    function buildDots() {
+      const maxSlide = getMaxSlide();
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= maxSlide; i++) {
+        const dot = document.createElement('button');
+        dot.className = i === currentPage ? 'dot active' : 'dot';
+        dot.setAttribute('data-page', String(i));
+        dot.setAttribute('aria-label', `Ga naar review ${i + 1}`);
+        dot.addEventListener('click', () => {
+          goToPage(i);
+          pauseAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      const dots = dotsContainer.querySelectorAll('.dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentPage);
       });
+    }
+
+    function goToPage(page: number) {
+      const maxSlide = getMaxSlide();
+      // Loop around
+      if (page > maxSlide) page = 0;
+      if (page < 0) page = maxSlide;
+      currentPage = page;
+
+      const gap = getGap();
+      const cardWidth = cards[0].offsetWidth;
+      const offset = page * (cardWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+
+      updateDots();
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => {
+        goToPage(currentPage + 1);
+      }, 7000);
+    }
+
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    function pauseAutoplay() {
+      stopAutoplay();
+      if (pauseTimeout) clearTimeout(pauseTimeout);
+      pauseTimeout = setTimeout(() => {
+        startAutoplay();
+      }, 10000);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      goToPage(currentPage - 1);
+      pauseAutoplay();
     });
 
-    setupObserver();
+    nextBtn.addEventListener('click', () => {
+      goToPage(currentPage + 1);
+      pauseAutoplay();
+    });
 
-    mediaQuery.addEventListener('change', setupObserver);
+    // Touch/swipe
+    let startX = 0;
+    let isDragging = false;
+
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goToPage(currentPage + 1);
+        else goToPage(currentPage - 1);
+        pauseAutoplay();
+      }
+    });
+
+    // Resize
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const maxSlide = getMaxSlide();
+        if (currentPage > maxSlide) currentPage = maxSlide;
+        buildDots();
+        goToPage(currentPage);
+      }, 150);
+    });
+
+    // Init
+    buildDots();
+    goToPage(0);
+    startAutoplay();
   }
 
-  // Run after DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCarousel);
+    document.addEventListener('DOMContentLoaded', initSlider);
   } else {
-    initCarousel();
+    initSlider();
   }
 </script>
