@@ -6,8 +6,7 @@ import { Image } from 'astro:assets';
 import heroImg from '../assets/particulieren_schoonmaak.jpeg';
 import galleryImg1 from '../assets/foto8.png';
 import galleryImg2 from '../assets/foto12.jpg';
-import teamPhoto18 from '../assets/foto18.jpeg';
-import teamPhoto20 from '../assets/foto20.jpeg';
+
 ---
 
 <BaseLayout
@@ -106,14 +105,6 @@ import teamPhoto20 from '../assets/foto20.jpeg';
             <span class="stat-number">5&#9733;</span>
             <span class="stat-label">Gemiddelde beoordeling</span>
           </div>
-        </div>
-      </div>
-      <div class="team-photos reveal">
-        <div class="team-photo-wrap">
-          <Image src={teamPhoto18} alt="Medewerker dweilt de keuken" class="team-photo-img" />
-        </div>
-        <div class="team-photo-wrap">
-          <Image src={teamPhoto20} alt="Medewerker maakt ramen schoon in blokhut" class="team-photo-img" />
         </div>
       </div>
     </div>
@@ -281,7 +272,6 @@ import teamPhoto20 from '../assets/foto20.jpeg';
   /* ── Gallery ── */
   .gallery-section {
     background: var(--color-white);
-    padding-top: 0;
   }
 
   .gallery-grid {
@@ -360,39 +350,7 @@ import teamPhoto20 from '../assets/foto20.jpeg';
     font-weight: var(--font-weight-semibold);
   }
 
-  /* ── Team Photos Row ── */
-  .team-photos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 20px;
-  }
-
-  .team-photo-wrap {
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
-  }
-
-  .team-photo-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-
-  .team-photo-wrap:hover .team-photo-img {
-    transform: scale(1.03);
-  }
-
-  @media (max-width: 700px) {
-    .team-photos {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  /* ── Timeline ── */
+/* ── Timeline ── */
   .timeline-section {
     background: var(--color-gray-50);
   }

@@ -3,9 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroBanner from '../components/HeroBanner.astro';
 import CTABlock from '../components/CTABlock.astro';
 import { Image } from 'astro:assets';
-import heroImg from '../assets/foto13.webp';
+import heroImg from '../assets/foto1.jpeg';
+import foto13 from '../assets/foto13.webp';
 import foto23 from '../assets/foto23.jpeg';
-import foto10 from '../assets/foto10.jpg';
 ---
 
 <BaseLayout
@@ -35,7 +35,7 @@ import foto10 from '../assets/foto10.jpg';
           </a>
         </div>
         <div class="intro-image-wrap">
-          <Image src={foto23} alt="Professionele restaurantschoonmaak" class="intro-image" />
+          <Image src={foto13} alt="Professionele restaurantschoonmaak" class="intro-image" />
         </div>
       </div>
     </div>
@@ -81,38 +81,29 @@ import foto10 from '../assets/foto10.jpg';
     </div>
   </section>
 
-  <!-- Photo Gallery / Highlight -->
+  <!-- Photo Gallery -->
   <section class="section gallery-section">
     <div class="container">
-      <div class="highlight-grid reveal">
-        <div class="highlight-image-wrap">
-          <Image src={foto10} alt="Professionele schoonmaak in een donkere kantoor- of horecaomgeving" class="highlight-img" />
+      <div class="gallery-grid reveal">
+        <div class="gallery-main">
+          <Image src={foto23} alt="Professionele restaurantschoonmaak" class="gallery-img" />
+          <div class="gallery-overlay">
+            <span>Vakmanschap in elk detail</span>
+          </div>
         </div>
-        <div class="highlight-text">
-          <p class="intro-label">Onze aanpak</p>
-          <h2>Schoon van keuken tot terras</h2>
-          <ul class="highlight-list">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Keuken en apparatuur reiniging
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Eetruimte, bar en terras
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Sanitaire voorzieningen
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Vloeren, wanden en plafonds
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Afzuigkappen en vetfilters
-            </li>
-          </ul>
+        <div class="gallery-stats">
+          <div class="stat-card">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Tevreden klanten</span>
+          </div>
+          <div class="stat-card stat-card-alt">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Tevredenheidsgarantie</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5&#9733;</span>
+            <span class="stat-label">Gemiddelde beoordeling</span>
+          </div>
         </div>
       </div>
     </div>
@@ -277,64 +268,85 @@ import foto10 from '../assets/foto10.jpg';
     color: var(--color-gray-800);
   }
 
-  /* ── Gallery / Highlight ── */
+  /* ── Gallery ── */
   .gallery-section {
     background: var(--color-white);
-    padding-top: 0;
   }
 
-  .highlight-grid {
+  .gallery-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: center;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: stretch;
   }
 
-  .highlight-image-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .highlight-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
+  .gallery-main {
     border-radius: 16px;
+    overflow: hidden;
+    position: relative;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
-  .highlight-img-team {
-    height: 220px;
+  .gallery-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
   }
 
-  .highlight-text h2 {
-    margin-bottom: 28px;
-    color: var(--color-gray-900);
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    padding: 28px 24px 20px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
   }
 
-  .highlight-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .gallery-stats {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .highlight-list li {
+  .stat-card {
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 28px 24px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-gray-800);
+    justify-content: center;
+    text-align: center;
+    flex: 1;
   }
 
-  .highlight-list svg {
-    flex-shrink: 0;
+  .stat-card-alt {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .stat-card-alt .stat-number,
+  .stat-card-alt .stat-label {
+    color: var(--color-white);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: var(--font-weight-extrabold);
     color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-top: 6px;
+    font-weight: var(--font-weight-semibold);
   }
 
   /* ── Timeline ── */
@@ -430,8 +442,7 @@ import foto10 from '../assets/foto10.jpg';
 
   /* ── Responsive ── */
   @media (max-width: 900px) {
-    .intro-grid,
-    .highlight-grid {
+    .intro-grid {
       grid-template-columns: 1fr;
       gap: 40px;
     }
@@ -440,16 +451,24 @@ import foto10 from '../assets/foto10.jpg';
       height: 300px;
     }
 
-    .highlight-img {
-      height: 220px;
-    }
-
-    .highlight-img-team {
-      height: 180px;
-    }
-
     .usp-grid {
       grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+      height: 280px;
+    }
+
+    .gallery-stats {
+      flex-direction: row;
+    }
+
+    .stat-card {
+      padding: 20px 16px;
     }
 
     .timeline::before {
@@ -480,6 +499,10 @@ import foto10 from '../assets/foto10.jpg';
   @media (max-width: 600px) {
     .usp-card {
       padding: 24px;
+    }
+
+    .gallery-stats {
+      flex-direction: column;
     }
 
     .timeline-content {
