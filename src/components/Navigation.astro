@@ -666,18 +666,16 @@
      ============================================================ */
   .mobile-menu {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     width: 100%;
-    max-width: 100%;
+    max-width: 100vw;
     z-index: 1002;
     background: #fff;
     display: flex;
     flex-direction: row;
-    /* Clip the two sliding panels */
+    /* Clip the two sliding panels — contain prevents mobile Safari overflow */
     overflow: hidden;
+    contain: paint;
     /* Hidden by default — slide in from right */
     transform: translateX(100%);
     transition: transform 0.35s ease;
@@ -1083,6 +1081,7 @@
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Menu sluiten');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     mobileCloseBtn.focus();
   }
 
@@ -1093,6 +1092,7 @@
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-label', 'Menu openen');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
     hamburger.focus();
   }
 
