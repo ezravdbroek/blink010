@@ -673,9 +673,8 @@
     background: #fff;
     display: flex;
     flex-direction: row;
-    /* Clip the two sliding panels — contain prevents mobile Safari overflow */
+    /* Clip the two sliding panels */
     overflow: hidden;
-    contain: paint;
     /* Hidden by default — slide in from right */
     transform: translateX(100%);
     transition: transform 0.35s ease;
@@ -701,21 +700,18 @@
     transition: transform 0.3s ease;
   }
 
-  /* Panel 1 sits at position 0 (visible) */
+  /* Panel 1 always stays in place */
   #mobile-panel-main {
     transform: translateX(0);
   }
 
-  /* Panel 2 sits off-screen to the right */
+  /* Panel 2 sits off-screen to the right, stacked on top */
   .mobile-panel-diensten {
     transform: translateX(100%);
+    z-index: 1;
   }
 
-  /* When diensten panel is active, slide panel 1 left and panel 2 into view */
-  .mobile-menu.diensten-open #mobile-panel-main {
-    transform: translateX(-100%);
-  }
-
+  /* When diensten panel is active, slide panel 2 over panel 1 (no negative translate) */
   .mobile-menu.diensten-open .mobile-panel-diensten {
     transform: translateX(0);
   }
