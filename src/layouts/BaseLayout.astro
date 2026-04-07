@@ -6,9 +6,10 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
 }
 
-const { title, description = 'Professionele schoonmaakdiensten in Rotterdam en omgeving. Kantoren, particulier, restaurant en meer.' } = Astro.props;
+const { title, description = 'Professionele schoonmaakdiensten in Rotterdam en omgeving. Kantoren, particulier, restaurant en meer.', canonical } = Astro.props;
 const fullTitle = `${title} | Blink Schoonmaak 010`;
 ---
 
@@ -23,6 +24,8 @@ const fullTitle = `${title} | Blink Schoonmaak 010`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <slot name="head" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />

@@ -2,11 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroBanner from '../components/HeroBanner.astro';
 import CTABlock from '../components/CTABlock.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { Image } from 'astro:assets';
 import {
   generateAllPages,
   generateTitle,
   generateMetaDescription,
   generateIntroText,
+  generateExtraText,
   categoryContent,
   getRelatedLocationPages,
   getRelatedKeywordPages,
@@ -20,6 +23,8 @@ import heroOplevering from '../assets/opleveringschoonmaak.jpeg';
 import heroHoreca from '../assets/foto9.jpg';
 import heroRecreatie from '../assets/recreatieschoonmaak.jpeg';
 import heroParticulier from '../assets/particulieren_schoonmaak.jpeg';
+import galleryImg from '../assets/foto15.jpg';
+import galleryImg2 from '../assets/foto9.jpg';
 
 const heroImages: Record<string, ImageMetadata> = {
   general: heroGeneral,
@@ -52,12 +57,106 @@ const cat = categoryContent[keyword.category];
 const title = generateTitle(keyword, location);
 const description = generateMetaDescription(keyword, location);
 const introText = generateIntroText(keyword, location);
+const extraText = generateExtraText(keyword, location);
 const heroImage = heroImages[keyword.category];
 const relatedLocations = getRelatedLocationPages(keyword, location, 6);
 const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
+const canonicalUrl = `https://www.blinkschoonmaak.nl/${page.slug}`;
+const siteUrl = 'https://www.blinkschoonmaak.nl';
+
+// Structured data
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Blink Schoonmaak 010',
+  description: description,
+  url: siteUrl,
+  logo: `${siteUrl}/logo.png`,
+  image: `${siteUrl}/logo.png`,
+  telephone: '+31-10-1234567',
+  areaServed: {
+    '@type': 'Place',
+    name: location.name,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Rotterdam',
+    addressRegion: 'Zuid-Holland',
+    addressCountry: 'NL',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '500',
+    bestRating: '5',
+    worstRating: '1',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: cat.serviceLinkText,
+      item: `${siteUrl}${cat.serviceLink}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: title,
+      item: canonicalUrl,
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: cat.faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Blink Schoonmaak 010',
+    url: siteUrl,
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: location.name,
+  },
+  serviceType: keyword.name,
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} canonical={canonicalUrl}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
   <HeroBanner
     title={title}
     image={heroImage}
@@ -70,18 +169,18 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
   <!-- Intro Section -->
   <section class="section intro-section">
     <div class="container">
-      <div class="intro-content reveal">
-        <p class="intro-label">{cat.label} in {location.name}</p>
-        <h2>{cat.heading}</h2>
-        <p class="intro-paragraph">{introText}</p>
-        <div class="intro-actions">
-          <a href="/offerte-aanvragen" class="btn btn-primary">
-            Offerte aanvragen
+      <div class="intro-grid reveal">
+        <div class="intro-text">
+          <p class="intro-label">{cat.label} in {location.name}</p>
+          <h2>{cat.heading}</h2>
+          <p class="intro-paragraph">{introText}</p>
+          <a href="#offerte-formulier" class="btn btn-primary">
+            Direct offerte aanvragen
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href={cat.serviceLink} class="btn btn-outline">
-            {cat.serviceLinkText}
-          </a>
+        </div>
+        <div class="intro-image-wrap">
+          <Image src={galleryImg} alt={`${cat.label} in ${location.name}`} class="intro-image" />
         </div>
       </div>
     </div>
@@ -135,6 +234,51 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     </div>
   </section>
 
+  <!-- Gallery + Extra Content -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="gallery-grid reveal">
+        <div class="gallery-main">
+          <Image src={galleryImg2} alt={`Blink Schoonmaak 010 — ${keyword.name} in ${location.name}`} class="gallery-img" />
+          <div class="gallery-overlay">
+            <span>Vakmanschap in elk detail</span>
+          </div>
+        </div>
+        <div class="gallery-text">
+          <h2>Uw partner in {location.name}</h2>
+          <p>{extraText}</p>
+          <a href="#offerte-formulier" class="btn btn-primary">
+            Neem contact op
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Veelgestelde vragen over {keyword.name.toLowerCase()} in {location.name}</h2>
+        <p class="section-sub">Antwoorden op de meest gestelde vragen van onze klanten.</p>
+      </div>
+      <div class="faq-list reveal">
+        {cat.faqs.map((faq) => (
+          <details class="faq-item reveal-item">
+            <summary class="faq-question">
+              <span>{faq.question}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="faq-chevron"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Process Timeline -->
   <section class="section timeline-section">
     <div class="container">
@@ -146,7 +290,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
         <div class="timeline-item timeline-left">
           <div class="timeline-content">
             <h3>Offerte aanvragen</h3>
-            <p>Vul het formulier in of neem contact op. Wij reageren binnen één werkdag met een vrijblijvende offerte.</p>
+            <p>Vul het formulier hieronder in of neem contact op. Wij reageren binnen één werkdag met een vrijblijvende offerte.</p>
           </div>
           <div class="timeline-circle">1</div>
           <div class="timeline-spacer"></div>
@@ -175,6 +319,19 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
             <p>Onze vakmensen gaan aan de slag in {location.name}! U hoeft er niets voor te doen — wij regelen alles.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form Section -->
+  <section class="section form-section" id="offerte-formulier">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Offerte aanvragen voor {location.name}</h2>
+        <p class="section-sub">Vul het formulier in en ontvang binnen één werkdag een vrijblijvende offerte.</p>
+      </div>
+      <div class="form-container reveal">
+        <QuoteForm />
       </div>
     </div>
   </section>
@@ -223,8 +380,11 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     background: var(--color-white);
   }
 
-  .intro-content {
-    max-width: 760px;
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
   }
 
   .intro-label {
@@ -237,7 +397,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     margin-bottom: 12px;
   }
 
-  .intro-content h2 {
+  .intro-text h2 {
     margin-bottom: 20px;
     color: var(--color-gray-900);
   }
@@ -249,33 +409,73 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     margin-bottom: 32px;
   }
 
-  .intro-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+  .intro-image-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
   }
 
-  .btn-outline {
-    display: inline-flex;
+  .intro-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Gallery + Extra Content ── */
+  .gallery-section {
+    background: var(--color-gray-50);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
     align-items: center;
-    gap: 8px;
-    padding: 14px 28px;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-    border-radius: 12px;
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    transition: background var(--transition-fast), color var(--transition-fast);
   }
 
-  .btn-outline:hover {
-    background: var(--color-primary);
+  .gallery-main {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    padding: 28px 24px 20px;
     color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+  }
+
+  .gallery-text h2 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    color: var(--color-gray-900);
+    margin-bottom: 20px;
+  }
+
+  .gallery-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-gray-800);
+    margin-bottom: 28px;
   }
 
   /* ── USPs ── */
   .usp-section {
-    background: var(--color-gray-50);
+    background: var(--color-white);
   }
 
   .section-sub {
@@ -296,7 +496,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
   }
 
   .usp-card {
-    background: var(--color-white);
+    background: var(--color-gray-50);
     border: 1px solid var(--color-gray-100);
     border-radius: 16px;
     padding: 32px;
@@ -336,7 +536,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
 
   /* ── Stats ── */
   .stats-section {
-    background: var(--color-white);
+    background: var(--color-gray-50);
   }
 
   .stats-grid {
@@ -346,7 +546,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
   }
 
   .stat-card {
-    background: var(--color-gray-50);
+    background: var(--color-white);
     border: 1px solid var(--color-gray-100);
     border-radius: 16px;
     padding: 32px 24px;
@@ -379,6 +579,76 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     color: var(--color-gray-400);
     margin-top: 6px;
     font-weight: var(--font-weight-semibold);
+  }
+
+  /* ── FAQ ── */
+  .faq-section {
+    background: var(--color-white);
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color var(--transition-fast);
+  }
+
+  .faq-item:hover,
+  .faq-item[open] {
+    border-color: var(--color-primary);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::marker {
+    display: none;
+    content: '';
+  }
+
+  .faq-chevron {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-gray-800);
+    margin: 0;
   }
 
   /* ── Timeline ── */
@@ -472,9 +742,19 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     /* fills the empty opposite column */
   }
 
+  /* ── Quote Form ── */
+  .form-section {
+    background: var(--color-white);
+  }
+
+  .form-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
   /* ── Related Pages ── */
   .related-section {
-    background: var(--color-white);
+    background: var(--color-gray-50);
   }
 
   .related-grid {
@@ -489,7 +769,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
     flex-direction: column;
     gap: 4px;
     padding: 20px 24px;
-    background: var(--color-gray-50);
+    background: var(--color-white);
     border: 1px solid var(--color-gray-100);
     border-radius: 12px;
     text-decoration: none;
@@ -549,7 +829,7 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
   .related-keyword-link {
     display: inline-block;
     padding: 10px 20px;
-    background: var(--color-gray-50);
+    background: var(--color-white);
     border: 1px solid var(--color-gray-100);
     border-radius: 100px;
     font-size: 0.9rem;
@@ -567,6 +847,24 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
 
   /* ── Responsive ── */
   @media (max-width: 900px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      height: 300px;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .gallery-img {
+      height: 280px;
+    }
+
     .usp-grid {
       grid-template-columns: 1fr;
     }
@@ -609,15 +907,6 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
       font-size: 1rem;
     }
 
-    .intro-actions {
-      flex-direction: column;
-    }
-
-    .btn-outline {
-      text-align: center;
-      justify-content: center;
-    }
-
     .usp-card {
       padding: 24px;
     }
@@ -648,6 +937,15 @@ const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
       width: 44px;
       height: 44px;
       font-size: 1rem;
+    }
+
+    .faq-question {
+      padding: 16px 18px;
+      font-size: 0.95rem;
+    }
+
+    .faq-answer {
+      padding: 0 18px 16px;
     }
   }
 </style>
