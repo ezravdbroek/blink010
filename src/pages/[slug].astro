@@ -1,0 +1,674 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroBanner from '../components/HeroBanner.astro';
+import CTABlock from '../components/CTABlock.astro';
+import {
+  generateAllPages,
+  generateTitle,
+  generateMetaDescription,
+  generateIntroText,
+  categoryContent,
+  getRelatedLocationPages,
+  getRelatedKeywordPages,
+  type PseoPage,
+} from '../data/pseo-data';
+
+// Hero images per category (static imports)
+import heroGeneral from '../assets/foto2.jpeg';
+import heroKantoor from '../assets/foto15.jpg';
+import heroOplevering from '../assets/opleveringschoonmaak.jpeg';
+import heroHoreca from '../assets/foto9.jpg';
+import heroRecreatie from '../assets/recreatieschoonmaak.jpeg';
+import heroParticulier from '../assets/particulieren_schoonmaak.jpeg';
+
+const heroImages: Record<string, ImageMetadata> = {
+  general: heroGeneral,
+  kantoor: heroKantoor,
+  oplevering: heroOplevering,
+  horeca: heroHoreca,
+  recreatie: heroRecreatie,
+  particulier: heroParticulier,
+  vve: heroKantoor,
+  scholen: heroHoreca,
+  zorg: heroKantoor,
+  periodiek: heroGeneral,
+};
+
+export function getStaticPaths() {
+  const pages = generateAllPages();
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+interface Props {
+  page: PseoPage;
+}
+
+const { page } = Astro.props;
+const { keyword, location } = page;
+const cat = categoryContent[keyword.category];
+const title = generateTitle(keyword, location);
+const description = generateMetaDescription(keyword, location);
+const introText = generateIntroText(keyword, location);
+const heroImage = heroImages[keyword.category];
+const relatedLocations = getRelatedLocationPages(keyword, location, 6);
+const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
+---
+
+<BaseLayout title={title} description={description}>
+  <HeroBanner
+    title={title}
+    image={heroImage}
+    breadcrumbs={[
+      { label: 'Home', href: '/' },
+      { label: cat.serviceLinkText, href: cat.serviceLink },
+    ]}
+  />
+
+  <!-- Intro Section -->
+  <section class="section intro-section">
+    <div class="container">
+      <div class="intro-content reveal">
+        <p class="intro-label">{cat.label} in {location.name}</p>
+        <h2>{cat.heading}</h2>
+        <p class="intro-paragraph">{introText}</p>
+        <div class="intro-actions">
+          <a href="/offerte-aanvragen" class="btn btn-primary">
+            Offerte aanvragen
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href={cat.serviceLink} class="btn btn-outline">
+            {cat.serviceLinkText}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP Section -->
+  <section class="section usp-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Waarom Blink Schoonmaak 010 in {location.name}?</h2>
+        <p class="section-sub">Kwaliteit, betrouwbaarheid en persoonlijke service — dat is wat ons onderscheidt.</p>
+      </div>
+      <div class="usp-grid reveal">
+        {cat.usps.map((usp, i) => (
+          <div class="usp-card reveal-item">
+            <div class="usp-icon">
+              {i === 0 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>}
+              {i === 1 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>}
+              {i === 2 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>}
+              {i === 3 && <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}
+            </div>
+            <h3>{usp.title}</h3>
+            <p>{usp.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section stats-section">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Tevreden klanten</span>
+        </div>
+        <div class="stat-card stat-card-alt">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Tevredenheidsgarantie</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5&#9733;</span>
+          <span class="stat-label">Gemiddelde beoordeling</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">24u</span>
+          <span class="stat-label">Reactietijd</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="section timeline-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Hoe werkt het?</h2>
+        <p class="section-sub">In vier stappen geregeld — snel en zonder gedoe.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>Offerte aanvragen</h3>
+            <p>Vul het formulier in of neem contact op. Wij reageren binnen één werkdag met een vrijblijvende offerte.</p>
+          </div>
+          <div class="timeline-circle">1</div>
+          <div class="timeline-spacer"></div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-circle">2</div>
+          <div class="timeline-content">
+            <h3>Vrijblijvend gesprek</h3>
+            <p>We bespreken uw wensen en situatie in {location.name}. Geen verplichtingen, wel concrete oplossingen.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>Planning</h3>
+            <p>{cat.timelineStep3}</p>
+          </div>
+          <div class="timeline-circle">3</div>
+          <div class="timeline-spacer"></div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-circle">4</div>
+          <div class="timeline-content">
+            <h3>Schoonmaak</h3>
+            <p>Onze vakmensen gaan aan de slag in {location.name}! U hoeft er niets voor te doen — wij regelen alles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Pages (Internal Linking) -->
+  <section class="section related-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>{keyword.name} in andere regio's</h2>
+        <p class="section-sub">Wij zijn ook actief in de volgende plaatsen in de regio.</p>
+      </div>
+      <div class="related-grid reveal">
+        {relatedLocations.map((rel) => (
+          <a href={`/${rel.slug}`} class="related-card reveal-item">
+            <span class="related-location">{rel.location.name}</span>
+            <span class="related-keyword">{rel.keyword.name}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        ))}
+      </div>
+
+      {relatedKeywords.length > 0 && (
+        <div class="related-keywords-section reveal">
+          <h3>Andere diensten in {location.name}</h3>
+          <div class="related-keywords-grid">
+            {relatedKeywords.map((rel) => (
+              <a href={`/${rel.slug}`} class="related-keyword-link">
+                {rel.keyword.name} {rel.location.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <CTABlock
+    heading={`${keyword.name} in ${location.name}? Vraag een offerte aan.`}
+    subtext="Neem vandaag nog contact op — wij reageren binnen één werkdag met een vrijblijvende offerte."
+  />
+</BaseLayout>
+
+<style>
+  /* ── Intro ── */
+  .intro-section {
+    background: var(--color-white);
+  }
+
+  .intro-content {
+    max-width: 760px;
+  }
+
+  .intro-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .intro-content h2 {
+    margin-bottom: 20px;
+    color: var(--color-gray-900);
+  }
+
+  .intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-gray-800);
+    margin-bottom: 32px;
+  }
+
+  .intro-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 12px;
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  /* ── USPs ── */
+  .usp-section {
+    background: var(--color-gray-50);
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--color-gray-400);
+    margin-top: 12px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .usp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .usp-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 32px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .usp-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 133, 154, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .usp-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 133, 154, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .usp-card h3 {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .usp-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-gray-800);
+  }
+
+  /* ── Stats ── */
+  .stats-section {
+    background: var(--color-white);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .stat-card {
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .stat-card-alt {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .stat-card-alt .stat-number,
+  .stat-card-alt .stat-label {
+    color: var(--color-white);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-top: 6px;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* ── Timeline ── */
+  .timeline-section {
+    background: var(--color-gray-50);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: var(--color-gray-100);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    align-items: center;
+    padding: 20px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timeline-circle {
+    width: 56px;
+    height: 56px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-extrabold);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(0, 133, 154, 0.35);
+  }
+
+  .timeline-content {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .timeline-content h3 {
+    font-size: 1.05rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    margin: 0;
+  }
+
+  .timeline-left .timeline-content {
+    text-align: right;
+  }
+
+  .timeline-right .timeline-content {
+    text-align: left;
+  }
+
+  .timeline-spacer {
+    /* fills the empty opposite column */
+  }
+
+  /* ── Related Pages ── */
+  .related-section {
+    background: var(--color-white);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px 24px;
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+    position: relative;
+  }
+
+  .related-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 133, 154, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .related-card svg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--color-primary);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+
+  .related-card:hover svg {
+    opacity: 1;
+  }
+
+  .related-location {
+    font-size: 1.05rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+  }
+
+  .related-keyword {
+    font-size: 0.85rem;
+    color: var(--color-gray-400);
+  }
+
+  .related-keywords-section {
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .related-keywords-section h3 {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 20px;
+  }
+
+  .related-keywords-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .related-keyword-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    color: var(--color-gray-800);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .related-keyword-link:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .usp-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .timeline::before {
+      left: 28px;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .timeline-spacer {
+      display: none;
+    }
+
+    .timeline-left .timeline-content,
+    .timeline-right .timeline-content {
+      text-align: left;
+    }
+
+    .timeline-left .timeline-circle {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .intro-paragraph {
+      font-size: 1rem;
+    }
+
+    .intro-actions {
+      flex-direction: column;
+    }
+
+    .btn-outline {
+      text-align: center;
+      justify-content: center;
+    }
+
+    .usp-card {
+      padding: 24px;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat-card {
+      padding: 24px 16px;
+    }
+
+    .related-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-content {
+      padding: 18px 20px;
+    }
+
+    .timeline-left,
+    .timeline-right {
+      gap: 14px;
+    }
+
+    .timeline-circle {
+      width: 44px;
+      height: 44px;
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  if (timelineItems.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(timelineItems).indexOf(entry.target as HTMLElement);
+            setTimeout(() => {
+              (entry.target as HTMLElement).classList.add('visible');
+            }, index * 150);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    timelineItems.forEach((item) => observer.observe(item));
+  }
+</script>

@@ -14,7 +14,14 @@
       "Bash(git -C:*)",
       "WebFetch(domain:trustoo.nl)",
       "WebFetch(domain:www.google.com)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/schoonmaakbedrijf-inhuren-rotterdam)",
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(curl -s http://localhost:4321/schoonmaakbedrijf-inhuren-rotterdam)",
+      "Bash(pkill -f \"astro\")",
+      "mcp__astro-docs__search_astro_docs",
+      "Bash(pkill -f \"node.*astro\")",
+      "Bash(pkill -f \"astro\" sleep 3)"
     ]
   }
 }
