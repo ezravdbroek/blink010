@@ -16,27 +16,67 @@ import {
   type PseoPage,
 } from '../data/pseo-data';
 
-// Hero images per category (static imports)
-import heroGeneral from '../assets/foto2.jpeg';
-import heroKantoor from '../assets/foto15.jpg';
-import heroOplevering from '../assets/opleveringschoonmaak.jpeg';
-import heroHoreca from '../assets/foto9.jpg';
-import heroRecreatie from '../assets/recreatieschoonmaak.jpeg';
-import heroParticulier from '../assets/particulieren_schoonmaak.jpeg';
-import galleryImg from '../assets/foto15.jpg';
-import galleryImg2 from '../assets/foto9.jpg';
+// Images per category (static imports)
+import imgGeneral from '../assets/foto2.jpeg';
+import imgKantoor from '../assets/foto15.jpg';
+import imgOplevering from '../assets/opleveringschoonmaak.jpeg';
+import imgHoreca from '../assets/foto9.jpg';
+import imgRecreatie from '../assets/recreatieschoonmaak.jpeg';
+import imgParticulier from '../assets/particulieren_schoonmaak.jpeg';
+import imgVve from '../assets/foto17.jpeg';
+import imgScholen from '../assets/foto16.jpeg';
+import imgZorg from '../assets/foto18.jpeg';
+import imgPeriodiek from '../assets/foto21.jpeg';
+
+// Secondary images for gallery section
+import imgGeneral2 from '../assets/foto25.jpeg';
+import imgKantoor2 from '../assets/foto19.jpeg';
+import imgOplevering2 from '../assets/foto26.jpeg';
+import imgHoreca2 from '../assets/foto23.jpeg';
+import imgRecreatie2 from '../assets/foto20.jpeg';
+import imgParticulier2 from '../assets/foto1.jpeg';
+import imgVve2 from '../assets/auto-zijkant.jpeg';
+import imgScholen2 from '../assets/foto24.jpeg';
+import imgZorg2 from '../assets/auto-achterkant.jpeg';
+import imgPeriodiek2 from '../assets/foto3.jpeg';
 
 const heroImages: Record<string, ImageMetadata> = {
-  general: heroGeneral,
-  kantoor: heroKantoor,
-  oplevering: heroOplevering,
-  horeca: heroHoreca,
-  recreatie: heroRecreatie,
-  particulier: heroParticulier,
-  vve: heroKantoor,
-  scholen: heroHoreca,
-  zorg: heroKantoor,
-  periodiek: heroGeneral,
+  general: imgGeneral,
+  kantoor: imgKantoor,
+  oplevering: imgOplevering,
+  horeca: imgHoreca,
+  recreatie: imgRecreatie,
+  particulier: imgParticulier,
+  vve: imgVve,
+  scholen: imgScholen,
+  zorg: imgZorg,
+  periodiek: imgPeriodiek,
+};
+
+const introImages: Record<string, ImageMetadata> = {
+  general: imgKantoor,
+  kantoor: imgKantoor2,
+  oplevering: imgOplevering2,
+  horeca: imgHoreca2,
+  recreatie: imgRecreatie2,
+  particulier: imgParticulier2,
+  vve: imgVve2,
+  scholen: imgScholen2,
+  zorg: imgZorg2,
+  periodiek: imgPeriodiek2,
+};
+
+const galleryImages: Record<string, ImageMetadata> = {
+  general: imgGeneral2,
+  kantoor: imgGeneral,
+  oplevering: imgKantoor,
+  horeca: imgHoreca,
+  recreatie: imgRecreatie,
+  particulier: imgParticulier,
+  vve: imgVve,
+  scholen: imgScholen,
+  zorg: imgZorg,
+  periodiek: imgPeriodiek,
 };
 
 export function getStaticPaths() {
@@ -59,6 +99,8 @@ const description = generateMetaDescription(keyword, location);
 const introText = generateIntroText(keyword, location);
 const extraText = generateExtraText(keyword, location);
 const heroImage = heroImages[keyword.category];
+const introImage = introImages[keyword.category];
+const galleryImage = galleryImages[keyword.category];
 const relatedLocations = getRelatedLocationPages(keyword, location, 6);
 const relatedKeywords = getRelatedKeywordPages(keyword, location, 4);
 const canonicalUrl = `https://www.blinkschoonmaak.nl/${page.slug}`;
@@ -180,7 +222,7 @@ const serviceSchema = {
           </a>
         </div>
         <div class="intro-image-wrap">
-          <Image src={galleryImg} alt={`${cat.label} in ${location.name}`} class="intro-image" />
+          <Image src={introImage} alt={`${cat.label} in ${location.name}`} class="intro-image" />
         </div>
       </div>
     </div>
@@ -239,7 +281,7 @@ const serviceSchema = {
     <div class="container">
       <div class="gallery-grid reveal">
         <div class="gallery-main">
-          <Image src={galleryImg2} alt={`Blink Schoonmaak 010 — ${keyword.name} in ${location.name}`} class="gallery-img" />
+          <Image src={galleryImage} alt={`Blink Schoonmaak 010 — ${keyword.name} in ${location.name}`} class="gallery-img" />
           <div class="gallery-overlay">
             <span>Vakmanschap in elk detail</span>
           </div>
