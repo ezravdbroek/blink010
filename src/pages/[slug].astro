@@ -641,6 +641,14 @@ const serviceSchema = {
   }
 
   .faq-answer {
+    padding: 0 24px 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .faq-item[open] .faq-answer {
+    max-height: 300px;
     padding: 0 24px 20px;
   }
 
@@ -969,4 +977,18 @@ const serviceSchema = {
     );
     timelineItems.forEach((item) => observer.observe(item));
   }
+
+  // FAQ accordion: close others when one opens
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if ((item as HTMLDetailsElement).open) {
+        faqItems.forEach((other) => {
+          if (other !== item && (other as HTMLDetailsElement).open) {
+            (other as HTMLDetailsElement).open = false;
+          }
+        });
+      }
+    });
+  });
 </script>
