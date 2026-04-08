@@ -119,10 +119,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Bekijk onze schoonmaakdiensten',
     heroImage: 'foto2',
     usps: [
-      { title: 'Ervaren vakmensen', description: 'Al onze medewerkers zijn opgeleid, gescreend en beschikken over jarenlange ervaring in professionele schoonmaak.' },
-      { title: 'Flexibel inplanbaar', description: 'Overdag, \u2019s avonds of in het weekend \u2014 wij passen ons aan uw schema aan. Geen vaste contracten vereist.' },
-      { title: 'Duurzame middelen', description: 'Wij werken uitsluitend met milieuvriendelijke schoonmaakmiddelen die veilig zijn voor mens, dier en milieu.' },
-      { title: 'Tevredenheidsgarantie', description: 'Niet tevreden? Dan komen wij kosteloos terug. Uw tevredenheid is onze hoogste prioriteit.' },
+      { title: 'Ervaren vakmensen', description: 'Al onze medewerkers zijn opgeleid, gescreend en beschikken over jarenlange ervaring in professionele schoonmaak. Zij worden regelmatig bijgeschoold in de nieuwste technieken en veiligheidsvoorschriften.' },
+      { title: 'Flexibel inplanbaar', description: 'Overdag, \u2019s avonds of in het weekend \u2014 wij passen ons aan uw schema aan. Geen vaste contracten vereist. Zo heeft u altijd de vrijheid om de planning aan te passen zoals het u uitkomt.' },
+      { title: 'Duurzame middelen', description: 'Wij werken uitsluitend met milieuvriendelijke schoonmaakmiddelen die veilig zijn voor mens, dier en milieu. Deze middelen zijn even effectief als traditionele producten, maar een stuk beter voor de wereld om ons heen.' },
+      { title: 'Tevredenheidsgarantie', description: 'Niet tevreden? Dan komen wij kosteloos terug. Uw tevredenheid is onze hoogste prioriteit. Wij staan voor ons werk en lossen eventuele opmerkingen altijd snel en vriendelijk op.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat aansluit bij uw wensen en situatie.',
     whatWeOffer: [
@@ -136,19 +136,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Wat kost het inhuren van een schoonmaakbedrijf?',
-        answer: 'De kosten van een schoonmaakbedrijf hangen af van de grootte van de ruimte, de frequentie en het type schoonmaak. Wij bieden altijd een vrijblijvende offerte op maat, zodat u precies weet waar u aan toe bent. Er zijn geen verborgen kosten.',
+        answer: 'De kosten van een schoonmaakbedrijf hangen af van de grootte van de ruimte, de frequentie en het type schoonmaak. Wij bieden altijd een vrijblijvende offerte op maat, zodat u precies weet waar u aan toe bent. Er zijn geen verborgen kosten. Zo kunt u rustig vergelijken en een weloverwogen keuze maken.',
       },
       {
         question: 'Hoe snel kan een schoonmaakbedrijf starten?',
-        answer: 'Na ontvangst van uw aanvraag reageren wij binnen \u00e9\u00e9n werkdag. In de meeste gevallen kunnen wij binnen een week starten met de schoonmaakwerkzaamheden. Bij spoed is het vaak mogelijk om dezelfde week nog te beginnen.',
+        answer: 'Na ontvangst van uw aanvraag reageren wij binnen \u00e9\u00e9n werkdag. In de meeste gevallen kunnen wij binnen een week starten met de schoonmaakwerkzaamheden. Bij spoed is het vaak mogelijk om dezelfde week nog te beginnen. Neem gerust contact op en wij kijken samen naar de mogelijkheden.',
       },
       {
         question: 'Moet ik een langlopend contract afsluiten?',
-        answer: 'Nee, wij werken zonder lange contractverplichtingen. U kunt kiezen voor eenmalige schoonmaak of een periodiek abonnement dat flexibel opzegbaar is. Wij geloven in kwaliteit, niet in kleine lettertjes.',
+        answer: 'Nee, wij werken zonder lange contractverplichtingen. U kunt kiezen voor eenmalige schoonmaak of een periodiek abonnement dat flexibel opzegbaar is. Wij geloven in kwaliteit, niet in kleine lettertjes. Ons doel is dat u blijft omdat u tevreden bent, niet omdat u vastzit.',
       },
       {
         question: 'Zijn de schoonmakers verzekerd?',
-        answer: 'Ja, al onze medewerkers zijn volledig verzekerd. Wij hebben een bedrijfsaansprakelijkheidsverzekering die eventuele schade dekt. U kunt met een gerust hart onze vakmensen in uw pand laten werken.',
+        answer: 'Ja, al onze medewerkers zijn volledig verzekerd. Wij hebben een bedrijfsaansprakelijkheidsverzekering die eventuele schade dekt. U kunt met een gerust hart onze vakmensen in uw pand laten werken. Mocht er toch iets misgaan, dan lossen wij het direct en transparant op.',
       },
     ],
   },
@@ -159,10 +159,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Meer over kantoorschoonmaak',
     heroImage: 'foto2',
     usps: [
-      { title: 'Dagelijkse reiniging', description: 'Uw kantoor is elke ochtend spic en span. Wij zorgen voor een frisse start van uw werkdag, elke dag van de week.' },
-      { title: 'Flexibel inplanbaar', description: 'Vroeg in de ochtend, laat in de avond of in het weekend \u2014 wij plannen de schoonmaak op uw agenda in.' },
-      { title: 'Duurzame middelen', description: 'Wij werken uitsluitend met milieuvriendelijke schoonmaakmiddelen die veilig zijn voor mens, dier en milieu.' },
-      { title: 'Gecertificeerd personeel', description: 'Al onze medewerkers zijn gediplomeerd, gescreend en continu bijgeschoold. U kunt ons volledig vertrouwen.' },
+      { title: 'Dagelijkse reiniging', description: 'Uw kantoor is elke ochtend spic en span. Wij zorgen voor een frisse start van uw werkdag, elke dag van de week. Een nette werkomgeving draagt aantoonbaar bij aan productiviteit en werkplezier.' },
+      { title: 'Flexibel inplanbaar', description: 'Vroeg in de ochtend, laat in de avond of in het weekend \u2014 wij plannen de schoonmaak op uw agenda in. Zo wordt uw team nooit gestoord en verloopt uw bedrijfsvoering zonder onderbreking.' },
+      { title: 'Duurzame middelen', description: 'Wij werken uitsluitend met milieuvriendelijke schoonmaakmiddelen die veilig zijn voor mens, dier en milieu. Dit is bewust beleid: goed voor uw kantoomgeving en goed voor de planeet.' },
+      { title: 'Gecertificeerd personeel', description: 'Al onze medewerkers zijn gediplomeerd, gescreend en continu bijgeschoold. U kunt ons volledig vertrouwen. Vaste koppeling aan uw pand zorgt bovendien voor vertrouwde gezichten en consistent resultaat.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat naadloos aansluit bij uw bedrijfsvoering.',
     whatWeOffer: [
@@ -176,19 +176,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Op welke tijden wordt de kantoorschoonmaak uitgevoerd?',
-        answer: 'Wij passen ons volledig aan uw kantooruren aan. De schoonmaak kan vroeg in de ochtend, laat in de avond of in het weekend worden uitgevoerd. Zo wordt uw team niet gestoord tijdens werkuren en start iedereen in een schone omgeving.',
+        answer: 'Wij passen ons volledig aan uw kantooruren aan. De schoonmaak kan vroeg in de ochtend, laat in de avond of in het weekend worden uitgevoerd. Zo wordt uw team niet gestoord tijdens werkuren en start iedereen in een schone omgeving. De gewenste tijden leggen we eenmalig vast, zodat het daarna vanzelf loopt.',
       },
       {
         question: 'Wat omvat de standaard kantoorschoonmaak?',
-        answer: 'Onze standaard kantoorschoonmaak omvat het reinigen van werkplekken, bureaus, vergaderruimtes, sanitair, keukens en vloeren. Daarnaast vullen wij dispensers bij en legen wij prullenbakken. Het pakket is volledig aan te passen aan uw wensen.',
+        answer: 'Onze standaard kantoorschoonmaak omvat het reinigen van werkplekken, bureaus, vergaderruimtes, sanitair, keukens en vloeren. Daarnaast vullen wij dispensers bij en legen wij prullenbakken. Het pakket is volledig aan te passen aan uw wensen. Zo betaalt u alleen voor wat u daadwerkelijk nodig heeft.',
       },
       {
         question: 'Kan ik de frequentie van de schoonmaak aanpassen?',
-        answer: 'Ja, u kunt op elk moment de frequentie verhogen of verlagen. Of u nu dagelijks, wekelijks of maandelijks schoonmaak nodig heeft, wij zijn flexibel en passen de planning aan op uw behoeften zonder extra kosten.',
+        answer: 'Ja, u kunt op elk moment de frequentie verhogen of verlagen. Of u nu dagelijks, wekelijks of maandelijks schoonmaak nodig heeft, wij zijn flexibel en passen de planning aan op uw behoeften zonder extra kosten. Een simpel berichtje of telefoontje is voldoende om de wijziging door te voeren.',
       },
       {
         question: 'Werken jullie met een vaste schoonmaker voor ons kantoor?',
-        answer: 'Ja, wij koppelen een vast team aan uw kantoor. Zo kent de schoonmaker uw pand, uw voorkeuren en eventuele aandachtspunten. Dit zorgt voor een consistent resultaat en vertrouwde gezichten in uw werkomgeving.',
+        answer: 'Ja, wij koppelen een vast team aan uw kantoor. Zo kent de schoonmaker uw pand, uw voorkeuren en eventuele aandachtspunten. Dit zorgt voor een consistent resultaat en vertrouwde gezichten in uw werkomgeving. Bij afwezigheid zorgen wij voor een goed ingewerkte vervanger zodat de kwaliteit geborgd blijft.',
       },
     ],
   },
@@ -199,10 +199,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Meer over opleveringsschoonmaak',
     heroImage: 'opleveringschoonmaak',
     usps: [
-      { title: 'Dieptereiniging', description: 'Van bouwstof tot de laatste details \u2014 wij maken uw woning of pand volledig schoon en klaar voor oplevering.' },
-      { title: 'Snelle oplevering', description: 'Wij werken snel en effici\u00ebnt zodat u op tijd kunt opleveren. Ook last-minute aanvragen zijn mogelijk.' },
-      { title: 'Inclusief ramen', description: 'Ramen, kozijnen, dorpels en glaswerk worden streeploos gereinigd. Binnen \u00e9n buiten als dat gewenst is.' },
-      { title: 'Na verbouwing', description: 'Cement, stof en verfspetters? Geen probleem. Wij hebben de ervaring en middelen om alles vlekkeloos te verwijderen.' },
+      { title: 'Dieptereiniging', description: 'Van bouwstof tot de laatste details \u2014 wij maken uw woning of pand volledig schoon en klaar voor oplevering. Geen hoek of spleet wordt overgeslagen, zodat de inspectie zonder opmerkingen verloopt.' },
+      { title: 'Snelle oplevering', description: 'Wij werken snel en effici\u00ebnt zodat u op tijd kunt opleveren. Ook last-minute aanvragen zijn mogelijk. Dankzij onze ervaring weten wij precies wat er nodig is om een pand snel en grondig gereed te maken.' },
+      { title: 'Inclusief ramen', description: 'Ramen, kozijnen, dorpels en glaswerk worden streeploos gereinigd. Binnen \u00e9n buiten als dat gewenst is. Helder glas geeft direct de juiste eerste indruk bij de oplevering.' },
+      { title: 'Na verbouwing', description: 'Cement, stof en verfspetters? Geen probleem. Wij hebben de ervaring en middelen om alles vlekkeloos te verwijderen. Zo levert u een pand op dat er werkelijk als nieuw uitziet.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat aansluit bij uw opleverdatum.',
     whatWeOffer: [
@@ -216,19 +216,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Wanneer moet ik een opleveringsschoonmaak inplannen?',
-        answer: 'Het beste moment is na afronding van alle bouw- of verbouwingswerkzaamheden en v\u00f3\u00f3r de inspectie of sleuteloverdracht. Wij raden aan om minimaal twee werkdagen van tevoren te boeken, maar ook last-minute aanvragen zijn vaak mogelijk.',
+        answer: 'Het beste moment is na afronding van alle bouw- of verbouwingswerkzaamheden en v\u00f3\u00f3r de inspectie of sleuteloverdracht. Wij raden aan om minimaal twee werkdagen van tevoren te boeken, maar ook last-minute aanvragen zijn vaak mogelijk. Hoe eerder u plant, hoe meer zekerheid u heeft over de gewenste datum en het team.',
       },
       {
         question: 'Wat is het verschil tussen een opleveringsschoonmaak en een gewone schoonmaak?',
-        answer: 'Een opleveringsschoonmaak is veel grondiger dan een reguliere schoonmaak. Wij verwijderen bouwstof, cementsluier, verfspetters en lijmresten die bij een normale schoonmaak niet aan bod komen. Elk detail wordt gecontroleerd zodat het pand er als nieuw uitziet.',
+        answer: 'Een opleveringsschoonmaak is veel grondiger dan een reguliere schoonmaak. Wij verwijderen bouwstof, cementsluier, verfspetters en lijmresten die bij een normale schoonmaak niet aan bod komen. Elk detail wordt gecontroleerd zodat het pand er als nieuw uitziet. Daarmee voldoet u direct aan de eisen van makelaars, aannemers en kopers.',
       },
       {
         question: 'Hoe lang duurt een opleveringsschoonmaak?',
-        answer: 'De duur hangt af van de grootte van het pand en de mate van vervuiling. Een gemiddeld appartement is binnen 4 tot 6 uur klaar. Grotere panden of zeer vervuilde ruimtes kunnen langer duren. Wij geven van tevoren een indicatie.',
+        answer: 'De duur hangt af van de grootte van het pand en de mate van vervuiling. Een gemiddeld appartement is binnen 4 tot 6 uur klaar. Grotere panden of zeer vervuilde ruimtes kunnen langer duren. Wij geven van tevoren een indicatie. Zo kunt u de inspectie of sleuteloverdracht goed op de schoonmaak afstemmen.',
       },
       {
         question: 'Kan ik een schoonmaak na verbouwing combineren met de oplevering?',
-        answer: 'Ja, dat kan. Wij bieden een compleet pakket aan waarin zowel het verwijderen van bouwstof als de eindreiniging voor oplevering is inbegrepen. Zo heeft u \u00e9\u00e9n aanspreekpunt en bespaart u tijd en kosten.',
+        answer: 'Ja, dat kan. Wij bieden een compleet pakket aan waarin zowel het verwijderen van bouwstof als de eindreiniging voor oplevering is inbegrepen. Zo heeft u \u00e9\u00e9n aanspreekpunt en bespaart u tijd en kosten. Wij stemmen de planning af op de bouwoplevering zodat alles soepel verloopt.',
       },
     ],
   },
@@ -239,10 +239,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Meer over horecaschoonmaak',
     heroImage: 'foto15',
     usps: [
-      { title: 'HACCP-bewust', description: 'Wij werken volgens HACCP-richtlijnen en gebruiken voedselveilige schoonmaakmiddelen. Veiligheid staat voorop.' },
-      { title: 'Dagelijks beschikbaar', description: 'Ook in het weekend en op feestdagen. Wij stemmen onze planning af op uw openingstijden.' },
-      { title: 'Keuken specialist', description: 'Van afzuigkappen tot RVS werkbladen \u2014 wij reinigen professionele keukens tot op het hoogste niveau.' },
-      { title: 'Hygi\u00ebne garantie', description: 'Wij garanderen een hygi\u00ebnische omgeving die voldoet aan alle voedselveiligheidsnormen.' },
+      { title: 'HACCP-bewust', description: 'Wij werken volgens HACCP-richtlijnen en gebruiken voedselveilige schoonmaakmiddelen. Veiligheid staat voorop. Zo voldoet uw keuken altijd aan de eisen bij een onverwachte inspectie.' },
+      { title: 'Dagelijks beschikbaar', description: 'Ook in het weekend en op feestdagen. Wij stemmen onze planning af op uw openingstijden. Of uw zaak vroeg opent of laat sluit, wij zorgen dat alles klaar is voor de eerste gast.' },
+      { title: 'Keuken specialist', description: 'Van afzuigkappen tot RVS werkbladen \u2014 wij reinigen professionele keukens tot op het hoogste niveau. Hardnekkig vet, aankoeksel en kalkaanslag pakken wij aan met de juiste professionele middelen.' },
+      { title: 'Hygi\u00ebne garantie', description: 'Wij garanderen een hygi\u00ebnische omgeving die voldoet aan alle voedselveiligheidsnormen. Regelmatige controles en rapportages geven u altijd inzicht in de staat van uw horecagelegenheid.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat aansluit bij uw openingstijden en horecaconcepten.',
     whatWeOffer: [
@@ -256,19 +256,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Werken jullie volgens HACCP-normen?',
-        answer: 'Ja, al onze horecaschoonmakers zijn getraind in HACCP-richtlijnen. Wij gebruiken uitsluitend voedselveilige schoonmaakmiddelen en volgen strikte protocollen voor het reinigen van keukens, werkbladen en voedselbereidingsruimtes.',
+        answer: 'Ja, al onze horecaschoonmakers zijn getraind in HACCP-richtlijnen. Wij gebruiken uitsluitend voedselveilige schoonmaakmiddelen en volgen strikte protocollen voor het reinigen van keukens, werkbladen en voedselbereidingsruimtes. Zo staat u altijd sterk bij een inspectie van de NVWA of gemeente.',
       },
       {
         question: 'Kunnen jullie ook buiten openingstijden schoonmaken?',
-        answer: 'Absoluut. Wij stemmen onze werkzaamheden volledig af op uw openingstijden. Of uw zaak nu om middernacht sluit of vroeg in de ochtend opent, wij zorgen dat alles schoon is voordat de eerste gast binnenkomt.',
+        answer: 'Absoluut. Wij stemmen onze werkzaamheden volledig af op uw openingstijden. Of uw zaak nu om middernacht sluit of vroeg in de ochtend opent, wij zorgen dat alles schoon is voordat de eerste gast binnenkomt. Uw gasten merken niets van de schoonmaak, alleen van het resultaat.',
       },
       {
         question: 'Reinigen jullie ook de afzuiginstallatie?',
-        answer: 'Ja, wij verzorgen de grondige reiniging van afzuigkappen, filters en kanalen. Dit is essentieel voor brandveiligheid en luchtkwaliteit in uw keuken. Wij adviseren dit minimaal twee keer per jaar te laten doen.',
+        answer: 'Ja, wij verzorgen de grondige reiniging van afzuigkappen, filters en kanalen. Dit is essentieel voor brandveiligheid en luchtkwaliteit in uw keuken. Wij adviseren dit minimaal twee keer per jaar te laten doen. Een schone afzuiginstallatie draait efficiënter en verlengt de levensduur van uw apparatuur.',
       },
       {
         question: 'Wat kost horecaschoonmaak?',
-        answer: 'De kosten zijn afhankelijk van de grootte van uw horecagelegenheid, het type keuken en de gewenste frequentie. Wij bieden altijd een vrijblijvende offerte op maat. Neem contact op voor een persoonlijk voorstel.',
+        answer: 'De kosten zijn afhankelijk van de grootte van uw horecagelegenheid, het type keuken en de gewenste frequentie. Wij bieden altijd een vrijblijvende offerte op maat. Neem contact op voor een persoonlijk voorstel. Wij denken graag mee over de meest kostenefficiënte aanpak voor uw situatie.',
       },
     ],
   },
@@ -279,10 +279,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Meer over recreatiewoning schoonmaak',
     heroImage: 'recreatieschoonmaak',
     usps: [
-      { title: 'Snelle wisselschoonmaak', description: 'Wij reinigen uw woning tussen twee boekingen in \u2014 ook als check-in en check-out op dezelfde dag vallen.' },
-      { title: 'Linnengoed service', description: 'Beddengoed en handdoeken wassen, drogen en opmaken inclusief. Uw gasten komen aan in een frisse omgeving.' },
-      { title: 'Eindcontrole', description: 'Na elke schoonmaak voeren wij een grondige eindcontrole uit. Zo weet u zeker dat alles perfect is.' },
-      { title: 'Flexibele beschikbaarheid', description: 'Wij zijn beschikbaar in het weekend en op feestdagen. Uw verhuurkalender bepaalt onze planning.' },
+      { title: 'Snelle wisselschoonmaak', description: 'Wij reinigen uw woning tussen twee boekingen in \u2014 ook als check-in en check-out op dezelfde dag vallen. Onze ervaren teams werken efficiënt en grondig, zonder dat gasten hier iets van merken.' },
+      { title: 'Linnengoed service', description: 'Beddengoed en handdoeken wassen, drogen en opmaken inclusief. Uw gasten komen aan in een frisse omgeving. Een hotelachtige presentatie verhoogt de gastervaring en uw beoordelingen direct.' },
+      { title: 'Eindcontrole', description: 'Na elke schoonmaak voeren wij een grondige eindcontrole uit. Zo weet u zeker dat alles perfect is. Eventuele ontbrekende of beschadigde items signaleren wij direct aan u, zodat u tijdig kunt handelen.' },
+      { title: 'Flexibele beschikbaarheid', description: 'Wij zijn beschikbaar in het weekend en op feestdagen. Uw verhuurkalender bepaalt onze planning. Ook tijdens piekseizoenen met meerdere wisselingen per dag zorgen wij voor continuïteit.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat synchroniseert met uw boekingskalender.',
     whatWeOffer: [
@@ -296,19 +296,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Hoe snel kunnen jullie een wisselschoonmaak uitvoeren?',
-        answer: 'Wij zijn gespecialiseerd in snelle wisselschoonmaak. Een standaard vakantiewoning is binnen 2 tot 3 uur volledig schoon en klaar voor de volgende gasten. Ook als check-out en check-in op dezelfde dag vallen, regelen wij het.',
+        answer: 'Wij zijn gespecialiseerd in snelle wisselschoonmaak. Een standaard vakantiewoning is binnen 2 tot 3 uur volledig schoon en klaar voor de volgende gasten. Ook als check-out en check-in op dezelfde dag vallen, regelen wij het. U hoeft zich geen zorgen te maken over de overgang tussen gasten.',
       },
       {
         question: 'Verzorgen jullie ook het linnengoed?',
-        answer: 'Ja, wij bieden een complete linnengoed service aan. Beddengoed en handdoeken worden gewassen, gedroogd en netjes opgemaakt. Uw gasten worden ontvangen in een frisse, hotelachtige omgeving zonder dat u er omkijken naar heeft.',
+        answer: 'Ja, wij bieden een complete linnengoed service aan. Beddengoed en handdoeken worden gewassen, gedroogd en netjes opgemaakt. Uw gasten worden ontvangen in een frisse, hotelachtige omgeving zonder dat u er omkijken naar heeft. Dit verhoogt de gastbeleving en draagt direct bij aan betere beoordelingen op verhuurplatforms.',
       },
       {
         question: 'Zijn jullie ook beschikbaar in het weekend en op feestdagen?',
-        answer: 'Ja, wij zijn 7 dagen per week beschikbaar, inclusief feestdagen en in het hoogseizoen. Uw verhuurkalender bepaalt onze planning, niet andersom. Zo mist u nooit een boeking door gebrek aan schoonmaak.',
+        answer: 'Ja, wij zijn 7 dagen per week beschikbaar, inclusief feestdagen en in het hoogseizoen. Uw verhuurkalender bepaalt onze planning, niet andersom. Zo mist u nooit een boeking door gebrek aan schoonmaak. Koppel uw boekingskalender aan onze planning en alles wordt automatisch afgestemd.',
       },
       {
         question: 'Kunnen jullie meerdere vakantiewoningen tegelijk schoonmaken?',
-        answer: 'Ja, wij hebben voldoende capaciteit om meerdere woningen op dezelfde dag te schoonmaken. Ideaal voor eigenaren van meerdere verhuurobjecten of beheerders van vakantieparken. Wij stemmen de planning af op uw boekingsschema.',
+        answer: 'Ja, wij hebben voldoende capaciteit om meerdere woningen op dezelfde dag te schoonmaken. Ideaal voor eigenaren van meerdere verhuurobjecten of beheerders van vakantieparken. Wij stemmen de planning af op uw boekingsschema. Vraag naar onze voordelige tarieven voor beheerders met meerdere objecten.',
       },
     ],
   },
@@ -319,10 +319,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Meer over particuliere schoonmaak',
     heroImage: 'particulieren_schoonmaak',
     usps: [
-      { title: 'Op maat gemaakt', description: 'Elk huishouden is anders. Wij stemmen onze werkzaamheden af op uw specifieke wensen en behoeften.' },
-      { title: 'Vast contactpersoon', description: 'U krijgt altijd dezelfde schoonmaker. Vertrouwd, betrouwbaar en bekend met uw woning.' },
-      { title: 'Eigen sleutelservice', description: 'Niet thuis? Geen probleem. Wij bewaren uw sleutel veilig en maken schoon wanneer het u uitkomt.' },
-      { title: 'Milieuvriendelijk', description: 'Wij gebruiken groene schoonmaakmiddelen die veilig zijn voor uw gezin en huisdieren.' },
+      { title: 'Op maat gemaakt', description: 'Elk huishouden is anders. Wij stemmen onze werkzaamheden af op uw specifieke wensen en behoeften. Of u nu extra aandacht wilt voor de badkamer of juist de keuken, wij passen het plan aan.' },
+      { title: 'Vast contactpersoon', description: 'U krijgt altijd dezelfde schoonmaker. Vertrouwd, betrouwbaar en bekend met uw woning. Dat vertrouwen bouwen wij op met consistente kwaliteit en open communicatie.' },
+      { title: 'Eigen sleutelservice', description: 'Niet thuis? Geen probleem. Wij bewaren uw sleutel veilig en maken schoon wanneer het u uitkomt. Uw sleutel wordt bewaard op een beveiligde locatie en nooit zonder toestemming gebruikt.' },
+      { title: 'Milieuvriendelijk', description: 'Wij gebruiken groene schoonmaakmiddelen die veilig zijn voor uw gezin en huisdieren. Zo draagt u ook thuis bij aan een duurzamere wereld, zonder in te leveren op reinheid.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat aansluit bij uw leven en schema.',
     whatWeOffer: [
@@ -336,19 +336,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Krijg ik altijd dezelfde schoonmaker?',
-        answer: 'Ja, wij koppelen een vaste schoonmaker aan uw woning. Diegene leert uw huis kennen, weet wat uw voorkeuren zijn en waar extra aandacht nodig is. Bij ziekte of vakantie zorgen wij voor een geschikte vervanger die vooraf ge\u00efnstrueerd wordt.',
+        answer: 'Ja, wij koppelen een vaste schoonmaker aan uw woning. Diegene leert uw huis kennen, weet wat uw voorkeuren zijn en waar extra aandacht nodig is. Bij ziekte of vakantie zorgen wij voor een geschikte vervanger die vooraf ge\u00efnstrueerd wordt. Zo ervaart u altijd dezelfde kwaliteit, ongeacht wie er langs komt.',
       },
       {
         question: 'Moet ik zelf schoonmaakmiddelen in huis hebben?',
-        answer: 'Nee, dat is niet nodig. Onze schoonmakers nemen hun eigen professionele en milieuvriendelijke middelen en materialen mee. Als u specifieke producten wilt laten gebruiken, is dat uiteraard ook mogelijk.',
+        answer: 'Nee, dat is niet nodig. Onze schoonmakers nemen hun eigen professionele en milieuvriendelijke middelen en materialen mee. Als u specifieke producten wilt laten gebruiken, is dat uiteraard ook mogelijk. U hoeft dus nooit meer op te letten of er genoeg schoonmaakmiddelen in huis zijn.',
       },
       {
         question: 'Hoe werkt de sleutelservice?',
-        answer: 'U vertrouwt uw sleutel toe aan ons en wij bewaren deze veilig op een beveiligde locatie. Onze schoonmakers komen op het afgesproken moment en u hoeft niet thuis te zijn. Na de schoonmaak wordt uw woning netjes achtergelaten en afgesloten.',
+        answer: 'U vertrouwt uw sleutel toe aan ons en wij bewaren deze veilig op een beveiligde locatie. Onze schoonmakers komen op het afgesproken moment en u hoeft niet thuis te zijn. Na de schoonmaak wordt uw woning netjes achtergelaten en afgesloten. U ontvangt desgewenst een berichtje als de schoonmaak is afgerond.',
       },
       {
         question: 'Kan ik de schoonmaak tussentijds pauzeren of wijzigen?',
-        answer: 'Ja, u kunt de schoonmaak op elk moment pauzeren, wijzigen of stopzetten. Wij hanteren geen opzegtermijn. Bent u op vakantie of wilt u een keer overslaan? Geen probleem, laat het ons gewoon weten.',
+        answer: 'Ja, u kunt de schoonmaak op elk moment pauzeren, wijzigen of stopzetten. Wij hanteren geen opzegtermijn. Bent u op vakantie of wilt u een keer overslaan? Geen probleem, laat het ons gewoon weten. Wij passen de planning direct aan zonder administratieve rompslomp.',
       },
     ],
   },
@@ -359,10 +359,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Bekijk onze zakelijke schoonmaak',
     heroImage: 'foto15',
     usps: [
-      { title: 'Trappenhuizen & hallen', description: 'Wij houden trappenhuizen, entrees en gemeenschappelijke gangen schoon en representatief voor bewoners en bezoekers.' },
-      { title: 'Periodiek of wekelijks', description: 'Kies de frequentie die past bij uw VvE. Van wekelijks tot maandelijks \u2014 wij zijn flexibel.' },
-      { title: 'Glaswerk & buitenzijde', description: 'Ramen, deuren en kozijnen in gemeenschappelijke ruimtes worden streeploos en grondig gereinigd.' },
-      { title: 'Vaste prijsafspraak', description: 'Transparante tarieven zonder verrassingen. Wij maken duidelijke afspraken die passen bij het VvE-budget.' },
+      { title: 'Trappenhuizen & hallen', description: 'Wij houden trappenhuizen, entrees en gemeenschappelijke gangen schoon en representatief voor bewoners en bezoekers. Een verzorgde entree verhoogt de uitstraling van het hele complex.' },
+      { title: 'Periodiek of wekelijks', description: 'Kies de frequentie die past bij uw VvE. Van wekelijks tot maandelijks \u2014 wij zijn flexibel. De planning kan ook worden aangepast aan het seizoen of bijzondere omstandigheden.' },
+      { title: 'Glaswerk & buitenzijde', description: 'Ramen, deuren en kozijnen in gemeenschappelijke ruimtes worden streeploos en grondig gereinigd. Helder glaswerk geeft het pand direct een frisse en goed onderhouden uitstraling.' },
+      { title: 'Vaste prijsafspraak', description: 'Transparante tarieven zonder verrassingen. Wij maken duidelijke afspraken die passen bij het VvE-budget. Zo kan het bestuur eenvoudig plannen en hoeft er nooit onverwacht bijbetaald te worden.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op in overleg met uw VvE-bestuur.',
     whatWeOffer: [
@@ -376,19 +376,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Hoe wordt de VvE schoonmaak georganiseerd?',
-        answer: 'Wij overleggen met het VvE-bestuur of de beheerder over de gewenste werkzaamheden, frequentie en tijdstippen. Na een vrijblijvende offerte starten wij met een proefperiode. De facturatie gaat rechtstreeks naar de VvE.',
+        answer: 'Wij overleggen met het VvE-bestuur of de beheerder over de gewenste werkzaamheden, frequentie en tijdstippen. Na een vrijblijvende offerte starten wij met een proefperiode. De facturatie gaat rechtstreeks naar de VvE. Zo verloopt de administratie soepel en hoeven individuele bewoners niets te regelen.',
       },
       {
         question: 'Hoe vaak moeten gemeenschappelijke ruimtes worden schoongemaakt?',
-        answer: 'Dit hangt af van het aantal bewoners en het gebruik van de ruimtes. Voor de meeste VvE\u2019s adviseren wij wekelijkse of tweewekelijkse schoonmaak. Bij grotere complexen of veel loopverkeer kan dagelijkse schoonmaak raadzaam zijn.',
+        answer: 'Dit hangt af van het aantal bewoners en het gebruik van de ruimtes. Voor de meeste VvE\u2019s adviseren wij wekelijkse of tweewekelijkse schoonmaak. Bij grotere complexen of veel loopverkeer kan dagelijkse schoonmaak raadzaam zijn. Tijdens een intakegesprek geven wij u een concreet advies op maat.',
       },
       {
         question: 'Kunnen jullie ook de buitenruimtes schoonmaken?',
-        answer: 'Ja, wij verzorgen ook de reiniging van galerijen, entreegebieden, parkeergarages en buitentrappen. Dit draagt bij aan een nette uitstraling en voorkomt gladheid door vuil en algengroei.',
+        answer: 'Ja, wij verzorgen ook de reiniging van galerijen, entreegebieden, parkeergarages en buitentrappen. Dit draagt bij aan een nette uitstraling en voorkomt gladheid door vuil en algengroei. Een goed onderhouden buitenruimte verhoogt bovendien de waarde en aantrekkelijkheid van het complex.',
       },
       {
         question: 'Wat als de VvE niet tevreden is over de schoonmaak?',
-        answer: 'Wij bieden een tevredenheidsgarantie. Als de schoonmaak niet aan uw verwachtingen voldoet, komen wij kosteloos terug om het te herstellen. Regelmatige kwaliteitscontroles zorgen voor een consistent hoog niveau.',
+        answer: 'Wij bieden een tevredenheidsgarantie. Als de schoonmaak niet aan uw verwachtingen voldoet, komen wij kosteloos terug om het te herstellen. Regelmatige kwaliteitscontroles zorgen voor een consistent hoog niveau. Feedback van bewoners en het bestuur nemen wij altijd serieus en verwerken wij direct in onze aanpak.',
       },
     ],
   },
@@ -399,10 +399,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Bekijk onze zakelijke schoonmaak',
     heroImage: 'foto9',
     usps: [
-      { title: 'Hygi\u00ebnisch & veilig', description: 'Wij gebruiken kindvriendelijke en hypoallergene schoonmaakmiddelen die veilig zijn voor leerlingen en personeel.' },
-      { title: 'Na schooltijd', description: 'Onze teams werken na de lesuren zodat het onderwijs niet verstoord wordt. Geen overlast, wel resultaat.' },
-      { title: 'Sanitair specialist', description: 'Toiletten, wastafels en kleedkamers worden dagelijks grondig gereinigd en gedesinfecteerd.' },
-      { title: 'Periodiek & structureel', description: 'Van dagelijkse schoonmaak tot grote beurten in vakanties \u2014 wij bieden een totaalpakket voor scholen.' },
+      { title: 'Hygi\u00ebnisch & veilig', description: 'Wij gebruiken kindvriendelijke en hypoallergene schoonmaakmiddelen die veilig zijn voor leerlingen en personeel. Zo minimaliseert u het risico op allergische reacties en huidirritaties op school.' },
+      { title: 'Na schooltijd', description: 'Onze teams werken na de lesuren zodat het onderwijs niet verstoord wordt. Geen overlast, wel resultaat. De volgende ochtend start iedereen in een frisse, hygiënische omgeving.' },
+      { title: 'Sanitair specialist', description: 'Toiletten, wastafels en kleedkamers worden dagelijks grondig gereinigd en gedesinfecteerd. Goed onderhouden sanitair is essentieel voor de gezondheid en het welzijn van leerlingen.' },
+      { title: 'Periodiek & structureel', description: 'Van dagelijkse schoonmaak tot grote beurten in vakanties \u2014 wij bieden een totaalpakket voor scholen. Zo heeft u één betrouwbare partner voor alle schoonmaakbehoeften het hele schooljaar door.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat aansluit bij het schoolrooster en de vakanties.',
     whatWeOffer: [
@@ -416,19 +416,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Zijn de schoonmaakmiddelen veilig voor kinderen?',
-        answer: 'Ja, wij gebruiken uitsluitend kindvriendelijke, hypoallergene en milieuvriendelijke schoonmaakmiddelen. Deze zijn vrij van agressieve chemicali\u00ebn en veilig voor leerlingen, personeel en het milieu.',
+        answer: 'Ja, wij gebruiken uitsluitend kindvriendelijke, hypoallergene en milieuvriendelijke schoonmaakmiddelen. Deze zijn vrij van agressieve chemicali\u00ebn en veilig voor leerlingen, personeel en het milieu. Dit geeft ouders en schoolleiding de zekerheid dat de gezondheid van kinderen centraal staat.',
       },
       {
         question: 'Wanneer wordt de schoonmaak uitgevoerd?',
-        answer: 'Onze teams werken na de lesuren, zodat het onderwijs niet verstoord wordt. In overleg kan de schoonmaak ook vroeg in de ochtend worden uitgevoerd, zodat de school er fris bij staat wanneer de leerlingen aankomen.',
+        answer: 'Onze teams werken na de lesuren, zodat het onderwijs niet verstoord wordt. In overleg kan de schoonmaak ook vroeg in de ochtend worden uitgevoerd, zodat de school er fris bij staat wanneer de leerlingen aankomen. Wij stemmen de planning altijd af met de schoolleiding zodat het naadloos aansluit op het rooster.',
       },
       {
         question: 'Verzorgen jullie ook de grote schoonmaak in vakanties?',
-        answer: 'Ja, wij bieden grote schoonmaakbeurten aan tijdens schoolvakanties. Dit omvat dieptereiniging van alle lokalen, vloerbehandeling, reiniging van meubilair en een grondige beurt van het hele gebouw.',
+        answer: 'Ja, wij bieden grote schoonmaakbeurten aan tijdens schoolvakanties. Dit omvat dieptereiniging van alle lokalen, vloerbehandeling, reiniging van meubilair en een grondige beurt van het hele gebouw. Zo start het nieuwe schooljaar of kwartaal in een volledig frisse en hygiënische omgeving.',
       },
       {
         question: 'Kunnen jullie ook de sportzaal en kleedkamers schoonmaken?',
-        answer: 'Absoluut. Wij hebben ervaring met het reinigen van sportzalen, kleedkamers en douches. Deze ruimtes vereisen extra aandacht voor hygi\u00ebne en wij zorgen voor een grondige desinfectie na elk gebruik.',
+        answer: 'Absoluut. Wij hebben ervaring met het reinigen van sportzalen, kleedkamers en douches. Deze ruimtes vereisen extra aandacht voor hygi\u00ebne en wij zorgen voor een grondige desinfectie na elk gebruik. Schimmel en bacteriën krijgen geen kans dankzij onze gespecialiseerde aanpak voor vochtige ruimtes.',
       },
     ],
   },
@@ -439,10 +439,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Bekijk onze zakelijke schoonmaak',
     heroImage: 'foto15',
     usps: [
-      { title: 'Infectiepreventie', description: 'Wij werken volgens strikte hygi\u00ebneprotocollen en desinfecteren contactpunten zorgvuldig en structureel.' },
-      { title: 'Gecertificeerd personeel', description: 'Onze medewerkers zijn getraind in schoonmaak voor zorginstellingen en kennen de specifieke eisen.' },
-      { title: 'Stille werkmethode', description: 'Wij werken discreet en stil zodat bewoners en pati\u00ebnten niet gestoord worden in hun rust.' },
-      { title: 'Flexibele planning', description: 'Wij stemmen onze werkzaamheden af op de dagelijkse routines van de instelling \u2014 7 dagen per week.' },
+      { title: 'Infectiepreventie', description: 'Wij werken volgens strikte hygi\u00ebneprotocollen en desinfecteren contactpunten zorgvuldig en structureel. Dit verlaagt aantoonbaar het risico op verspreiding van ziektekiemen binnen de instelling.' },
+      { title: 'Gecertificeerd personeel', description: 'Onze medewerkers zijn getraind in schoonmaak voor zorginstellingen en kennen de specifieke eisen. Zij worden regelmatig bijgeschoold om te voldoen aan de laatste richtlijnen van het RIVM en de sector.' },
+      { title: 'Stille werkmethode', description: 'Wij werken discreet en stil zodat bewoners en pati\u00ebnten niet gestoord worden in hun rust. Onze medewerkers zijn getraind in respectvol en zorgzaam gedrag in gevoelige omgevingen.' },
+      { title: 'Flexibele planning', description: 'Wij stemmen onze werkzaamheden af op de dagelijkse routines van de instelling \u2014 7 dagen per week. Of het nu gaat om vroege ochtenden, middagen of avonden, wij passen ons naadloos aan.' },
     ],
     timelineStep3: 'We stellen een passend schoonmaakplan op dat aansluit bij de protocollen van uw instelling.',
     whatWeOffer: [
@@ -456,19 +456,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Werken jullie volgens de hygi\u00ebneprotocollen voor zorginstellingen?',
-        answer: 'Ja, onze medewerkers zijn speciaal getraind in hygi\u00ebneprotocollen voor de zorgsector. Wij werken met desinfecterende middelen die voldoen aan de eisen van de RIVM en hanteren strikte procedures voor infectiepreventie.',
+        answer: 'Ja, onze medewerkers zijn speciaal getraind in hygi\u00ebneprotocollen voor de zorgsector. Wij werken met desinfecterende middelen die voldoen aan de eisen van de RIVM en hanteren strikte procedures voor infectiepreventie. Op verzoek kunnen wij schoonmaakrapportages aanleveren als onderdeel van uw kwaliteitsdossier.',
       },
       {
         question: 'Hoe gaan jullie om met de privacy van bewoners?',
-        answer: 'Privacy en discretie staan bij ons voorop. Onze medewerkers zijn getraind in het respectvol omgaan met bewoners en pati\u00ebnten. Wij kloppen altijd aan, werken stil en verlaten de ruimte netjes zonder persoonlijke bezittingen aan te raken.',
+        answer: 'Privacy en discretie staan bij ons voorop. Onze medewerkers zijn getraind in het respectvol omgaan met bewoners en pati\u00ebnten. Wij kloppen altijd aan, werken stil en verlaten de ruimte netjes zonder persoonlijke bezittingen aan te raken. Het welzijn van bewoners staat altijd centraal bij alles wat wij doen.',
       },
       {
         question: 'Kunnen jullie schoonmaken zonder de dagelijkse routines te verstoren?',
-        answer: 'Ja, wij stemmen onze werkzaamheden af op de dagplanning van de instelling. Of het nu gaat om maaltijden, therapiesessies of rusttijden, wij passen ons aan zodat bewoners en personeel zo min mogelijk worden gestoord.',
+        answer: 'Ja, wij stemmen onze werkzaamheden af op de dagplanning van de instelling. Of het nu gaat om maaltijden, therapiesessies of rusttijden, wij passen ons aan zodat bewoners en personeel zo min mogelijk worden gestoord. Wij bespreken dit vooraf met de teamleider of zorgcoördinator zodat iedereen op de hoogte is.',
       },
       {
         question: 'Welke desinfectiemiddelen gebruiken jullie?',
-        answer: 'Wij gebruiken professionele desinfectiemiddelen die effectief zijn tegen bacteri\u00ebn, virussen en schimmels. Deze middelen voldoen aan alle geldende normen voor zorginstellingen en zijn veilig voor bewoners en personeel.',
+        answer: 'Wij gebruiken professionele desinfectiemiddelen die effectief zijn tegen bacteri\u00ebn, virussen en schimmels. Deze middelen voldoen aan alle geldende normen voor zorginstellingen en zijn veilig voor bewoners en personeel. Op verzoek verstrekken wij een overzicht van de gebruikte producten en hun certificeringen.',
       },
     ],
   },
@@ -479,10 +479,10 @@ export const categoryContent: Record<Category, CategoryContent> = {
     serviceLinkText: 'Bekijk onze schoonmaakdiensten',
     heroImage: 'foto2',
     usps: [
-      { title: 'Vast schema', description: 'Wekelijks, tweewekelijks of maandelijks \u2014 wij komen wanneer het u uitkomt, op vaste dagen en tijden.' },
-      { title: 'Dezelfde schoonmaker', description: 'U krijgt een vaste medewerker die uw woning of pand kent en weet wat er verwacht wordt.' },
-      { title: 'Geen contractverplichting', description: 'Flexibel opzegbaar. Wij geloven in kwaliteit, niet in kleine lettertjes.' },
-      { title: 'Inclusief materialen', description: 'Wij nemen onze eigen professionele middelen en materialen mee. U hoeft niets te regelen.' },
+      { title: 'Vast schema', description: 'Wekelijks, tweewekelijks of maandelijks \u2014 wij komen wanneer het u uitkomt, op vaste dagen en tijden. Zo weet u altijd wanneer de schoonmaak plaatsvindt en kunt u er op rekenen.' },
+      { title: 'Dezelfde schoonmaker', description: 'U krijgt een vaste medewerker die uw woning of pand kent en weet wat er verwacht wordt. Dat zorgt voor vertrouwen, consistentie en een resultaat dat elke keer aan uw verwachtingen voldoet.' },
+      { title: 'Geen contractverplichting', description: 'Flexibel opzegbaar. Wij geloven in kwaliteit, niet in kleine lettertjes. U bent vrij om te stoppen wanneer u wilt, want wij verdienen uw vertrouwen door ons werk, niet door juridische verplichtingen.' },
+      { title: 'Inclusief materialen', description: 'Wij nemen onze eigen professionele middelen en materialen mee. U hoeft niets te regelen. Zo bent u verlost van het aanschaffen, bijhouden en opbergen van schoonmaakspullen.' },
     ],
     timelineStep3: 'We stellen een vast schoonmaakschema op dat past bij uw ritme en voorkeuren.',
     whatWeOffer: [
@@ -496,19 +496,19 @@ export const categoryContent: Record<Category, CategoryContent> = {
     faqs: [
       {
         question: 'Hoe vaak moet ik periodieke schoonmaak inplannen?',
-        answer: 'Dit hangt af van uw situatie. Voor de meeste huishoudens adviseren wij wekelijkse of tweewekelijkse schoonmaak. Kantoren en bedrijfspanden hebben vaak dagelijkse of wekelijkse schoonmaak nodig. Wij adviseren u graag over de beste frequentie.',
+        answer: 'Dit hangt af van uw situatie. Voor de meeste huishoudens adviseren wij wekelijkse of tweewekelijkse schoonmaak. Kantoren en bedrijfspanden hebben vaak dagelijkse of wekelijkse schoonmaak nodig. Wij adviseren u graag over de beste frequentie. Tijdens een vrijblijvend kennismakingsgesprek kijken wij samen naar wat het beste bij uw situatie past.',
       },
       {
         question: 'Kan ik de frequentie tussentijds aanpassen?',
-        answer: 'Ja, u kunt op elk moment de frequentie verhogen of verlagen. Heeft u bijvoorbeeld gasten die komen logeren en wilt u die week een extra schoonmaak? Geen probleem, wij plannen het flexibel in.',
+        answer: 'Ja, u kunt op elk moment de frequentie verhogen of verlagen. Heeft u bijvoorbeeld gasten die komen logeren en wilt u die week een extra schoonmaak? Geen probleem, wij plannen het flexibel in. U betaalt alleen voor wat u daadwerkelijk gebruikt, zonder vaste verplichtingen.',
       },
       {
         question: 'Wat als ik een keer wil overslaan?',
-        answer: 'Dat is geen probleem. Laat ons minimaal 24 uur van tevoren weten dat u een beurt wilt overslaan en wij passen de planning aan. Er worden geen kosten in rekening gebracht voor tijdig geannuleerde afspraken.',
+        answer: 'Dat is geen probleem. Laat ons minimaal 24 uur van tevoren weten dat u een beurt wilt overslaan en wij passen de planning aan. Er worden geen kosten in rekening gebracht voor tijdig geannuleerde afspraken. Wij waarderen uw openheid en verwachten hetzelfde van onze kant.',
       },
       {
         question: 'Nemen jullie eigen schoonmaakmiddelen mee?',
-        answer: 'Ja, onze schoonmakers nemen alle benodigde professionele middelen en materialen mee. U hoeft niets in huis te halen. Wij gebruiken milieuvriendelijke producten die effectief en veilig zijn voor uw woning.',
+        answer: 'Ja, onze schoonmakers nemen alle benodigde professionele middelen en materialen mee. U hoeft niets in huis te halen. Wij gebruiken milieuvriendelijke producten die effectief en veilig zijn voor uw woning. Zo bespaart u ook op de aanschaf van schoonmaakmiddelen en hoeft u die niet langer bij te houden.',
       },
     ],
   },
@@ -537,19 +537,70 @@ export function generateMetaDescription(keyword: Keyword, location: Location): s
   return descriptions[cat];
 }
 
+export function generateUspSubtext(keyword: Keyword, location: Location): string {
+  const cat = keyword.category;
+  const texts: Record<Category, string> = {
+    general: `Al meer dan 500 klanten in ${location.name} en omgeving gingen u voor. Ontdek waarom zij kiezen voor Blink Schoonmaak 010 als hun vaste schoonmaakpartner.`,
+    kantoor: `Van kleine bedrijfsruimtes tot grote kantoorpanden in ${location.name} — wij luisteren naar uw wensen en stellen een plan op dat past bij uw bedrijf.`,
+    oplevering: `Nieuwbouw, renovatie of verbouwing in ${location.name}? Onze opleveringsschoonmaak voldoet aan de strengste eisen van makelaars, aannemers en woningcorporaties.`,
+    horeca: `Wij begrijpen de dynamiek van de horeca in ${location.name}: onregelmatige tijden, hoge druk en strenge eisen. Daarom passen wij ons volledig aan op uw bedrijfsvoering.`,
+    recreatie: `Of u één woning verhuurt in ${location.name} of een heel park beheert — wij schalen flexibel op naar uw behoefte. Ook in het hoogseizoen.`,
+    particulier: `Onze schoonmakers in ${location.name} zijn grondig, betrouwbaar en discreet. U krijgt een vaste medewerker die uw woning door en door leert kennen.`,
+    vve: `Wij ondersteunen VvE's in ${location.name} met een helder schoonmaakplan, transparante tarieven en een persoonlijk aanspreekpunt voor het bestuur.`,
+    scholen: `Blink Schoonmaak 010 heeft ruime ervaring met basisscholen, middelbare scholen en kinderopvanglocaties in ${location.name} en omgeving.`,
+    zorg: `Wij passen onze planning aan op de dagindeling van uw instelling in ${location.name}. Zo wordt het dagelijks leven van bewoners en patiënten zo min mogelijk verstoord.`,
+    periodiek: `Onze vaste schoonmaker kent uw ruimte in ${location.name} en weet precies waar aandacht nodig is. U kiest zelf de frequentie — zonder kleine lettertjes.`,
+  };
+  return texts[cat];
+}
+
+export function generateGalleryText(keyword: Keyword, location: Location): string {
+  const cat = keyword.category;
+  const texts: Record<Category, string> = {
+    general: `Als uw schoonmaakpartner in ${location.name} staan wij altijd klaar. Of het nu gaat om een spoedklus of een structurele samenwerking — u kunt op ons rekenen. Wij komen indien gewenst langs voor een vrijblijvende kennismaking op locatie, zodat u precies weet met wie u te maken krijgt. Neem vandaag nog contact op en ervaar het verschil.`,
+    kantoor: `Getraind personeel, discreet en betrouwbaar — dat is waar kantoorschoonmaak in ${location.name} om draait. Onze schoonmakers werken zelfstandig met een eigen sleutel zodat u er geen omkijken naar heeft. Wij bieden ook aanvullende diensten aan zoals ramen-, vloer- en dieptereiniging. Alles bespreekbaar, alles op maat voor uw bedrijf.`,
+    oplevering: `Het resultaat van onze opleveringsschoonmaak in ${location.name} is een volledig instapklare ruimte die klaar is voor gebruik of verkoop. Heeft u een deadline? Geen probleem — wij plannen onze schoonmaak op het moment dat het u uitkomt, ook op korte termijn. Onze kwaliteit wordt gegarandeerd door een uitgebreide eindcontrole.`,
+    horeca: `Naast dagelijkse schoonmaak bieden wij in ${location.name} ook periodieke dieptereiniging aan: het ontvetten van keukenapparatuur, het grondig reinigen van tegelvloeren en het desinfecteren van werkoppervlakken. Alles om uw horecazaak op het hoogste niveau te houden. Wij documenteren onze werkzaamheden zodat u bij controles altijd voorbereid bent.`,
+    recreatie: `Wij werken samen met verhuurders in heel Zuid-Holland en Zeeland. In het hoogseizoen zorgen wij voor extra capaciteit in ${location.name} zodat ook bij piekdrukte elke woning op tijd gastenklaar is. Aanvullend bieden wij welkomstpakketten, linnengoed-service en onderhoud van terrassen en buitenruimtes.`,
+    particulier: `Heeft u een feestje gehad of wilt u de frequentie tijdelijk verhogen? Geen probleem. Onze schoonmakers in ${location.name} zijn flexibel en werken altijd volgens een duidelijk schoonmaakplan dat in overleg met u is opgesteld. Wekelijks, tweewekelijks of maandelijks — u bepaalt het ritme, wij leveren de kwaliteit.`,
+    vve: `Onze schoonmakers werken op vaste dagen en tijden in ${location.name}. Bij klachten of bijzonderheden is er één vast aanspreekpunt — geen anoniem callcenter, maar een persoonlijke contactpersoon die uw complex kent. Op verzoek verzorgen wij ook aanvullende diensten zoals glazenwassen, gevelreiniging en groenonderhoud.`,
+    scholen: `Tijdens schoolvakanties bieden wij uitgebreide dieptereiniging aan in ${location.name}: het grondig reinigen van vloeren, het wassen van gordijnen en het behandelen van stoffering. Zo start elk nieuw schooljaar in een volledig schone, frisse omgeving. Onze teams werken zelfstandig met een vast contactpersoon voor de schoolleiding.`,
+    zorg: `In de zorgsector gaat schoonmaak verder dan esthetiek — het is essentieel voor infectiepreventie en patiëntveiligheid. Onze medewerkers in ${location.name} zijn getraind in de juiste protocollen en werken met speciale desinfectiemiddelen. Bij uitbraken van infectieziekten handelen wij snel en adequaat met crisisschoonmaak.`,
+    periodiek: `Blink Schoonmaak 010 stelt samen met u een schoonmaakplan op in ${location.name}. U bepaalt de frequentie, de dagen en de tijdstippen — wij voeren het uit. Onze vaste schoonmaker signaleert proactief wanneer extra aandacht nodig is, bijvoorbeeld bij seizoenswisselingen of na drukke periodes. Kwaliteit is onze garantie.`,
+  };
+  return texts[cat];
+}
+
+export function generateHeroSubtitle(keyword: Keyword, location: Location): string {
+  const cat = keyword.category;
+  const subtitles: Record<Category, string> = {
+    general: `Professionele schoonmaakdiensten voor particulieren en bedrijven in ${location.name}. Betrouwbaar, grondig en altijd op maat — vraag vandaag nog een vrijblijvende offerte aan.`,
+    kantoor: `Professionele kantoorschoonmaak in ${location.name}, afgestemd op uw planning. Elke ochtend een frisse werkplek voor uw medewerkers — zonder overlast.`,
+    oplevering: `Stralend schoon opleveren na verbouwing of verhuizing in ${location.name}. Van bouwstof tot een perfect eindresultaat — grondig, snel en zonder zorgen.`,
+    horeca: `HACCP-conforme horecaschoonmaak in ${location.name} voor restaurants, cafés en hotels. Hygiënisch, grondig en volledig afgestemd op uw openingstijden.`,
+    recreatie: `Professionele schoonmaak van vakantiewoningen in ${location.name}. Snelle wisselschoonmaak tussen gasten — altijd gastenklaar, altijd betrouwbaar.`,
+    particulier: `Betrouwbare huishoudelijke hulp in ${location.name}. Vaste schoonmaker, flexibel inplanbaar en met alle materialen inbegrepen.`,
+    vve: `Professionele VvE schoonmaak in ${location.name}. Schone trappenhuizen, entrees en gemeenschappelijke ruimtes — voor tevreden bewoners en bezoekers.`,
+    scholen: `Professionele schoonmaak voor scholen en onderwijsinstellingen in ${location.name}. Veilig, kindvriendelijk en altijd na schooltijd.`,
+    zorg: `Gespecialiseerde schoonmaak voor zorginstellingen in ${location.name}. Discreet, hygiënisch en beschikbaar 7 dagen per week.`,
+    periodiek: `Structurele periodieke schoonmaak in ${location.name}. Vast schema, vaste schoonmaker, flexibele frequentie en geen contractverplichtingen.`,
+  };
+  return subtitles[cat];
+}
+
 export function generateIntroText(keyword: Keyword, location: Location): string {
   const cat = keyword.category;
   const intros: Record<Category, string> = {
-    general: `Op zoek naar een schoonmaakbedrijf in ${location.name}? Blink Schoonmaak 010 biedt professionele schoonmaak voor particulieren en bedrijven. Eenmalig of structureel \u2014 wij regelen het.`,
-    kantoor: `Blink Schoonmaak 010 verzorgt kantoorschoonmaak in ${location.name}, afgestemd op uw planning. Wij werken buiten kantoortijden zodat uw team elke ochtend fris kan starten.`,
-    oplevering: `Na een verbouwing of bij oplevering zorgt Blink Schoonmaak 010 in ${location.name} voor een stralend schoon resultaat. Van bouwstof tot ramen \u2014 wij maken het volledig in orde.`,
-    horeca: `Blink Schoonmaak 010 biedt horecaschoonmaak in ${location.name} volgens HACCP-richtlijnen. Keukens, gastenruimtes en sanitair \u2014 hygi\u00ebnisch en op uw openingstijden afgestemd.`,
-    recreatie: `Blink Schoonmaak 010 verzorgt de schoonmaak van vakantiewoningen in ${location.name}. Snelle wisselschoonmaak tussen gasten, inclusief linnengoed en eindcontrole.`,
-    particulier: `Een schoon huis zonder zorgen? Blink Schoonmaak 010 biedt particuliere schoonmaak in ${location.name}. Vaste schoonmaker, op maat en flexibel inplanbaar.`,
-    vve: `Blink Schoonmaak 010 verzorgt VvE schoonmaak in ${location.name}. Trappenhuizen, entrees en gemeenschappelijke ruimtes \u2014 representatief voor bewoners en bezoekers.`,
-    scholen: `Professionele schoonmaak voor scholen in ${location.name}. Blink Schoonmaak 010 werkt met kindvriendelijke middelen en komt na schooltijd \u2014 geen overlast, wel resultaat.`,
-    zorg: `Blink Schoonmaak 010 biedt schoonmaak voor zorginstellingen in ${location.name}. Getraind personeel, strikte hygi\u00ebneprotocollen en een stille werkmethode.`,
-    periodiek: `Structurele schoonmaak in ${location.name} op een vast schema. Vaste schoonmaker, geen contractverplichting en alle materialen inbegrepen.`,
+    general: `Op zoek naar een betrouwbaar schoonmaakbedrijf in ${location.name}? Blink Schoonmaak 010 biedt professionele schoonmaakdiensten voor particulieren en bedrijven. Eenmalig of structureel — wij stemmen alles af op uw wensen. Onze schoonmakers zijn in vaste dienst, werken met milieuvriendelijke middelen en leveren altijd een heldere offerte zonder verborgen kosten.`,
+    kantoor: `Blink Schoonmaak 010 verzorgt kantoorschoonmaak in ${location.name}, volledig afgestemd op uw planning. Wij werken buiten kantoortijden zodat uw team elke ochtend een frisse werkplek aantreft. Van werkplekken en vergaderruimtes tot sanitair en entreegebieden — wij zorgen voor een representatieve uitstraling.`,
+    oplevering: `Na een verbouwing of bij oplevering in ${location.name} zorgt Blink Schoonmaak 010 voor een stralend schoon resultaat. Bouwstof, cementsluier, verfspetters — onze specialisten verwijderen alles vakkundig zonder schade. Vloeren, ramen, kozijnen, sanitair en keukens: wij maken het volledig in orde.`,
+    horeca: `Blink Schoonmaak 010 biedt horecaschoonmaak in ${location.name} volgens HACCP-richtlijnen. Onze schoonmakers zijn getraind in voedselgerelateerde omgevingen en gebruiken voedselveilige reinigingsmiddelen. Van keuken en bereidingsruimtes tot gastenruimte, bar en toiletten — alles grondig en efficiënt.`,
+    recreatie: `Blink Schoonmaak 010 verzorgt de schoonmaak van vakantiewoningen in ${location.name}. Snelle wisselschoonmaak tussen gasten, inclusief het reinigen van alle kamers, badkamers en keuken, het verschonen van linnengoed en een uitgebreide eindcontrole. Altijd op tijd klaar voor de volgende gast.`,
+    particulier: `Een schoon huis zonder zorgen? Blink Schoonmaak 010 biedt particuliere schoonmaak in ${location.name}. U krijgt een vaste schoonmaker die uw woning leert kennen. Wij werken met milieuvriendelijke middelen en brengen al het materiaal zelf mee. Flexibel inplanbaar en zonder verplichtingen.`,
+    vve: `Blink Schoonmaak 010 verzorgt VvE schoonmaak in ${location.name}. Trappenhuizen, entrees, liften, gangen en buitenruimtes — wij reinigen alles op een vast schema. Transparante tarieven zonder verrassingen en een vast aanspreekpunt voor het bestuur.`,
+    scholen: `Professionele schoonmaak voor scholen in ${location.name}. Wij werken met kindvriendelijke, niet-toxische middelen en komen na schooltijd. Klaslokalen, gangen, aula's, toiletten en kantoren — met extra aandacht voor contactpunten zoals deurklinken en tafels.`,
+    zorg: `Blink Schoonmaak 010 biedt schoonmaak voor zorginstellingen in ${location.name}. Speciaal opgeleid personeel dat werkt volgens strikte hygiëneprotocollen. Bewonerskamers, behandelkamers, sanitair en gemeenschappelijke ruimtes — discreet, zorgvuldig en 7 dagen per week beschikbaar.`,
+    periodiek: `Structurele schoonmaak in ${location.name} op een vast schema. Vaste schoonmaker, flexibele frequentie en alle materialen inbegrepen. Dagelijks, wekelijks of maandelijks — u bepaalt het ritme, zonder langlopende contractverplichtingen.`,
   };
   return intros[cat];
 }
@@ -557,16 +608,16 @@ export function generateIntroText(keyword: Keyword, location: Location): string 
 export function generateExtraText(keyword: Keyword, location: Location): string {
   const cat = keyword.category;
   const extras: Record<Category, string> = {
-    general: `Onze schoonmakers zijn in dienst bij ons \u2014 niet via een uitzendbureau. Zo garanderen wij de kwaliteit bij elke klant in ${location.name}. Geen verborgen kosten, altijd een heldere offerte vooraf.`,
-    kantoor: `Van kleine bedrijfsruimtes tot grote kantoorpanden in ${location.name} \u2014 wij luisteren naar uw wensen en stellen een plan op dat past bij uw bedrijf. Getraind personeel, discreet en betrouwbaar.`,
-    oplevering: `Nieuwbouw, renovatie of verbouwing in ${location.name}? Wij weten precies welke aandachtspunten belangrijk zijn. Van bouwstof tot het polijsten van kranen \u2014 wij laten niets aan het toeval over.`,
-    horeca: `Blink Schoonmaak 010 begrijpt de dynamiek van de horeca in ${location.name}: onregelmatige tijden, hoge druk en strenge eisen. Wij passen ons aan op uw openingstijden en bedrijfsvoering.`,
-    recreatie: `Blink Schoonmaak 010 werkt samen met verhuurders in heel Zuid-Holland en Zeeland. Of u nu \u00e9\u00e9n woning verhuurt in ${location.name} of een heel park beheert \u2014 wij schalen op naar uw behoefte.`,
-    particulier: `Onze schoonmakers in ${location.name} zijn grondig, betrouwbaar en discreet. U krijgt een vaste medewerker die uw woning leert kennen en weet waar extra aandacht nodig is.`,
-    vve: `Blink Schoonmaak 010 ondersteunt VvE\u2019s in ${location.name} met transparante tarieven zonder verrassingen. Wij denken mee over de optimale frequentie en het meest effici\u00ebnte schoonmaakplan.`,
-    scholen: `Blink Schoonmaak 010 heeft ervaring met basisscholen en middelbare scholen in ${location.name}. Onze teams werken na schooltijd en tijdens vakanties, zodat het onderwijs niet wordt verstoord.`,
-    zorg: `Blink Schoonmaak 010 is gespecialiseerd in zorginstellingen in ${location.name}. Onze medewerkers respecteren de privacy en rust van bewoners en zijn 7 dagen per week beschikbaar.`,
-    periodiek: `Onze vaste schoonmaker kent uw ruimte in ${location.name} en weet precies waar aandacht nodig is. U kiest zelf de frequentie \u2014 geen verplichtingen, geen kleine lettertjes.`,
+    general: `Wat ons onderscheidt in ${location.name} is onze persoonlijke aanpak. Wij bespreken vooraf uw wensen en stellen een schoonmaakplan op dat past bij uw situatie. Al onze schoonmakers zijn in vaste dienst, volledig verzekerd en worden regelmatig bijgeschoold. Neem contact op voor een vrijblijvend adviesgesprek.`,
+    kantoor: `Een schoon kantoor is het visitekaartje van uw bedrijf in ${location.name}. Wij reinigen niet alleen zichtbare oppervlakken, maar ook toetsenborden, ventilatieroosters en lichtschakelaars. Na elke beurt voeren wij een kwaliteitscontrole uit. Alles bespreekbaar, alles op maat.`,
+    oplevering: `Bij een opleveringsschoonmaak in ${location.name} werken wij systematisch van boven naar beneden. Alle oppervlakken worden behandeld met de juiste techniek om beschadigingen te voorkomen. Na afloop inspecteren wij alles met een gedetailleerde checklist — pas als alles perfect is, tekenen wij af.`,
+    horeca: `Gasten verwachten een smetteloze omgeving en de NVWA hanteert strikte normen. Onze schoonmakers in ${location.name} weten precies hoe zij moeten omgaan met afzuigkappen, koelinstallaties en vloeren met vetafzetting. Wij documenteren alles zodat u bij een controle altijd kunt aantonen dat de hygiëne op orde is.`,
+    recreatie: `Een schone woning bij aankomst zorgt voor positieve reviews en herhaalde boekingen. Onze teams in ${location.name} werken met gedetailleerde checklists per woning. Wij signaleren ook beschadigingen en technische problemen. Aanvullend bieden wij linnengoed-service en onderhoud van buitenruimtes.`,
+    particulier: `Onze schoonmakers in ${location.name} besteden aandacht aan details: plinten, deurkozijnen, de bovenkant van kasten. Zij zijn volledig verzekerd en beschikken over een VOG. U kunt hen met een gerust hart ontvangen, ook als u niet thuis bent. Alle middelen en materialen nemen wij mee.`,
+    vve: `Een goed onderhouden complex in ${location.name} verhoogt het woongenot én de woningwaarde. Onze schoonmakers werken op vaste dagen zodat bewoners weten wat ze kunnen verwachten. Eén vast aanspreekpunt, transparante maandtarieven en op verzoek aanvullende diensten zoals glazenwassen en gevelreiniging.`,
+    scholen: `Onze teams in ${location.name} gebruiken desinfecterende middelen op veelgebruikte contactpunten. Voor basisscholen extra aandacht voor lage oppervlakken en speelgoed, bij middelbare scholen voor praktijklokalen en computerruimtes. Tijdens vakanties bieden wij uitgebreide dieptereiniging aan.`,
+    zorg: `Onze medewerkers in ${location.name} zijn getraind volgens WIP-richtlijnen en werken met kleurcodering om kruisbesmetting te voorkomen. Zij werken discreet en respectvol, met oog voor de kwetsbare doelgroep. Bij uitbraken van infectieziekten bieden wij crisisschoonmaak en desinfectie aan.`,
+    periodiek: `Regelmatig onderhoud voorkomt dat vuil zich ophoopt in uw ruimte in ${location.name}. Onze vaste schoonmaker signaleert proactief wanneer extra aandacht nodig is. Alle materialen zijn inbegrepen, er zijn geen langlopende verplichtingen. Kwaliteit is de reden om te blijven, niet een contract.`,
   };
   return extras[cat];
 }

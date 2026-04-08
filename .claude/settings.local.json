@@ -21,7 +21,12 @@
       "Bash(pkill -f \"astro\")",
       "mcp__astro-docs__search_astro_docs",
       "Bash(pkill -f \"node.*astro\")",
-      "Bash(pkill -f \"astro\" sleep 3)"
+      "Bash(pkill -f \"astro\" sleep 3)",
+      "Bash(node -e ':*)",
+      "Bash(npx tsx:*)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(node --loader ts-node/esm -e ':*)",
+      "Bash(node:*)"
     ]
   }
 }
