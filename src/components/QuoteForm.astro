@@ -209,9 +209,7 @@
         </div>
       </div>
 
-      <!-- Hidden Web3Forms inputs -->
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
-      <input type="hidden" name="from_name" value="Blink Schoonmaak 010 - Offerte" />
+      <!-- Hidden inputs for submission -->
       <input type="hidden" id="hidden-services" name="diensten" value="" />
       <input type="hidden" id="hidden-naam" name="naam_hidden" value="" />
       <input type="hidden" id="hidden-telefoon" name="telefoon_hidden" value="" />
@@ -464,24 +462,23 @@
       submitBtn.textContent = 'Verzenden...';
       submitBtn.disabled = true;
 
-      const data = new FormData();
-      data.append('access_key', 'YOUR_WEB3FORMS_KEY');
-      data.append('from_name', 'Blink Schoonmaak 010 - Offerte');
-      data.append('diensten', Array.from(selectedServices).join(', '));
-      data.append('naam', formData.naam ?? '');
-      data.append('telefoon', formData.telefoon ?? '');
-      data.append('email', formData.email ?? '');
-      data.append('adres', `${formData.adres ?? ''}, ${formData.postcode ?? ''} ${formData.woonplaats ?? ''}`);
-
       const berichtEl = document.getElementById('qf-bericht') as HTMLTextAreaElement;
-      if (berichtEl && berichtEl.value.trim()) {
-        data.append('bericht', berichtEl.value.trim());
-      }
+      const bericht = berichtEl?.value.trim() || '';
+
+      const payload = {
+        diensten: Array.from(selectedServices).join(', '),
+        naam: formData.naam ?? '',
+        telefoon: formData.telefoon ?? '',
+        email: formData.email ?? '',
+        adres: `${formData.adres ?? ''}, ${formData.postcode ?? ''} ${formData.woonplaats ?? ''}`,
+        ...(bericht && { bericht }),
+      };
 
       try {
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch('/api/quote', {
           method: 'POST',
-          body: data,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
         });
 
         if (response.ok) {

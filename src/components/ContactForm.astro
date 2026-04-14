@@ -2,8 +2,6 @@
 ---
 
 <form class="contact-form" id="contact-form" novalidate>
-  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
-  <input type="hidden" name="from_name" value="Blink Schoonmaak 010 - Contact" />
 
   <div class="form-group">
     <label for="naam">Naam *</label>
@@ -57,9 +55,15 @@
 
       try {
         const formData = new FormData(form);
-        const response = await fetch('https://api.web3forms.com/submit', {
+        const response = await fetch('/api/contact', {
           method: 'POST',
-          body: formData,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            naam: formData.get('naam'),
+            telefoon: formData.get('telefoon'),
+            email: formData.get('email'),
+            bericht: formData.get('bericht'),
+          }),
         });
 
         if (response.ok) {
