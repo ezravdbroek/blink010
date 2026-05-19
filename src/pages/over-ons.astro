@@ -59,7 +59,19 @@ import foto22 from '../assets/foto22.webp';
       </div>
     </section>
 
-    <!-- 3. Waarden Section -->
+    <!-- 3. Video Section -->
+    <section class="section video-section">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-heading">Zie ons in actie</h2>
+        </div>
+        <div class="video-wrapper reveal">
+          <video class="about-video" src="/offerte-video.mp4" muted loop playsinline controls aria-label="Blink Schoonmaak 010 in actie"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Waarden Section -->
     <section class="section waarden-section">
       <div class="container">
         <div class="reveal">
@@ -116,7 +128,7 @@ import foto22 from '../assets/foto22.webp';
       </div>
     </section>
 
-    <!-- 4. Team Gallery Section -->
+    <!-- 5. Team Gallery Section -->
     <section class="section gallery-section">
       <div class="container">
         <div class="reveal">
@@ -175,7 +187,7 @@ import foto22 from '../assets/foto22.webp';
       </div>
     </section>
 
-    <!-- 5. Team Section -->
+    <!-- 6. Team Section -->
     <section class="section team-section">
       <div class="container">
         <div class="team-grid">
@@ -233,7 +245,7 @@ import foto22 from '../assets/foto22.webp';
       </div>
     </section>
 
-    <!-- 5. Werkgebied Section -->
+    <!-- 7. Werkgebied Section -->
     <section class="section werkgebied-section">
       <div class="container">
         <div class="reveal">
@@ -256,7 +268,7 @@ import foto22 from '../assets/foto22.webp';
       </div>
     </section>
 
-    <!-- 6. CTA Block -->
+    <!-- 8. CTA Block -->
     <CTABlock
       heading="Samenwerken?"
       subtext="Neem contact op voor een vrijblijvend kennismakingsgesprek"
@@ -295,7 +307,25 @@ import foto22 from '../assets/foto22.webp';
     color: var(--color-gray-800);
   }
 
-  /* ── 3. Waarden ────────────────────────────────────────────── */
+  /* ── 3. Video ────────────────────────────────────────────────── */
+  .video-section {
+    background: var(--color-gray-50);
+  }
+
+  .video-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .about-video {
+    width: 100%;
+    display: block;
+  }
+
+  /* ── 4. Waarden ────────────────────────────────────────────── */
   .waarden-section {
     background: var(--color-gray-50);
   }
@@ -352,7 +382,7 @@ import foto22 from '../assets/foto22.webp';
     margin: 0;
   }
 
-  /* ── 4. Team ────────────────────────────────────────────────── */
+  /* ── 6. Team ────────────────────────────────────────────────── */
   .team-section {
     background: var(--color-white);
   }
@@ -418,7 +448,7 @@ import foto22 from '../assets/foto22.webp';
     color: var(--color-white);
   }
 
-  /* ── 5. Werkgebied ──────────────────────────────────────────── */
+  /* ── 7. Werkgebied ──────────────────────────────────────────── */
   .werkgebied-section {
     background: var(--color-gray-50);
     position: relative;
@@ -484,7 +514,7 @@ import foto22 from '../assets/foto22.webp';
     box-shadow: 0 4px 16px rgba(0, 133, 154, 0.1);
   }
 
-  /* ── 4. Team Gallery ───────────────────────────────────────── */
+  /* ── 5. Team Gallery ───────────────────────────────────────── */
   .gallery-section {
     background: var(--color-white);
   }

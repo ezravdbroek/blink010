@@ -240,6 +240,9 @@
     </svg>
     <h3>Bedankt!</h3>
     <p>We nemen zo snel mogelijk contact met u op.</p>
+    <div class="success-video-wrapper">
+      <video class="success-video" src="/offerte-video.mp4" muted loop playsinline controls aria-label="Blink Schoonmaak 010 in actie"></video>
+    </div>
   </div>
 
 </div>
@@ -1071,6 +1074,20 @@
   .quote-success p {
     color: var(--color-gray-400);
     font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .success-video-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .success-video {
+    width: 100%;
+    display: block;
   }
 
   /* ── Screen reader only ────────────────────────────────────────────────── */

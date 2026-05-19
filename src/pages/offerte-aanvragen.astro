@@ -15,6 +15,30 @@ import QuoteForm from '../components/QuoteForm.astro';
       breadcrumbs={[{ label: 'Home', href: '/' }]}
     />
 
+    <section class="section description-section">
+      <div class="container">
+        <div class="desc-content reveal">
+          <h2>Waarom een schoonmaak op maat?</h2>
+          <p>
+            Elke ruimte is anders. Of het nu gaat om een kantoorpand, een particulier huishouden, 
+            een restaurant, een recreatiewoning of een opleveringsschoonmaak — wij stemmen onze 
+            dienstverlening volledig af op uw situatie. Geen standaardpakketten, maar een 
+            schoonmaakplan dat naadloos aansluit bij uw wensen, agenda en budget.
+          </p>
+          <p>
+            Onze gecertificeerde medewerkers werken met professionele apparatuur en 
+            milieuvriendelijke middelen. Van dagelijkse schoonmaak tot een eenmalige grondige 
+            beurt: wij garanderen een stralend resultaat. En omdat wij een lokaal Rotterdams 
+            familiebedrijf zijn, staan wij altijd in de buurt voor snel en persoonlijk contact.
+          </p>
+          <p>
+            Vul onderstaand formulier in en ontvang binnen één werkdag een vrijblijvende 
+            offerte op maat. Geen verplichtingen, wel helder advies.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="section quote-section">
       <div class="container">
         <div class="form-wrapper reveal">
@@ -34,6 +58,30 @@ import QuoteForm from '../components/QuoteForm.astro';
 </BaseLayout>
 
 <style>
+  .description-section {
+    background: var(--color-white);
+  }
+
+  .desc-content {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .desc-content h2 {
+    text-align: center;
+    color: var(--color-gray-900);
+    margin-bottom: 4px;
+  }
+
+  .desc-content p {
+    font-size: 1.075rem;
+    line-height: 1.8;
+    color: var(--color-gray-800);
+  }
+
   .quote-section {
     background: var(--color-gray-50);
   }
