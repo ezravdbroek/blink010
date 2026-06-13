@@ -1,40 +1,48 @@
 ---
+interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const { lang = 'nl' } = Astro.props;
+
 const steps = [
   {
     number: "1",
-    title: "Offerte aanvragen",
-    description: "Vul het formulier in",
+    title: { nl: 'Offerte aanvragen', en: 'Request a quote' },
+    description: { nl: 'Vul het formulier in', en: 'Fill in the form' },
   },
   {
     number: "2",
-    title: "Kennismaking",
-    description: "We bespreken uw wensen",
+    title: { nl: 'Kennismaking', en: 'Introduction' },
+    description: { nl: 'We bespreken uw wensen', en: 'We discuss your needs' },
   },
   {
     number: "3",
-    title: "Schoonmaak",
-    description: "Wij gaan aan de slag",
+    title: { nl: 'Schoonmaak', en: 'Cleaning' },
+    description: { nl: 'Wij gaan aan de slag', en: 'We get to work' },
   },
 ];
+
+const heading = lang === 'en' ? 'How it works' : 'Hoe het werkt';
 ---
 
 <section class="process-steps section">
   <div class="container">
-    <h2 class="section-heading">Hoe het werkt</h2>
+    <h2 class="section-heading">{heading}</h2>
 
-    <div class="steps-wrapper" aria-label="Processtappen">
+    <div class="steps-wrapper" aria-label={lang === 'en' ? 'Process steps' : 'Processtappen'}>
       <div class="line-track" aria-hidden="true">
         <div class="line-fill"></div>
       </div>
 
       {steps.map((step, i) => (
-        <div class="step" data-index={i} aria-label={`Stap ${step.number}: ${step.title}`}>
+        <div class="step" data-index={i} aria-label={`${lang === 'en' ? 'Step' : 'Stap'} ${step.number}: ${step.title[lang]}`}>
           <div class="circle" aria-hidden="true">
             <span class="circle-number">{step.number}</span>
           </div>
           <div class="step-text">
-            <strong class="step-title">{step.title}</strong>
-            <p class="step-desc">{step.description}</p>
+            <strong class="step-title">{step.title[lang]}</strong>
+            <p class="step-desc">{step.description[lang]}</p>
           </div>
         </div>
       ))}

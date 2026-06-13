@@ -1,4 +1,17 @@
 ---
+interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const { lang = 'nl' } = Astro.props;
+
+const labels: Record<string, Record<'nl' | 'en', string>> = {
+  'Flexibele planning': { nl: 'Flexibele planning', en: 'Flexible planning' },
+  'Betrouwbaar & stipt': { nl: 'Betrouwbaar & stipt', en: 'Reliable & punctual' },
+  'Duurzame werkwijze': { nl: 'Duurzame werkwijze', en: 'Sustainable approach' },
+  '100% Nederlandstalig': { nl: '100% Nederlandstalig', en: '100% Dutch-speaking' },
+};
+
 const usps = [
   {
     label: 'Flexibele planning',
@@ -46,7 +59,7 @@ const usps = [
       {usps.map((usp) => (
         <li class="usp-item reveal-item">
           <span class="usp-icon" set:html={usp.icon} />
-          <span class="usp-label">{usp.label}</span>
+          <span class="usp-label">{labels[usp.label][lang]}</span>
         </li>
       ))}
     </ul>

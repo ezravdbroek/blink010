@@ -1,6 +1,13 @@
 ---
 import ReviewCard from './ReviewCard.astro';
 
+interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const { lang = 'nl' } = Astro.props;
+const isEn = lang === 'en';
+
 const reviews = [
   {
     quote: 'Dylan is een geweldige schoonmaker! Hij is super georganiseerd en heel duidelijk over zijn prijzen en wanneer hij langskomt. Na elke schoonmaakbeurt laat hij het huis brandschoon achter. Echt een harde werker die zijn werk met veel zorg doet. Ik zou hem voor 100% aan iedereen aanraden!',
@@ -150,7 +157,7 @@ const avgRating = '4.9';
 
 <section class="reviews-section section">
   <div class="container">
-    <h2 class="section-heading reveal" style="margin-bottom: 12px;">Wat onze klanten zeggen</h2>
+    <h2 class="section-heading reveal" style="margin-bottom: 12px;">{isEn ? 'What our clients say' : 'Wat onze klanten zeggen'}</h2>
 
     <div class="reviews-summary reveal">
       <div class="summary-stars" aria-label={`${avgRating} van 5 sterren`}>
@@ -161,7 +168,7 @@ const avgRating = '4.9';
         <span class="star">&#9733;</span>
       </div>
       <p class="summary-text">
-        <strong>{avgRating}/5</strong> — gebaseerd op Trustoo en Google Reviews
+        <strong>{avgRating}/5</strong> — {isEn ? 'based on Trustoo and Google Reviews' : 'gebaseerd op Trustoo en Google Reviews'}
       </p>
     </div>
 
@@ -180,10 +187,10 @@ const avgRating = '4.9';
         </div>
       </div>
 
-      <button class="slider-btn slider-btn-prev" id="slider-prev" aria-label="Vorige reviews">
+      <button class="slider-btn slider-btn-prev" id="slider-prev" aria-label={isEn ? 'Previous reviews' : 'Vorige reviews'}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-      <button class="slider-btn slider-btn-next" id="slider-next" aria-label="Volgende reviews">
+      <button class="slider-btn slider-btn-next" id="slider-next" aria-label={isEn ? 'Next reviews' : 'Volgende reviews'}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
 
@@ -381,7 +388,7 @@ const avgRating = '4.9';
         const dot = document.createElement('button');
         dot.className = i === currentPage ? 'dot active' : 'dot';
         dot.setAttribute('data-page', String(i));
-        dot.setAttribute('aria-label', `Ga naar review ${i + 1}`);
+        dot.setAttribute('aria-label', `${isEn ? 'Go to review' : 'Ga naar review'} ${i + 1}`);
         dot.addEventListener('click', () => {
           goToPage(i);
           pauseAutoplay();

@@ -1,0 +1,541 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroBanner from '../../components/HeroBanner.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/particulieren_schoonmaak.jpeg';
+import galleryImg1 from '../../assets/foto25.jpeg';
+
+---
+
+<BaseLayout
+  title="Residential Cleaning"
+  description="Tailored home cleaning in Rotterdam. Reliable, personal and flexibly scheduled."
+  lang="en"
+>
+  <HeroBanner
+    title="Residential Cleaning"
+    subtitle="A clean home without the hassle. Our regular cleaners provide reliable, flexible household help tailored to your needs."
+    ctaText="Request a quote"
+    image={heroImg}
+    breadcrumbs={[{ label: 'Home', href: '/en/' }]}
+  />
+
+  <!-- Intro Section -->
+  <section class="section intro-section">
+    <div class="container">
+      <div class="intro-grid reveal">
+        <div class="intro-text">
+          <p class="intro-label">Household cleaning</p>
+          <h2>Your home, always perfectly cared for</h2>
+          <p class="intro-paragraph">
+            Enjoy a clean and fresh home without having to clean it yourself. Many families today lead busy lives with work, children and other commitments, leaving little time for housekeeping. That is completely understandable &mdash; your free time is better spent on precious moments with family or relaxation.
+          </p>
+          <p class="intro-paragraph">
+            At Blinkschoonmaak010, we are happy to take that burden off your hands. As a family business, personal contact and trust are our top priorities. Our 100% Dutch-speaking cleaners are reliable, friendly and work with great attention to detail.
+          </p>
+          <p class="intro-paragraph">
+            We come at a time that suits you best and ensure a fresh and familiar environment every single time.
+          </p>
+          <a href="/en/offerte-aanvragen" class="btn btn-primary">
+            Want to know more? Get in touch
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="intro-image-wrap">
+          <Image src={galleryImg1} alt="Residential cleaning at home" class="intro-image" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP Section -->
+  <section class="section usp-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>Why choose our residential cleaning?</h2>
+        <p class="section-sub">Personal, reliable and fully tailored to your home situation.</p>
+      </div>
+      <div class="usp-grid reveal">
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Tailor-made</h3>
+          <p>Every household is different. Together we create a personal cleaning plan that suits your home and needs.</p>
+        </div>
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Regular cleaner</h3>
+          <p>You always work with the same familiar cleaner who knows your home inside out, so you don't have to explain a thing.</p>
+        </div>
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h3>Key service</h3>
+          <p>You don't need to be home. We store your key safely and discreetly so cleaning can always go ahead.</p>
+        </div>
+        <div class="usp-card reveal-item">
+          <div class="usp-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Eco-friendly</h3>
+          <p>We use biodegradable cleaning products that are safe for your family, pets and the environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="gallery-grid reveal">
+        <div class="gallery-main">
+          <img src="/team-5.jpg" alt="Blink Schoonmaak 010 team" class="gallery-img" />
+          <div class="gallery-overlay">
+            <span>Craftsmanship in every detail</span>
+          </div>
+        </div>
+        <div class="gallery-stats">
+          <div class="stat-card">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Happy households</span>
+          </div>
+          <div class="stat-card stat-card-alt">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfaction guarantee</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5&#9733;</span>
+            <span class="stat-label">Average rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="section timeline-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <h2>How it works</h2>
+        <p class="section-sub">In four steps to a sparkling clean home — completely hassle-free.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>Request a quote</h3>
+            <p>Fill in the form or get in touch. We will respond within one business day.</p>
+          </div>
+          <div class="timeline-circle">1</div>
+          <div class="timeline-spacer"></div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-circle">2</div>
+          <div class="timeline-content">
+            <h3>Free consultation</h3>
+            <p>We discuss your needs and situation. No obligations, just concrete solutions.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-left">
+          <div class="timeline-content">
+            <h3>Planning</h3>
+            <p>We create a cleaning plan that fits your lifestyle and schedule.</p>
+          </div>
+          <div class="timeline-circle">3</div>
+          <div class="timeline-spacer"></div>
+        </div>
+        <div class="timeline-item timeline-right">
+          <div class="timeline-spacer"></div>
+          <div class="timeline-circle">4</div>
+          <div class="timeline-content">
+            <h3>Cleaning</h3>
+            <p>Our professionals get to work! You don't have to lift a finger — we handle everything.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    heading="Interested in residential cleaning? Request a quote."
+    subtext="Get in touch today — we will respond within one business day."
+    ctaHref="/en/offerte-aanvragen"
+  />
+</BaseLayout>
+
+<style>
+  /* ── Intro ── */
+  .intro-section {
+    background: var(--color-white);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .intro-label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .intro-text h2 {
+    margin-bottom: 20px;
+    color: var(--color-gray-900);
+  }
+
+  .intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-gray-800);
+  }
+
+  .intro-paragraph + .intro-paragraph {
+    margin-top: 20px;
+  }
+
+  .intro-image-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  }
+
+  .intro-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── USPs ── */
+  .usp-section {
+    background: var(--color-gray-50);
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--color-gray-400);
+    margin-top: 12px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .usp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .usp-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 32px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .usp-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 133, 154, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .usp-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 133, 154, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .usp-card h3 {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .usp-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-gray-800);
+  }
+
+  /* ── Gallery ── */
+  .gallery-section {
+    background: var(--color-white);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .gallery-main {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    padding: 28px 24px 20px;
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1rem;
+  }
+
+  .gallery-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 16px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+  }
+
+  .stat-card-alt {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .stat-card-alt .stat-number,
+  .stat-card-alt .stat-label {
+    color: var(--color-white);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-top: 6px;
+    font-weight: var(--font-weight-semibold);
+  }
+
+/* ── Timeline ── */
+  .timeline-section {
+    background: var(--color-gray-50);
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: var(--color-gray-100);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    align-items: center;
+    padding: 20px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .timeline-circle {
+    width: 56px;
+    height: 56px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-extrabold);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 16px rgba(0, 133, 154, 0.35);
+  }
+
+  .timeline-content {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-100);
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .timeline-content h3 {
+    font-size: 1.05rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    margin: 0;
+  }
+
+  .timeline-left .timeline-content {
+    text-align: right;
+  }
+
+  .timeline-right .timeline-content {
+    text-align: left;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .intro-image {
+      height: 300px;
+    }
+
+    .usp-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-img {
+      height: 280px;
+    }
+
+    .gallery-stats {
+      flex-direction: row;
+    }
+
+    .stat-card {
+      padding: 20px 16px;
+    }
+
+    .timeline::before {
+      left: 28px;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .timeline-spacer {
+      display: none;
+    }
+
+    .timeline-left .timeline-content,
+    .timeline-right .timeline-content {
+      text-align: left;
+    }
+
+    .timeline-left .timeline-circle {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .usp-card {
+      padding: 24px;
+    }
+
+    .gallery-stats {
+      flex-direction: column;
+    }
+
+    .timeline-content {
+      padding: 18px 20px;
+    }
+  }
+</style>
+
+<script>
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  if (timelineItems.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(timelineItems).indexOf(entry.target as HTMLElement);
+            setTimeout(() => {
+              (entry.target as HTMLElement).classList.add('visible');
+            }, index * 150);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    timelineItems.forEach((item) => observer.observe(item));
+  }
+</script>

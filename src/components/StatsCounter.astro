@@ -1,16 +1,22 @@
 ---
+interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const { lang = 'nl' } = Astro.props;
+
 interface StatItem {
   number?: number;
   suffix?: string;
   value?: string;
-  label: string;
+  label: Record<'nl' | 'en', string>;
 }
 
 const stats: StatItem[] = [
-  { number: 10,  suffix: "+", label: "Jaar ervaring" },
-  { number: 100, suffix: "%", label: "Garantie op werk" },
-  { value: "24/7",            label: "Bereikbaar" },
-  { number: 500, suffix: "+", label: "Tevreden klanten" },
+  { number: 10,  suffix: "+", label: { nl: "Jaar ervaring", en: "Years experience" } },
+  { number: 100, suffix: "%", label: { nl: "Garantie op werk", en: "Work guarantee" } },
+  { value: "24/7",            label: { nl: "Bereikbaar", en: "Available" } },
+  { number: 500, suffix: "+", label: { nl: "Tevreden klanten", en: "Happy clients" } },
 ];
 ---
 
@@ -27,7 +33,7 @@ const stats: StatItem[] = [
             data-suffix={stat.suffix ?? ""}
           >0</span>
         )}
-        <span class="stat-label">{stat.label}</span>
+        <span class="stat-label">{stat.label[lang]}</span>
       </div>
     ))}
   </div>

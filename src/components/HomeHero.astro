@@ -1,6 +1,22 @@
 ---
 import { Image } from 'astro:assets';
 import foto1 from '../assets/foto1.jpeg';
+
+interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const { lang = 'nl' } = Astro.props;
+const isEn = lang === 'en';
+const t = {
+  tagline: isEn ? 'Cleaning Company Rotterdam' : 'Schoonmaakbedrijf Rotterdam',
+  subtitle: isEn ? 'Professional cleaning tailored to your needs &mdash; no worries, we handle it.' : 'Professionele schoonmaak op maat &mdash; geen zorgen, wij regelen het.',
+  cta: isEn ? 'Request a quote' : 'Offerte aanvragen',
+  viewServices: isEn ? 'View services' : 'Bekijk diensten',
+  trust1: isEn ? '10+ years experience' : '10+ jaar ervaring',
+  trust2: isEn ? 'Free quote' : 'Gratis offerte',
+  trust3: isEn ? '24/7 available' : '24/7 bereikbaar',
+};
 ---
 
 <section class="hero" aria-label="Homepage hero">
@@ -52,32 +68,29 @@ import foto1 from '../assets/foto1.jpeg';
   <div class="hero-content">
     <div class="hero-tagline">
       <div class="tagline-line"></div>
-      <span>Schoonmaakbedrijf Rotterdam</span>
+      <span>{t.tagline}</span>
     </div>
 
     <h1 class="hero-title">
       Blink Schoonmaak <span>010</span>
     </h1>
 
-    <p class="hero-subtitle">
-      Professionele schoonmaak op maat &mdash; geen zorgen, wij regelen het.
-    </p>
+    <p class="hero-subtitle" set:html={t.subtitle}></p>
 
     <div class="hero-buttons">
-      <a href="/offerte-aanvragen" class="btn btn-primary hero-cta">
-        Offerte aanvragen <span class="arrow">&#8594;</span>
+      <a href={isEn ? '/en/offerte-aanvragen' : '/offerte-aanvragen'} class="btn btn-primary hero-cta">
+        {t.cta} <span class="arrow">&#8594;</span>
       </a>
-      <a href="#diensten" class="btn btn-ghost hero-cta-secondary">
-        Bekijk diensten
+      <a href={isEn ? '/en/kantoren-schoonmaak' : '#diensten'} class="btn btn-ghost hero-cta-secondary">
+        {t.viewServices}
       </a>
     </div>
 
     <div class="hero-trust">
-      <span>✓ 10+ jaar ervaring</span>
-      <span>✓ Gratis offerte</span>
-      <span>✓ 24/7 bereikbaar</span>
+      <span>✓ {t.trust1}</span>
+      <span>✓ {t.trust2}</span>
+      <span>✓ {t.trust3}</span>
     </div>
-  </div>
 
   <!-- Scroll indicator -->
   <div class="hero-scroll-indicator" aria-hidden="true">

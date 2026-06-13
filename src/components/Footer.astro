@@ -1,3 +1,12 @@
+---
+interface Props {
+  lang?: 'nl' | 'en';
+}
+
+const { lang = 'nl' } = Astro.props;
+const p = (path: string) => lang === 'en' ? '/en' + path : path;
+---
+
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -5,29 +14,31 @@
       <!-- Column 1: Logo + Tagline -->
       <div class="footer-col footer-brand">
         <img src="/logo.png" alt="Blink Schoonmaak 010" class="footer-logo" />
-        <p class="footer-tagline">Uw betrouwbare schoonmaakpartner in Rotterdam en omgeving</p>
+        <p class="footer-tagline">{lang === 'en' ? 'Your reliable cleaning partner in Rotterdam and surrounding areas' : 'Uw betrouwbare schoonmaakpartner in Rotterdam en omgeving'}</p>
       </div>
 
-      <!-- Column 2: Diensten -->
+      <!-- Column 2: Services -->
       <div class="footer-col">
-        <h3 class="footer-heading">Diensten</h3>
+        <h3 class="footer-heading">{lang === 'en' ? 'Services' : 'Diensten'}</h3>
         <ul class="footer-links">
-          <li><a href="/kantoren-schoonmaak">Kantoren Schoonmaak</a></li>
-          <li><a href="/particuliere-schoonmaak">Particuliere Schoonmaak</a></li>
-          <li><a href="/restaurant-schoonmaak">Restaurant Schoonmaak</a></li>
-          <li><a href="/schoonmaak-recreatiewoning">Recreatiewoning Schoonmaak</a></li>
-          <li><a href="/opleveringsschoonmaak">Opleveringsschoonmaak</a></li>
+          <li><a href={p('/kantoren-schoonmaak')}>{lang === 'en' ? 'Office Cleaning' : 'Kantoren Schoonmaak'}</a></li>
+          <li><a href={p('/particuliere-schoonmaak')}>{lang === 'en' ? 'Home Cleaning' : 'Particuliere Schoonmaak'}</a></li>
+          <li><a href={p('/restaurant-schoonmaak')}>{lang === 'en' ? 'Restaurant Cleaning' : 'Restaurant Schoonmaak'}</a></li>
+          <li><a href={p('/schoonmaak-recreatiewoning')}>{lang === 'en' ? 'Holiday Home Cleaning' : 'Recreatiewoning Schoonmaak'}</a></li>
+          <li><a href={p('/opleveringsschoonmaak')}>{lang === 'en' ? 'End of Tenancy' : 'Opleveringsschoonmaak'}</a></li>
+          <li><a href={p('/housekeeping-airbnbs-hotels')}>{lang === 'en' ? 'Housekeeping' : 'Housekeeping'}</a></li>
+          <li><a href={p('/glasbewassing')}>{lang === 'en' ? 'Window Cleaning' : 'Glasbewassing'}</a></li>
         </ul>
       </div>
 
-      <!-- Column 3: Navigatie -->
+      <!-- Column 3: Navigation -->
       <div class="footer-col">
-        <h3 class="footer-heading">Navigatie</h3>
+        <h3 class="footer-heading">{lang === 'en' ? 'Navigation' : 'Navigatie'}</h3>
         <ul class="footer-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/over-ons">Over Ons</a></li>
-          <li><a href="/offerte-aanvragen">Offerte Aanvragen</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href={p('/')}>{lang === 'en' ? 'Home' : 'Home'}</a></li>
+          <li><a href={p('/over-ons')}>{lang === 'en' ? 'About Us' : 'Over Ons'}</a></li>
+          <li><a href={p('/offerte-aanvragen')}>{lang === 'en' ? 'Get a Quote' : 'Offerte Aanvragen'}</a></li>
+          <li><a href={p('/contact')}>{lang === 'en' ? 'Contact' : 'Contact'}</a></li>
         </ul>
       </div>
 
@@ -50,7 +61,7 @@
             href="https://www.instagram.com/blinkschoonmaak010/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Volg ons op Instagram"
+            aria-label={lang === 'en' ? 'Follow us on Instagram' : 'Volg ons op Instagram'}
             class="social-link"
           >
             <svg viewBox="0 0 24 24" fill="white" width="22" height="22" aria-hidden="true">
@@ -61,7 +72,7 @@
             href="https://wa.me/31611125603"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Stuur ons een WhatsApp bericht"
+            aria-label={lang === 'en' ? 'Send us a WhatsApp message' : 'Stuur ons een WhatsApp bericht'}
             class="social-link"
           >
             <svg viewBox="0 0 24 24" fill="white" width="22" height="22" aria-hidden="true">

@@ -7,16 +7,20 @@ interface Props {
   title: string;
   description?: string;
   canonical?: string;
+  lang?: 'nl' | 'en';
 }
 
-const { title, description = 'Professionele schoonmaakdiensten in Rotterdam en omgeving. Kantoren, particulier, restaurant en meer.', canonical } = Astro.props;
+const { title, description = 'Professionele schoonmaakdiensten in Rotterdam en omgeving. Kantoren, particulier, restaurant en meer.', canonical, lang = 'nl' } = Astro.props;
 const fullTitle = `${title} | Blink Schoonmaak 010`;
 const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = `${Astro.site}og-image.png`;
+const isEn = lang === 'en';
+const defaultDesc = isEn ? 'Professional cleaning services in Rotterdam and surrounding areas. Office, home, restaurant and more.' : 'Professionele schoonmaakdiensten in Rotterdam en omgeving. Kantoren, particulier, restaurant en meer.';
+const finalDesc = description === 'Professionele schoonmaakdiensten in Rotterdam en omgeving. Kantoren, particulier, restaurant en meer.' ? defaultDesc : description;
 ---
 
 <!doctype html>
-<html lang="nl">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,9 +41,9 @@ const ogImage = `${Astro.site}og-image.png`;
     <title>{fullTitle}</title>
   </head>
   <body>
-    <Navigation />
+    <Navigation lang={lang} />
     <slot />
-    <Footer />
+    <Footer lang={lang} />
     <WhatsAppButton />
   </body>
 </html>
