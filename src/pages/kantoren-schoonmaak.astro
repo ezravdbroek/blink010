@@ -28,9 +28,13 @@ import galleryImg3 from '../assets/foto9.jpg';
           <p class="intro-label">Professionele kantoorschoonmaak</p>
           <h2>Een schone werkplek voor uw team</h2>
           <p class="intro-paragraph">
-            Een schone werkomgeving is essentieel voor productiviteit en welzijn van uw medewerkers.
-            Blink Schoonmaak 010 biedt professionele kantoorschoonmaak in Rotterdam, afgestemd op
-            uw wensen en planning.
+            Een schone en verzorgde werkomgeving is essentieel voor de productiviteit, gezondheid en het welzijn van uw medewerkers. Daarnaast zorgt een schoon kantoor ook direct voor een professionele uitstraling richting klanten en bezoekers.
+          </p>
+          <p class="intro-paragraph">
+            Blinkschoonmaak010 biedt professionele kantoorschoonmaak in Rotterdam en omgeving, volledig afgestemd op uw wensen, werkzaamheden en planning. Of het nu gaat om dagelijkse schoonmaak, meerdere keren per week of periodiek onderhoud — wij zorgen ervoor dat uw kantoor altijd fris, netjes en representatief blijft.
+          </p>
+          <p class="intro-paragraph">
+            Van werkplekken en vergaderruimtes tot sanitair, keukens en algemene ruimtes: onze betrouwbare schoonmakers werken zorgvuldig, efficiënt en met oog voor detail. Uiteraard kunnen wij de schoonmaak uitvoeren op tijden die het beste aansluiten bij uw bedrijf, zodat uw dagelijkse werkzaamheden hier geen hinder van ondervinden.
           </p>
           <a href="/offerte-aanvragen" class="btn btn-primary">
             Meer weten? Neem contact op
@@ -70,8 +74,8 @@ import galleryImg3 from '../assets/foto9.jpg';
           <div class="usp-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Duurzame middelen</h3>
-          <p>Wij werken uitsluitend met milieuvriendelijke schoonmaakmiddelen die veilig zijn voor mens, dier en het milieu.</p>
+          <h3>Kwaliteitscontroles</h3>
+          <p>Wij voeren regelmatig controles uit om de kwaliteit van onze schoonmaak hoog te houden. Zo blijft uw kantoor altijd consistent schoon en fris.</p>
         </div>
         <div class="usp-card reveal-item">
           <div class="usp-icon">
@@ -108,6 +112,9 @@ import galleryImg3 from '../assets/foto9.jpg';
             <span class="stat-label">Gemiddelde beoordeling</span>
           </div>
         </div>
+      </div>
+      <div class="team-image-wrapper reveal">
+        <img src="/team-3.png" alt="Team Blink Schoonmaak 010" class="team-kantoor-img" loading="lazy" />
       </div>
     </div>
   </section>
@@ -309,6 +316,20 @@ import galleryImg3 from '../assets/foto9.jpg';
     font-size: 1rem;
   }
 
+  .team-image-wrapper {
+    margin-top: 32px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-kantoor-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
   .gallery-stats {
     display: flex;
     flex-direction: column;
@@ -472,6 +493,10 @@ import galleryImg3 from '../assets/foto9.jpg';
       flex-direction: row;
     }
 
+    .team-kantoor-img {
+      height: 240px;
+    }
+
     .stat-card {
       padding: 20px 16px;
     }
@@ -514,6 +539,10 @@ import galleryImg3 from '../assets/foto9.jpg';
 
     .gallery-stats {
       flex-direction: column;
+    }
+
+    .team-kantoor-img {
+      height: 200px;
     }
 
     .timeline-content {
