@@ -11,7 +11,6 @@ import foto16 from '../assets/foto16.jpeg';
 import foto17 from '../assets/foto17.jpeg';
 import foto18 from '../assets/foto18.jpeg';
 import foto19 from '../assets/foto19.jpeg';
-import foto21 from '../assets/foto21.jpeg';
 import foto22 from '../assets/foto22.webp';
 ---
 
@@ -230,16 +229,13 @@ import foto22 from '../assets/foto22.webp';
             </div>
           </div>
           <div class="team-image-col reveal-right">
-            <Image
-              src={foto21}
-              alt="De bedrijfsbus van Blink Schoonmaak 010 met uitrusting"
-              width={600}
-              height={480}
-              loading="lazy"
-              format="webp"
-              quality={80}
-              class="content-foto"
-            />
+            <div class="team-photos-grid">
+              <img src="/team-1.jpg" alt="Teamlid Blink Schoonmaak 010" class="team-photo" loading="lazy" />
+              <img src="/team-2.jpg" alt="Teamlid Blink Schoonmaak 010" class="team-photo" loading="lazy" />
+              <img src="/team-3.png" alt="Teamlid Blink Schoonmaak 010" class="team-photo" loading="lazy" />
+              <img src="/team-4.png" alt="Teamlid Blink Schoonmaak 010" class="team-photo" loading="lazy" />
+              <img src="/team-5.jpg" alt="Teamlid Blink Schoonmaak 010" class="team-photo team-photo--wide" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -391,7 +387,33 @@ import foto22 from '../assets/foto22.webp';
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 64px;
-    align-items: center;
+    align-items: start;
+  }
+
+  .team-photos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .team-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  }
+
+  .team-photo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 133, 154, 0.14);
+  }
+
+  .team-photo--wide {
+    grid-column: 1 / -1;
+    height: 220px;
   }
 
   .team-text-col {

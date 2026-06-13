@@ -5,7 +5,6 @@ import CTABlock from '../components/CTABlock.astro';
 import { Image } from 'astro:assets';
 import heroImg from '../assets/particulieren_schoonmaak.jpeg';
 import galleryImg1 from '../assets/foto25.jpeg';
-import galleryImg2 from '../assets/foto26.jpeg';
 
 ---
 
@@ -29,8 +28,13 @@ import galleryImg2 from '../assets/foto26.jpeg';
           <p class="intro-label">Huishoudelijke schoonmaak</p>
           <h2>Uw huis altijd perfect verzorgd</h2>
           <p class="intro-paragraph">
-            Geniet van een schoon en fris huis zonder zelf te hoeven poetsen. Onze betrouwbare
-            schoonmakers komen op een tijdstip dat u het beste uitkomt, met oog voor detail.
+            Geniet van een schoon en fris huis zonder zelf te hoeven poetsen. Veel gezinnen hebben tegenwoordig een druk leven met werk, kinderen en andere verplichtingen, waardoor er weinig tijd overblijft voor het huishouden. Dat is volledig begrijpelijk &mdash; uw vrije tijd besteedt u liever aan belangrijke momenten met familie of ontspanning.
+          </p>
+          <p class="intro-paragraph">
+            Bij Blinkschoonmaak010 nemen wij die zorg graag uit handen. Als familiebedrijf staat persoonlijk contact en vertrouwen bij ons op nummer één. Onze 100% Nederlandstalige schoonmaaksters zijn betrouwbaar, sociaal en werken met veel aandacht voor detail.
+          </p>
+          <p class="intro-paragraph">
+            Wij komen op een moment dat u het beste uitkomt en zorgen iedere keer weer voor een frisse en vertrouwde omgeving.
           </p>
           <a href="/offerte-aanvragen" class="btn btn-primary">
             Meer weten? Neem contact op
@@ -89,7 +93,7 @@ import galleryImg2 from '../assets/foto26.jpeg';
     <div class="container">
       <div class="gallery-grid reveal">
         <div class="gallery-main">
-          <Image src={galleryImg2} alt="Nette liftlobby van een woongebouw" class="gallery-img" />
+          <img src="/team-5.jpg" alt="Team Blink Schoonmaak 010" class="gallery-img" />
           <div class="gallery-overlay">
             <span>Vakmanschap in elk detail</span>
           </div>
@@ -194,7 +198,10 @@ import galleryImg2 from '../assets/foto26.jpeg';
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--color-gray-800);
-    margin-bottom: 32px;
+  }
+
+  .intro-paragraph + .intro-paragraph {
+    margin-top: 20px;
   }
 
   .intro-image-wrap {
